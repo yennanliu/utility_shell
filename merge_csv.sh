@@ -2,7 +2,9 @@
 # directly append 1 csv to the other if they have same shema 
 
 
-OutFileName="MERGED.csv"                       # Fix the output name
+OutFileName=RESULT_`date +"%Y-%m-%d"`.csv                  # Fix the output name
+#OutFileName="MERGED_.csv"                       # Fix the output name
+
 i=0                                       # Reset a counter
 for filename in ./*.csv; do 
  if [ "$filename"  != "$OutFileName" ] ;      # Avoid recursion 
