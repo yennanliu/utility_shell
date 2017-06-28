@@ -1,23 +1,12 @@
 #!/bin/sh
 
 
-
-
-
 # get 1 csv schema 
 #cat df_test.csv  | head -n 1 
 
 
 
-
-filename=$1
-firstline=$2
-lastline=$3
-
-echo $filename
-echo $firstline
-
-
+# get all csv schema 
 
 i=0   
 
