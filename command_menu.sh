@@ -43,7 +43,7 @@ case "$REPLY"  in
 	b) cal ;;
 	c) exit 0 ;;
 	d) date ;;
-	e) to_upper $1 ;;
+	e) to_upper ;;
 	f) do_backup ;;
 esac 
 
