@@ -36,6 +36,20 @@ pyspark
 
 
 
+# run script pyspark via command lune 
+export SPARK_HOME=/Users/yennanliu/spark
+export PATH=$SPARK_HOME/bin:$PATH
+# for example 
+# /Users/yennanliu/spark/bin/spark-submit spark_test1.py
+./bin/spark-submit  your_python_script.py
+
+
+
+
+
+
+
+
 
 
 
