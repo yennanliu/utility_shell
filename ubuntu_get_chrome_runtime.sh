@@ -11,7 +11,9 @@ echo '=============='
 
 # explain of ps output 
 # https://kb.iu.edu/d/afnv
+# https://www.computerhope.com/unix/ups.htm
 # https://www.ibm.com/support/knowledgecenter/en/ssw_aix_61/com.ibm.aix.cmds4/ps.htm
+### http://linux.vbird.org/linux_basic/0440processcontrol/0440processcontrol-fc4.php#process_1
 # TIME :  The total runtime for the process. The time is displayed in the format of mm:ss or mmmm:ss if the runtime reaches 100 minutes, which is different from the displayed format if you use the -o time flag.
 # STIME : Time when the process started
 
