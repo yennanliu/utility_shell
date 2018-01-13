@@ -17,9 +17,12 @@ export PATH=~/anaconda3/bin:$PATH
 
 """
 
+# export PATH 
+# https://www.cyberciti.biz/faq/unix-linux-adding-path/
+echo 'export PATH=~/anaconda3/bin:$PATH'  >> ~/.bash_profile
 
-export PATH=~/anaconda3/bin:$PATH
 
+# check python version 
 echo 'test python version :'
 
 python --version
