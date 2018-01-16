@@ -1,14 +1,8 @@
 #!/bin/sh
 
-
-
-# get list of chrome relative 
-ps -ef | grep chrome 
-echo '=============='
-
 # get chrome pid and running time 
 # http://www.binarytides.com/linux-ps-command/
-
+#
 # explain of ps output 
 # https://kb.iu.edu/d/afnv
 # https://www.computerhope.com/unix/ups.htm
@@ -18,12 +12,20 @@ echo '=============='
 # STIME : Time when the process started
 
 
+
+# get list of chrome relative 
+function get_process_chrome (){
+ps -ef | grep chrome
+ }
+
 # dispaly process 
-ps -C chrome 
-echo '=============='
+#ps -C chrome 
+#echo '=============='
+
 # Display process hierarchy in a tree style
-ps -f --forest -C chrome
-echo '=============='
+function get_hierarchy_process_chrome() {
+ps -f --forest -C chrome }
+
 # Display elapsed time 
 # etime is the elapsed time since the process was started,
 # in the form dd-hh:mm:ss. 
@@ -31,8 +33,26 @@ echo '=============='
 # hh, the number of hours; 
 # mm, the number of minutes; 
 # ss, the number of seconds.
+echo 'show process with elapsed time...'
 
+function get_process_chrome_elapsed_time(){
 ps -eo pid,cmd,etime | grep chrome/chrome 
+}
+
+
+
+
+
+
+echo 'get list of chrome relative ... '
+get_process_chrome 
+echo '=============='
+echo 'show running process hierarchy ...'
+get_hierarchy_process_chrome
+echo '=============='
+echo 'show running process with elapsed time ...'
+get_process_chrome_elapsed_time
+
 
 
 
