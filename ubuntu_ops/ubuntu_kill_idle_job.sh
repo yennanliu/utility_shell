@@ -58,11 +58,12 @@ for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
 
 
 function kill_chrome_run_over_3_hour() {
-	
+
 for ((i=3;i<=24;i++)); 
 do 
 echo 'i =' $i
 PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " $i-" | awk '{print $1}'`"
+echo $PIDS 
 done
 
 # print PIDS 
