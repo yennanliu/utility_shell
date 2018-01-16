@@ -34,20 +34,23 @@ ps -f --forest -C chrome
 # hh, the number of hours; 
 # mm, the number of minutes; 
 # ss, the number of seconds.
-echo 'show process with elapsed time...'
+#echo 'show process with elapsed time...'
 
 function get_process_chrome_elapsed_time(){
 ps -eo pid,cmd,etime | grep chrome/chrome 
 }
 
-
-echo 'get list of chrome relative ... '
+echo ''
+echo 'GET list of chrome relative ... '
+echo ''
 get_process_chrome 
 echo '=============='
-echo 'show running process hierarchy ...'
+echo 'SHOW running process hierarchy ...'
+echo ''
 get_hierarchy_process_chrome
 echo '=============='
-echo 'show running process with elapsed time ...'
+echo 'SHOW running process with elapsed time ...'
+echo ''
 get_process_chrome_elapsed_time
 
 
