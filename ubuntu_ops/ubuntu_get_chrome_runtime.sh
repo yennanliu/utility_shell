@@ -24,7 +24,8 @@ ps -ef | grep chrome
 
 # Display process hierarchy in a tree style
 function get_hierarchy_process_chrome() {
-ps -f --forest -C chrome }
+ps -f --forest -C chrome
+ }
 
 # Display elapsed time 
 # etime is the elapsed time since the process was started,
@@ -40,10 +41,6 @@ ps -eo pid,cmd,etime | grep chrome/chrome
 }
 
 
-
-
-
-
 echo 'get list of chrome relative ... '
 get_process_chrome 
 echo '=============='
@@ -52,9 +49,6 @@ get_hierarchy_process_chrome
 echo '=============='
 echo 'show running process with elapsed time ...'
 get_process_chrome_elapsed_time
-
-
-
 
 
 
