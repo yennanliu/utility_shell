@@ -40,7 +40,12 @@
 COMMENT1
 
 
+#======================
 
+
+
+
+function kill_chrome_run_over_1_day() {
 # FINAL VERSION 
 # get PIDS which job (job with crome keyword ) run over 1 day 
 PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " 1-" | awk '{print $1}'`"
@@ -49,6 +54,42 @@ echo $PIDS
 # kill all jobs with selected pids 
 for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
 #kill -7 $PIDS 
+}
+
+
+function kill_chrome_run_over_3_hour() {
+	
+for ((i=3;i<=24;i++)); 
+do 
+echo 'i =' $i
+PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " $i-" | awk '{print $1}'`"
+done
+
+# print PIDS 
+echo $PIDS 
+# kill all jobs with selected pids 
+#for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
+#kill -7 $PIDS 
+}
+
+
+
+echo "kill idle jobs run over 3 hour"
+echo ""
+kill_chrome_run_over_3_hour 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
