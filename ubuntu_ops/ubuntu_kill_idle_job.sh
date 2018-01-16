@@ -61,13 +61,22 @@ function kill_chrome_run_over_3_hour() {
 
 for ((i=3;i<=24;i++)); 
 do 
-echo 'i =' $i
-PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " $i-" | awk '{print $1}'`"
-echo $PIDS 
+if [ $i -lt 10 ];
+# in case get hour parameter as : "01, 02...09"
+then
+   echo 'i =' 0$i
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " 0$i:" | awk '{print $1}'`"
+   echo $PIDS 
+else 
+# get hour parameter as "11, 12...24"
+	echo 'i =' $i
+	PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " $i:" | awk '{print $1}'`"
+	echo $PIDS 
+fi 
 done
 
 # print PIDS 
-echo $PIDS 
+#echo $PIDS 
 # kill all jobs with selected pids 
 #for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
 #kill -7 $PIDS 
@@ -78,7 +87,6 @@ echo $PIDS
 echo "kill idle jobs run over 3 hour"
 echo ""
 kill_chrome_run_over_3_hour 
-
 
 
 
