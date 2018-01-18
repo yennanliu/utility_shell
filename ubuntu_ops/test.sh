@@ -6,9 +6,8 @@ echo $PIDS
 for k in ${PIDS}; 
 do 
 if [ expr ${PIDS} -eq 8 ];
-then 
-{ echo " $k" }; done;
-else
-	echo 'not a hour idle job'
+then  echo " $k" ;
+else echo 'not a hour idle job'; 
+ 
 fi 
 done 
