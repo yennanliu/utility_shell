@@ -8,7 +8,7 @@
 #======================
 
 # print msg when execute each line 
-set -xv
+#set -xv
 
 
 function kill_chrome_run_over_3_hour() {
