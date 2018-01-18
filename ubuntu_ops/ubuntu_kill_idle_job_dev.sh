@@ -21,7 +21,8 @@ then
    echo $PIDS 
    for k in ${PIDS}; do 
    if [ expr ${PIDS} -eq 8 ];
-   then  echo "test (not kill) $k" ;
+   #then  echo "test (not kill) $k" ;
+   then for k in ${PIDS}; do { echo "test (not kill) $k"; }; done;
    else echo 'not a hour idle job'; 
    fi 
    done 
