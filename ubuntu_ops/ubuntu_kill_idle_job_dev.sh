@@ -20,7 +20,7 @@ then
    PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep " 0$i:" | awk '{print $1}'`"
    echo $PIDS 
    for k in ${PIDS}; do 
-   if [ expr ${PIDS} -eq 8 ];
+   if [ expr k -eq 8 ];
    #then  echo "test (not kill) $k" ;
    then for k in ${PIDS}; do { echo "test (not kill) $k"; }; done;
    else echo 'not a hour idle job'; 
