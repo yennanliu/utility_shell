@@ -106,9 +106,48 @@ fi
 done 
 
 } 
+
+function kill_chrome_run_over_3_hour_dev_3() {
+
+regex='([0-9][0-9]:[0-9][0-9]:[0-9][0-9])'
+#mytime=$(ps -eo pid,etime,command | grep chrome/chrome | grep -v grep | awk '{print $2}')
+mytime=$(ps -eo pid,etime,command | grep top | grep -v grep | awk '{print $2}')
+mypid=$(ps -eo pid,etime,command | grep top | grep -v grep | awk '{print $1}')
+
+
+### create a pid - elapse time pair 
+declare -A arr
+
+arr["pids"]=mypid
+arr+=( ["etime"]=mytime )
+for key in ${!arr[@]}; do
+    echo ${key} ${arr[${key}]}
+done
+
+
+
+#### 
+
+<<COMMENT1
+
+for time in ${mytime} ;
+do
+if [[ $time =~ $regex ]]; then
+
+	echo $time 
+   echo 'mypid : ' $mypid done 
+else 
+	echo 'not fit the form ' 
+fi 
+done 
+
+COMMENT1
+} 
+
+
 echo "KILL idle jobs run over 3 hour"
 echo ""
-kill_chrome_run_over_3_hour_dev_2 
+kill_chrome_run_over_3_hour_dev_3 
 
 
 
