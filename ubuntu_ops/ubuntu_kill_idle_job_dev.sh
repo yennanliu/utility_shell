@@ -118,8 +118,8 @@ mypid=$(ps -eo pid,etime,command | grep top | grep -v grep | awk '{print $1}')
 ### create a pid - elapse time pair 
 declare -A arr
 
-arr["pids"]=mypid
-arr+=( ["etime"]=mytime )
+arr["pids"]=$mypid
+arr+=( ["etime"]=$mytime )
 for key in ${!arr[@]}; do
     echo ${key} ${arr[${key}]}
 done
