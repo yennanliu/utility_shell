@@ -5,20 +5,15 @@
 
 """
 
+
+# example 1 
+
 export PGPASSWORD='password'
 psql -h 'server name' -U 'user name' -d 'base name' \
      -c 'command' (eg. "select * from schema.table")
 
-"""
 
-# ===========================
-
-
-
-
-
-
-"""
+# example 2 
 
 ### Please export following env variables first in case connect to posgre server 
 
@@ -29,12 +24,6 @@ export username=<username>
 export dbname=<dbname>
 
 """
-
-
-
-#psql $host $dbname $username $password $port  << EOF
-#select  * from prc.sdb_members_dev limit 4;
-#EOF
 
 
 
