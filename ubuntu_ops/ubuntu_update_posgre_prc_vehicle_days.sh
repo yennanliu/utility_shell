@@ -41,7 +41,7 @@ COMMENT1
 # =========================
 
 echo '-------------'
-echo 'clean lastest data.... (prc.vehicle_days_dev)'
+echo 'clean view lastest data.... (prc.vehicle_days_dev)'
 echo '-------------'
 
 
@@ -52,14 +52,14 @@ psql \
    --dbname=$dbname << EOF
 DELETE
 FROM prc.vehicle_days_dev
-WHERE date(date) >= date((now() - interval '1 day'))
-  AND date(date) <= date(now()) ;
+WHERE date(date) >= date((now() - interval '2 day'))
+  AND date(date) <= date((now() - interval '1 day')) ;
 EOF
 
 # =========================
 
 echo '-------------'
-echo 'insert lastest data from view .... (prc.vehicle_days -> prc.vehicle_days_dev)'
+echo 'insert lastest data from view to table .... (prc.vehicle_days -> prc.vehicle_days_dev)'
 echo '-------------'
 
 
@@ -72,8 +72,8 @@ psql \
 INSERT INTO prc.vehicle_days_dev
   (SELECT *
    FROM prc.vehicle_days
-   WHERE date(date) >= date((now() - interval '1 day'))
-     AND date(date) <= date(now()) );
+   WHERE date(date) >= date((now() - interval '2 day'))
+     AND date(date) <= date((now() - interval '1 day')) );
 EOF
 
 
@@ -88,7 +88,10 @@ psql \
    --port=$port \
    --username  $username\
    --dbname=$dbname << EOF
-select  * from prc.vehicle_days_dev limit 3;
+SELECT date, count(*)
+FROM prc.vehicle_days_dev
+GROUP BY date
+ORDER BY date ;
 EOF
 
 
