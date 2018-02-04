@@ -17,6 +17,7 @@
 # list all buckets 
 aws s3 ls 
 
+
 # list all bucket names 
 aws s3 ls | awk '{print $3}'
 
@@ -25,7 +26,10 @@ aws s3 ls | awk '{print $3}'
 # for loop list all buckets 
 echo '----------------'
 for entry in ` aws s3 ls | awk '{print $3}'`;
-do echo $entry 
+do echo $entry
+# list all files under buckets
+aws s3 ls --summarize --human-readable --recursive s3://$entry 
+
 done 
 
 
@@ -34,7 +38,7 @@ echo '----------------'
 for entry in ` aws s3 ls | awk '{print $3}'`;
 do 
 echo $entry
-aws s3api list-objects --bucket $entry --output json --query "[sum(Contents[].Size), length(Contents[])]"
+#aws s3api list-objects --bucket $entry --output json --query "[sum(Contents[].Size), length(Contents[])]"
 done 
 
 
