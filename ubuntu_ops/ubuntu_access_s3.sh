@@ -8,9 +8,38 @@
 
 # config
 # set up Access Key ID / Secret Access Key  / region 
-#aws configure 
+# aws configure 
+
+#-------------
 
 
 
 # list all buckets 
 aws s3 ls 
+
+# list all bucket names 
+aws s3 ls | awk '{print $3}'
+
+
+
+# for loop list all buckets 
+echo '----------------'
+for entry in ` aws s3 ls | awk '{print $3}'`;
+do echo $entry 
+done 
+
+
+# get size, length of all buckets
+echo '----------------'
+for entry in ` aws s3 ls | awk '{print $3}'`;
+do 
+echo $entry
+aws s3api list-objects --bucket $entry --output json --query "[sum(Contents[].Size), length(Contents[])]"
+done 
+
+
+
+
+
+
+
