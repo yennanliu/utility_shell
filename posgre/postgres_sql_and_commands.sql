@@ -20,6 +20,16 @@ SELECT pg_cancel_backend(procpid);
 -- kill idle query
 SELECT pg_terminate_backend(procpid);
 
+
+-- kill multiple idle query with PIDs 
+-- https://www.dbrnd.com/2015/11/postgresql-script-to-kill-all-running-connections-and-sessions-of-a-database/
+SELECT pg_terminate_backend(pg_stat_activity.pid)
+FROM pg_stat_activity
+-- your job pids 
+WHERE pid in (2761, 9063 )
+
+
+
 -- vacuum command
 VACUUM (VERBOSE, ANALYZE);
 
