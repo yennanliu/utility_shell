@@ -23,12 +23,11 @@ insert into rw.zone_table_dev(name, geo_text, geom)
 
 
 /* dev 
---------------
 
 -- insert geojson into posgre 
 -- https://www.queryoverflow.gdn/query/how-to-insert-a-geojson-polygon-into-a-postgis-table-23_60928.html
 
-INSERT INTO rw.quartiers_dev (name, geom)
+INSERT INTO rw.zone_table_dev (name, geom)
 VALUES ('Woluwe Stockel',
         ST_TRANSFORM(ST_GeomFromGeoJSON('{
     "type":"Polygon",
@@ -61,7 +60,6 @@ VALUES ('Woluwe Stockel',
     "crs":{"type":"name","properties":{"name":"EPSG:4326"}}
 }'),3857));
 
---------------
 */
 
 
