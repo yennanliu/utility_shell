@@ -1,3 +1,6 @@
 # utility_shell
 
- dev 
+ // dev 
+
+* Test Running 
+`bash system_info.sh`
