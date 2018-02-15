@@ -17,8 +17,7 @@ area_km float) ;
 /* ------------ */
 
 -- insert geojson into posgre 
--- https://www.queryoverflow.gdn/query/how-to-insert-a-geojson-MultiPolygon-into-a-postgis-table-23_60928.html
-
+-- https://www.queryoverflow.gdn/query/how-to-insert-a-geojson-polygon-into-a-postgis-table-23_60928.html
 
 INSERT INTO rw.zone_table_dev (name, geom)
 VALUES ('Woluwe Stockel',
