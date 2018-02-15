@@ -72,13 +72,12 @@ insert into rw.zone_table_dev(name, geo_text, geom)
 
 /* insert other values */
 /* ------------ */
-update rw.zone_table_dev set quartier_code = '1' where zone_id =1;
-update rw.zone_table_dev set quartier_code = '2' where zone_id =2;
-update rw.zone_table_dev set quartier_code = '3' where zone_id =3;
-update rw.zone_table_dev SET area_km ='0.6454' where quartier_code='1';
-update rw.zone_table_dev SET area_km ='1.1772' where quartier_code='2';
-update rw.zone_table_dev SET area_km ='0.7598' where quartier_code='3';
 
+update rw.zone_table_dev set area_km = 2.56 where name ='Leaken';
+update rw.zone_table_dev set area_km = 0.958 where name ='Anderlecht';
+update rw.zone_table_dev set area_km = 1.05 where name ='Uccle';
+update rw.zone_table_dev set area_km = 1.03 where name ='Woluwe Stockel';
+update rw.zone_table_dev set area_km = 1.77 where name ='Woluwe saint Pierre';
 
 
 
