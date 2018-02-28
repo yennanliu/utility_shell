@@ -1,7 +1,7 @@
 #!/bin/sh
 
 
-cd 
+cd ~
 # export env variables 
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
@@ -12,6 +12,6 @@ source ~/.bashrc
 cd /home/ubuntu/yen_dev/uk_data_team/pipeline
 # push pipeline line project (.dig)
 #digdag push <your_project_name>
-# run digdag server
-digdag server -b 0.0.0.0 -m --task-log ../task_log
+# run digdag server (with nohup and output log)
+nohup digdag server -b 0.0.0.0 -m --task-log ../task_log >> crontab_log/digdag.log  2>&1 
 
