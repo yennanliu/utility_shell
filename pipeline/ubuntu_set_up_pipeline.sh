@@ -13,5 +13,5 @@ cd /home/ubuntu/yen_dev/uk_data_team/pipeline
 # push pipeline line project (.dig)
 #digdag push <your_project_name>
 # run digdag server (with nohup and output log)
-nohup digdag server -b 0.0.0.0 -m --task-log ../task_log >> crontab_log/digdag.log  2>&1 
+nohup digdag server -b 0.0.0.0 -m --task-log ../task_log >> /home/ubuntu/crontab_log/digdag.log  2>&1 
 
