@@ -145,42 +145,36 @@ COMMENT1
 } 
 
 
-
-function kill_chrome_run_over_3_hour() {
+function kill_chrome_run_over_3_hr_dev() {
 
 for ((i=3;i<=24;i++)); 
 do 
 if [ $i -lt 10 ];
-# in case get hour parameter as : "01, 02...09"
+# for hour : 01, 02...09 
 then
    echo 'elapsed hour =' 0$i
-   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "[0-9]:0$i:[0-9]"  | awk '{print $1}'`"
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "[0-9]$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
    echo $PIDS 
-   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+   #for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
    #echo "kill jobs with  PIDS : " $PIDS 
    #kill -7 $PIDS 
 else 
-# get hour parameter as "11, 12...24"
+# for hour : 10, 11... 24 
    echo 'elapsed hour  =' $i
-   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep " $i:" | awk '{print $1}'`"
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
    echo $PIDS 
-   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+   #for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
    #echo "kill jobs with PIDS : " $PIDS 
    #kill -7 $PIDS 
 fi 
 done
 
-# print PIDS 
-#echo $PIDS 
-# kill all jobs with selected pids 
-#for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
-#kill -7 $PIDS 
 }
 
 
 echo "KILL idle jobs run over 3 hour"
 echo ""
-kill_chrome_run_over_3_hour 
+kill_chrome_run_over_3_hr_dev 
 
 
 
