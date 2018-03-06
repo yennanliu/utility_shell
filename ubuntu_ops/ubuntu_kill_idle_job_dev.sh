@@ -153,7 +153,7 @@ if [ $i -lt 10 ];
 # for hour : 01, 02...09 
 then
    echo 'elapsed hour =' 0$i
-   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "[0-9]$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "0$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
    echo $PIDS 
    #for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
    #echo "kill jobs with  PIDS : " $PIDS 
