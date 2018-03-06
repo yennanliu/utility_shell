@@ -101,7 +101,8 @@ http://spatialreference.org/ref/epsg/osgb-1936-british-national-grid/
 
 
 */
-SELECT hex_grid(1.0, 51.51, -0.113, 51.52, -0.078, 4326, 27700, 4326);
+SELECT hex_grid(1.0, -0.113,51.51,  -0.078,51.52, 4326, 27700, 4326);
+
 
 -- Create spatial index
 
