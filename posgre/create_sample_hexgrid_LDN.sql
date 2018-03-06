@@ -77,17 +77,17 @@ END$BODY$ LANGUAGE PLPGSQL VOLATILE COST 100;
 
 --Create table for results
 
-DROP TABLE IF EXISTS us_hex_grid;
+DROP TABLE IF EXISTS ldn_hex_grid;
 
 
-CREATE TABLE us_hex_grid ( gid SERIAL NOT NULL PRIMARY KEY,
+CREATE TABLE ldn_hex_grid ( gid SERIAL NOT NULL PRIMARY KEY,
                                                        geom GEOMETRY('POLYGON', 4326, 2) NOT NULL) WITH (OIDS=FALSE);
 
 -- Create 1km2 hex grid (note: extents allow for the effects of the working projection used)
 -- Input parameters: hex_grid(areakm2 float, xmin float, ymin float, xmax float, ymax float, inputsrid integer,
 --   workingsrid integer, ouputsrid integer)
 
-INSERT INTO us_hex_grid (geom)
+INSERT INTO ldn_hex_grid (geom)
 /*
 
 check the xmin, ymin, xmax, ymax with google map
@@ -105,22 +105,22 @@ SELECT hex_grid(1.0, 51.51, -0.113, 51.52, -0.078, 4326, 27700, 4326);
 
 -- Create spatial index
 
-CREATE INDEX us_hex_grid_geom_idx ON us_hex_grid USING gist (geom);
+CREATE INDEX ldn_hex_grid_geom_idx ON ldn_hex_grid USING gist (geom);
 
 -- Cluster table by spatial index (for spatial query performance)
-CLUSTER us_hex_grid USING us_hex_grid_geom_idx;
+CLUSTER ldn_hex_grid USING ldn_hex_grid_geom_idx;
 
 -- Update stats on table
-ANALYZE us_hex_grid;
+ANALYZE ldn_hex_grid;
 
 --Check accuracy of results (in square km)
 
 SELECT
   (SELECT Count(*)
-   FROM us_hex_grid) AS hexagon_count,
+   FROM ldn_hex_grid) AS hexagon_count,
 
   (SELECT (MIN(ST_Area(geom::GEOGRAPHY, FALSE)) / 1000000.0)::NUMERIC(10,3)
-   FROM us_hex_grid) AS min_area,
+   FROM ldn_hex_grid) AS min_area,
 
   (SELECT (MAX(ST_Area(geom::GEOGRAPHY, FALSE)) / 1000000.0)::NUMERIC(10,3)
-   FROM us_hex_grid) AS max_area;
+   FROM ldn_hex_grid) AS max_area;
