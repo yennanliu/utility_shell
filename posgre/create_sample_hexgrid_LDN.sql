@@ -39,6 +39,7 @@ BEGIN
 
   -- Get height and width of hexagon - FLOOR and CEILING are used to get the hexagon size closer to the requested input area
   aream2 := areakm2 * 1000000.0;
+  --aream2 := areakm2 * 10000.0;
   qtrwidthfloat := sqrt(aream2/(sqrt(3.0) * (3.0/2.0))) / 2.0;
 
   qtrwidth := FLOOR(qtrwidthfloat);
@@ -101,7 +102,7 @@ http://spatialreference.org/ref/epsg/osgb-1936-british-national-grid/
 
 
 */
-SELECT hex_grid(1.0, -0.113,51.51,  -0.078,51.52, 4326, 27700, 4326);
+SELECT hex_grid(1.0, -0.168,51.44, -0.03,51.54, 4326, 27700, 4326);
 
 
 -- Create spatial index
