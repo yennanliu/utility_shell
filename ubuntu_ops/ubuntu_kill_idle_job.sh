@@ -90,6 +90,10 @@ done
 }
 
 
+current_date_time_=`date "+%Y-%m-%d %H:%M:%S"`
+echo 'current_date_time_ : ' $current_date_time_;
+
+
 echo "KILL idle jobs run over 1 day"
 echo ""
 kill_chrome_run_over_1_day

@@ -40,6 +40,11 @@ function get_process_chrome_elapsed_time(){
 ps -eo pid,cmd,etime | grep chrome/chrome 
 }
 
+
+current_date_time_=`date "+%Y-%m-%d %H:%M:%S"`
+echo 'current_date_time_ : ' $current_date_time_;
+
+
 echo ''
 echo 'GET list of chrome relative ... '
 echo ''
