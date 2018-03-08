@@ -36,26 +36,9 @@
 #for i in ${PIDS}; do { echo "Killing $i"; kill -9 $i; }; done;
 
 
-"""
-COMMENT1
 
 
-#======================
-
-
-
-
-function kill_chrome_run_over_1_day() {
-# FINAL VERSION 
-# get PIDS which job (job with crome keyword ) run over 1 day 
-#PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " 1-" | awk '{print $1}'`"
-PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep " 1-" | awk '{print $1}'`"
-# print PIDS 
-echo $PIDS 
-# kill all jobs with selected pids 
-for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
-#kill -7 $PIDS 
-}
+### backup last version script ###
 
 
 function kill_chrome_run_over_3_hour() {
@@ -90,8 +73,56 @@ done
 }
 
 
+"""
+COMMENT1
+
+
+#======================
+
+
+
+
+function kill_chrome_run_over_1_day() {
+# FINAL VERSION 
+# get PIDS which job (job with crome keyword ) run over 1 day 
+#PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome|mysqld|httpd" | grep " 1-" | awk '{print $1}'`"
+PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep " 1-" | awk '{print $1}'`"
+# print PIDS 
+echo $PIDS 
+# kill all jobs with selected pids 
+for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
+#kill -7 $PIDS 
+}
+
+
+function kill_chrome_run_over_3_hr() {
+
+for ((i=3;i<=24;i++)); 
+do 
+if [ $i -lt 10 ];
+# for hour : 01, 02...09 
+then
+   echo 'elapsed hour =' 0$i
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "0$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
+   echo $PIDS 
+   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+
+else 
+# for hour : 10, 11... 24 
+   echo 'elapsed hour  =' $i
+   PIDS="`ps -eo pid,cmd,etime | grep chrome/chrome | egrep "chrome" | grep "$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
+   echo $PIDS 
+   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+
+fi 
+done
+
+}
+
+echo '*************'
 current_date_time_=`date "+%Y-%m-%d %H:%M:%S"`
 echo 'current_date_time_ : ' $current_date_time_;
+echo '*************'
 
 
 echo "KILL idle jobs run over 1 day"
@@ -100,7 +131,7 @@ kill_chrome_run_over_1_day
 
 echo "KILL idle jobs run over 3 hour"
 echo ""
-kill_chrome_run_over_3_hour 
+kill_chrome_run_over_3_hr 
 
 
 
