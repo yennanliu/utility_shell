@@ -2,6 +2,11 @@
 
 # =========================
 
+echo '*************'
+current_date_time_=`date "+%Y-%m-%d %H:%M:%S"`
+echo 'current_date_time_ : ' $current_date_time_;
+echo '*************'
+
 
 
 echo '-------------'
@@ -108,7 +113,30 @@ EOF
 
 
 
+
+
+
 # =========================
+
+
+echo '-------------'
+echo 'delete table...'
+echo '-------------'
+
+
+psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+DROP TABLE IF EXISTS prc.v_cc_individuals_brussels_table;
+EOF
+
+
+
+
+# =========================
+
 
 echo '-------------'
 echo 'create table...'
