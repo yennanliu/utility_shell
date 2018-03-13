@@ -9,8 +9,27 @@ echo '*************'
 
 
 
+# =========================
+
+
 echo '-------------'
-echo 'creatw table ...'
+echo 'delete table...'
+echo '-------------'
+
+
+psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+DROP TABLE IF EXISTS ana.member_month_details_table;
+EOF
+
+# =========================
+
+
+echo '-------------'
+echo 'create table ...'
 echo '-------------'
 
 psql \
@@ -18,7 +37,8 @@ psql \
    --port=$port \
    --username  $username\
    --dbname=$dbname << EOF
-DROP TABLE IF EXISTS ana.member_month_details_table AS
+
+CREATE TABLE ana.member_month_details_table AS
   (WITH month_dates AS
      (SELECT MONTH
       FROM dates
@@ -76,7 +96,7 @@ DROP TABLE IF EXISTS ana.member_month_details_table AS
 
       LEFT JOIN ana.bookings bo ON date_trunc('month', bo.booking_end_date) = md.month
       AND bo.member_id = mem.member_id
-      AND bo.trip_duration > 0
+      AND bo.trip_duration > 0 -- limit the time here to speed up view updating
       GROUP BY concat(md.month, mem.member_id) ,
                md.month ,
                mem.member_id ,
@@ -135,6 +155,7 @@ DROP TABLE IF EXISTS ana.member_month_details_table AS
                                                                    ELSE NULL
                                                                END AS activity_segment
    FROM last_month_details);
+
 
 EOF
 
