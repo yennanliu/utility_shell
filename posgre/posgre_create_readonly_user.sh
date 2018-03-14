@@ -13,6 +13,9 @@ NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity'
 Assign permission to this read only user:
 EOF
 
+
+# ------- grant new user DB read only access  ------- 
+
 ## declare an array variable
 declare -a schema_list=("ana" "rw" "rpt" "prc")
 
