@@ -8,9 +8,8 @@ psql \
    --port=$port \
    --username  $username\
    --dbname=$dbname << EOF
-CREATE ROLE test_user WITH LOGIN PASSWORD 'Test1234' 
-NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity';
-Assign permission to this read only user:
+CREATE ROLE test_user WITH LOGIN PASSWORD 'Test1234'  NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION VALID UNTIL 'infinity'; 
+GRANT CONNECT ON DATABASE your_db_name TO test_user; 
 EOF
 
 
