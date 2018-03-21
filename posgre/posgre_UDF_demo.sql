@@ -6,8 +6,8 @@
 CREATE OR REPLACE FUNCTION upsert_tableName() RETURNS VOID AS $$ 
     DECLARE 
     BEGIN 
-        UPDATE rw.vehiclelogfix_dev SET category = 'Return to Service' WHERE category = 'Create booking'; 
-        IF NOT FOUND THEN 
+        UPDATE rw.vehiclelogfix_dev SET category = 'Return to Service' WHERE category = 'Out of Service' and category_shifted = 'Create booking'; 
+        IF FOUND THEN 
         INSERT INTO rw.vehiclelogfix_dev  (category) values ('Return to Service'); 
         END IF; 
     END; 
