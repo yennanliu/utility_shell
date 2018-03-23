@@ -52,10 +52,10 @@ WITH waivers AS
    LEFT JOIN ana.vehicles v ON v.vin::text = bo.vin::text
    WHERE bo.trip_duration > 0::double precision
      AND bo.booking_start_date < now() )
-SELECT DISTINCT mem.member_id ||'_zipcar' AS subscriber_key,
-                mem.member_id,
-                initcap(mem.first_name::text) AS first_name,
-                initcap(mem.last_name::text) AS last_name,
+SELECT DISTINCT mem.member_id ||'_zipcar' AS subscriber_key_zc,
+                mem.member_id AS member_id_zc,
+                initcap(mem.first_name::text) AS first_name_zc,
+                initcap(mem.last_name::text) AS last_name_zc,
                 ml.language,
                 date_trunc('month'::text, mem.birth_date::TIMESTAMP WITH TIME ZONE) AS birth_month_year,
                 CASE
@@ -63,7 +63,7 @@ SELECT DISTINCT mem.member_id ||'_zipcar' AS subscriber_key,
                          AND (mem.birth_date + (((date_part('year'::text, 'now'::text::date)::integer - date_part('year'::text, mem.birth_date)::integer) || ' years'::text)::interval)) <= ('now'::text::date + 7) THEN TRUE::bool
                     ELSE FALSE::bool
                 END AS has_birthday_this_week,
-                mem.email AS email_address,
+                mem.email AS email_address_zc,
                 CASE
                     WHEN mem.email IS NULL THEN NULL::text
                     ELSE lower("left"("substring"(mem.email::text, "position"(mem.email::text, '@'::text) + 1), "position"("substring"(mem.email::text, "position"(mem.email::text, '@'::text) + 1), '.'::text) - 1))
