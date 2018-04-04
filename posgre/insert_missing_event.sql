@@ -10,13 +10,14 @@ WITH triple AS (
         SELECT vin, category
         , LAG(category,2) OVER www AS must_be_a
         , LAG(category,1) OVER www AS must_be_c
-        , LAG(date,1) OVER www AS c_timestamp
+        , LAG(date,1) OVER www AS c_date
+        , LAG(time,1) OVER www AS c_time
         , LAG(category,0) OVER www AS must_be_d
         FROM abcd_dev
                 WINDOW www AS (PARTITION BY vin ORDER BY date)
         )
-INSERT INTO abcd_dev ( date , category , vin )
-SELECT t.c_timestamp, 'out_of_service', t.vin
+INSERT INTO abcd_dev ( date,time , category , vin )
+SELECT t.c_date, t.c_time,'out_of_service', t.vin
 FROM triple t
 WHERE t.must_be_a = 'End booking'
 AND t.must_be_c = 'Return to Service'
