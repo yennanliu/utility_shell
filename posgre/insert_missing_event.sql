@@ -1,9 +1,59 @@
 
 -- Insert missing events into an ordered sequence of event records in PosgreSQL
 
-  
+
+
 -- V1 
 
+/*
+
+case 1) 
+
+original : out of service -> x ( x!= return to service )
+modified : out of service -> return to service 
+
+*/
+
+WITH triple AS (
+        SELECT vin, category
+        , LAG(category,1) OVER www AS must_be_c
+        , LAG(date,1) OVER www AS c_date
+        , LAG(time,1) OVER www AS c_time
+        FROM abcd_dev
+                WINDOW www AS (PARTITION BY vin ORDER BY date,time desc)
+        )
+INSERT INTO abcd_dev ( date,time , category , vin )
+SELECT t.c_date, t.c_time,'Return to Service', t.vin
+FROM triple t
+WHERE t.must_be_c = 'Out of Service'
+
+
+
+
+
+/*
+
+case 2) 
+
+original :   x ( x!= out of service) -> return to service 
+modified : out of service -> return to service 
+
+*/
+
+
+
+-- To check if this case 2) is necessary 
+
+
+
+
+
+----------------------------------------
+
+
+
+
+-- V2
 
 
 WITH triple AS (
@@ -26,7 +76,7 @@ AND t.must_be_d = 'Create booking'
 
 
 
--- V2 
+-- V3
 INSERT INTO abcd_dev (out_of_service, return_service, vin,date,TIME,category)
 SELECT c.out_of_service,
        c.return_service,
