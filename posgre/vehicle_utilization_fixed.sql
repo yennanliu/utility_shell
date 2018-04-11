@@ -94,24 +94,28 @@ WITH dates AS
    AND v.date = vd.date
    WHERE v.active_p::text = 'Y'::text ),
      date_table AS
-  ( SELECT date.date::date AS date
-   FROM generate_series('2016-09-01 01:00:00+01'::TIMESTAMP WITH TIME ZONE, ('now'::text::date - 2)::TIMESTAMP WITH TIME ZONE, '1 day'::interval) date(date) ),
+  (SELECT date.date::date AS date
+   FROM generate_series('2016-09-01 01:00:00+01'::TIMESTAMP WITH TIME ZONE, ('now'::text::date - 2)::TIMESTAMP WITH TIME ZONE, '1 day'::interval) date(date)),
      fleet AS
-  ( SELECT sum(vehicle_days.total_service_days) AS service_days,
-           sum(vehicle_days.total_bookable_days) AS bookable_days,
-           vehicle_days.date
+  (SELECT sum(vehicle_days.total_service_days) AS service_days,
+          sum(vehicle_days.total_bookable_days) AS bookable_days,
+          vehicle_days.date
    FROM ana_vehicle_days_fixed vehicle_days
    GROUP BY vehicle_days.date
-   ORDER BY vehicle_days.date )
-SELECT td.date,
-       COALESCE(fl.bookable_days, 0::bigint::double precision) AS average_operational_fleet,
-       COALESCE(fl.service_days, 0::bigint::double precision) AS average_non_operational_fleet
-FROM date_table td
-LEFT JOIN fleet fl ON fl.date = td.date
-WHERE td.date < ('now'::text::date - 1)
-ORDER BY td.date
-LIMIT 100
-
-
+   ORDER BY vehicle_days.date),
+     rpt_daily_actuals AS
+  (SELECT td.date,
+          COALESCE(fl.bookable_days, 0::bigint::double precision) AS average_operational_fleet,
+          COALESCE(fl.service_days, 0::bigint::double precision) AS average_non_operational_fleet
+   FROM date_table td
+   LEFT JOIN fleet fl ON fl.date = td.date
+   WHERE td.date < ('now'::text::date - 1)
+   ORDER BY td.date)
+SELECT a.date AS date,
+       avg(a.average_operational_fleet) as average_operational_fleet,
+       avg(a.average_non_operational_fleet) as  average_non_operational_fleet 
+FROM rpt_daily_actuals a
+GROUP BY date
+ORDER BY date
 
 
