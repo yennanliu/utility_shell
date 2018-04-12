@@ -80,7 +80,7 @@ psql \
           SELECT vin, category
           , LAG(category,1) OVER www AS must_be_c
           , LAG(date,1) OVER www AS c_date
-          , LAG(time,1) OVER www AS c_time
+          , LAG(time + interval '18000 second' ,1) OVER www AS c_time
           FROM rw.vehicle_logs_fixed 
                   WINDOW www AS (PARTITION BY vin ORDER BY date,time desc)
           )
