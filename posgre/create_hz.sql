@@ -1,5 +1,8 @@
 
--- 1)  ###### create table  ######
+################## 
+-- 1) create table 
+################## 
+
 CREATE TABLE rw.ldn_homezone (
 	zone_id int4 NOT NULL,
 	"name" varchar(100) NULL,
@@ -17,7 +20,9 @@ WITH (
 /*CREATE INDEX homezone_geom_idx ON rw.ldn_homezone USING gist (geom) */
 
 
--- 2) ###### insert data  ######
+################## 
+-- 2) insert data 
+################## 
 
 
 -- add zone_id, name  
@@ -31,18 +36,26 @@ INSERT INTO  rw.ldn_homezone (zone_id, name)
 VALUES (2,'altham Forest')
 
 
+-- add km2
+
+UPDATE rw.ldn_homezone SET area_km2=50
+where zone_id=1
+-----------------
+UPDATE rw.ldn_homezone SET area_km2=30
+where zone_id=2
+
+
+
 
 -- add remote_p 
 
 
 UPDATE rw.ldn_homezone SET remote_p=True
 where zone_id=1
-
 -----------------
-
-
 UPDATE rw.ldn_homezone SET remote_p=True
 where zone_id=2
+
 
 
 -- add geojson 
