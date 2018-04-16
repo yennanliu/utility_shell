@@ -1,7 +1,18 @@
 
-################## 
+######################################################################## 
+-- 0) intro
+# please run following code step by step  
+# step 1) create table 
+# step 2) insert data  
+######################################################################## 
+
+
+
+
+
+######################################################################## 
 -- 1) create table 
-################## 
+######################################################################## 
 
 CREATE TABLE rw.ldn_homezone (
 	zone_id int4 NOT NULL,
@@ -20,13 +31,13 @@ WITH (
 /*CREATE INDEX homezone_geom_idx ON rw.ldn_homezone USING gist (geom) */
 
 
-################## 
+######################################################################## 
 -- 2) insert data 
-################## 
+######################################################################## 
 
 
 
--- add zone_id, name , areakm2, remote_p 
+-- 2-1) add zone_id, name , areakm2, remote_p 
 
 
 
@@ -52,7 +63,7 @@ VALUES
 
 
 
--- add geojson 
+-- 2-2) add geojson 
 
 
 UPDATE rw.ldn_homezone SET geojson=
@@ -353,7 +364,7 @@ where zone_id = 11;
 
 
 
--- add wkt 
+-- 2-3) add wkt 
 
 with wkt as (
 SELECT ST_AsText(ST_GeomFromGeoJSON('{
@@ -522,7 +533,7 @@ where zone_id = 11;
 
 
 
--- add geom  (### transforming from  WKT ###)
+-- 2-4) add geom  (### transforming from  WKT ###)
 
 
 with geom as ( select 
