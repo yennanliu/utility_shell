@@ -552,6 +552,86 @@ where zone_id = 3)
 UPDATE rw.ldn_homezone SET geom=(select * from geom )
 where zone_id = 3;
 
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 4)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 4;
+
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 5)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 5;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 6)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 6;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 7)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 7;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 8)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 8;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 9)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 9;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 10)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 10;
+
+-----------------
+
+
+with geom as ( select 
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+where zone_id = 11)
+
+UPDATE rw.ldn_homezone SET geom=(select * from geom )
+where zone_id = 11;
 
 
 
