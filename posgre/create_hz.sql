@@ -43,17 +43,17 @@ WITH (
 
 INSERT INTO  rw.ldn_homezone (zone_id, name,area_km2,remote_p)
 VALUES 
-(1,'Islington',50,True),
-(2,'Waltham Forest',50,True),
-(3,'Lewisham',50,True),
-(4,'Lambeth',50,True),
-(5,'Hackney',50,True),
-(6,'Tower Hamlets',50,True),
-(7,'Merton',50,True),
-(8,'Heathrow T5',20,True),
-(9,'Southwark',50,True),
-(10,'Wandsworth',50,True),
-(11,'Haringey',50,True)
+(1,'Islington',14.86,True),
+(2,'Waltham Forest',38.82,True),
+(3,'Lewisham',35.15,True),
+(4,'Lambeth',26.82,True),
+(5,'Hackney',19.06,True),
+(6,'Tower Hamlets',19.77,True),
+(7,'Merton',37.61,True),
+(8,'Heathrow T5',12.14,True),
+(9,'Southwark',28.85,True),
+(10,'Wandsworth',34.26,True),
+(11,'Haringey',29.59,True)
 
 
 
