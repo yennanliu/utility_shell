@@ -3,6 +3,10 @@
 
 # ref  :   http://blog.ghostinthemachines.com/2015/03/01/how-to-use-gpg-command-line/
 
+
+# list all keys 
+gpg --list-keys
+
 # encrypt the csv data 
 gpg --encrypt --recipient <your_email_name>.com  <test>.csv
 
