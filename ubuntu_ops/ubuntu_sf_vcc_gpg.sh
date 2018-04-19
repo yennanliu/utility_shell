@@ -5,7 +5,7 @@
 current_date="$(date +'%Y%m%d')"
 echo $current_date
 echo $db_url 
-echo $User
+echo $sftp_user
 echo $Host 
 echo $recipient_mail 
 
@@ -16,7 +16,7 @@ echo $file_name
 echo 'encrypt the data....'
 gpg --encrypt --recipient $recipient_mail  $file_name
 echo 'to sftp....'
-sshpass -p $password sftp -oport=22 $User@$Host << !
+sshpass -p $password sftp -oport=22 $sftp_user@$Host << !
 put $file_name.gpg /Import
 !
 rm $file_name
