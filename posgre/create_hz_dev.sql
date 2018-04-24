@@ -43,10 +43,10 @@ WITH (
 
 INSERT INTO  rw.ldn_homezone_dev (zone_id, name,area_km2,remote_p)
 VALUES 
-(1,'f_north',14.86,FALSE),
-(2,'f_south',38.82,FALSE),
-(3,'H_T5',35.15,FALSE),
-(4,'Rotherhithe',26.82,FALSE),
+(1,'f_north',71.72,FALSE),
+(2,'f_south',119.12,FALSE),
+(3,'H_T5',0.1853,FALSE),
+(4,'Rotherhithe',2.11,FALSE),
 
 
 
