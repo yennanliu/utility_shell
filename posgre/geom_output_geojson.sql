@@ -28,6 +28,7 @@ WHERE ST_Intersects(city_parks.geom,st_transform(ST_GeographyFromText('POLYGON((
 
 */
 
+/*
 SELECT json_build_object(
 'type', 'FeatureCollection',
 
@@ -41,6 +42,23 @@ SELECT json_build_object(
 )
 )
 FROM public.ldn_hex_grid
+
+*/
+
+
+SELECT json_build_object(
+'type', 'FeatureCollection',
+
+'features', json_agg(
+    json_build_object(
+        'type',       'Feature',
+        'gid',         id,
+        'geometry',   ST_AsGeoJSON(ST_ForceRHR(st_transform(geom,4326)))::json,
+        'properties', jsonb_set(row_to_json(cells_ldn_dev)::jsonb,'{geom}','0',false)
+    )
+)
+)
+FROM public.cells_ldn_dev
 
 
 
