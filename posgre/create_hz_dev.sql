@@ -229,7 +229,7 @@ where zone_id = 4;
 
 
 with geom as ( select 
-ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone_dev
 where zone_id = 1)
 
 UPDATE  rw.ldn_homezone_dev SET geom=(select * from geom )
@@ -239,7 +239,7 @@ where zone_id = 1;
 
 
 with geom as ( select 
-ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone_dev
 where zone_id = 2)
 
 UPDATE rw.ldn_homezone_dev SET geom=(select * from geom )
@@ -249,7 +249,7 @@ where zone_id = 2;
 
 
 with geom as ( select 
-ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone_dev
 where zone_id = 3)
 
 UPDATE rw.ldn_homezone_dev SET geom=(select * from geom )
@@ -259,7 +259,7 @@ where zone_id = 3;
 
 
 with geom as ( select 
-ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
+ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone_dev
 where zone_id = 4)
 
 UPDATE rw.ldn_homezone_dev SET geom=(select * from geom )
