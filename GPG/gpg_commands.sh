@@ -7,9 +7,16 @@
 # list all keys 
 gpg --list-keys
 
+# import new public key 
+gpg --import <public_key_name>.txt
+# edit and trust new public key 
+gpg --edit-key  <email_in_public_key>.com
+
 # encrypt the csv data 
 gpg --encrypt --recipient <your_email_name>.com  <test>.csv
 
 # decrypt the csv data 
 gpg --decrypt  <test>.csv.gpg
+
+
 
