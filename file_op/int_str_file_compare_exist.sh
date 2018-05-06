@@ -36,7 +36,7 @@ echo '#### check if file exist ####'
 echo $?
 echo '-------------'
 echo '#### check if directory exist ####'
-[ -e /Users/yennanliu/utility_shell/docker ]
+[ -d /Users/yennanliu/utility_shell/docker ]
 echo $?
 echo '-------------'
 
