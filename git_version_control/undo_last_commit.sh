@@ -16,6 +16,6 @@ COMMENT1
 
 # show last 5 commits 
 # https://stackoverflow.com/questions/16974204/how-to-get-commit-history-for-just-one-branch
-git log -3 master
+git log -5 master
 # reset last commit 
 git reset HEAD~  
