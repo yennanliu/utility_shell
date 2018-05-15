@@ -19,4 +19,13 @@ gpg --encrypt --recipient <your_email_name>.com  <test>.csv
 gpg --decrypt  <test>.csv.gpg
 
 
+# delete a public key 
+# http://irtfweb.ifa.hawaii.edu/~lockhart/gpg/
+gpg --delete-key "User Name"
+
+
+
+
+
+
 
