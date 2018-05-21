@@ -10,7 +10,7 @@ echo $Host
 echo $recipient_mail 
 
 echo 'query DB....'
-psql $db_url -c"\COPY (SELECT * FROM rw.job_health limit 10 ) To 'test$current_date.txt' WITH CSV HEADER DELIMITER '|'"
+psql $db_url -c"\COPY (SELECT * FROM prc.sdb_members_dev limit 10 ) To 'test$current_date.txt' WITH CSV HEADER DELIMITER '|'"
 file_name="test$current_date.txt"
 echo $file_name
 echo 'encrypt the data....'
