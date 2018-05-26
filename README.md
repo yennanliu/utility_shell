@@ -2,12 +2,14 @@
 
  // dev 
 
-* Test Running 
+
+Test Running 
 ```bash
 
 $ bash system_info.sh
 
 ```
+
 
 
 ## Ref 
@@ -21,3 +23,5 @@ $ bash system_info.sh
 	* http://www.imada.sdu.dk/~jamik/db2-12/material/39-PL-pgSQL.pdf
 * Posgre cursor 
 	* http://www.postgresqltutorial.com/plpgsql-cursor/
+
+	
