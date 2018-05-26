@@ -3,7 +3,11 @@
  // dev 
 
 * Test Running 
-`bash system_info.sh`
+```bash
+
+$ bash system_info.sh
+
+```
 
 
 ## Ref 
