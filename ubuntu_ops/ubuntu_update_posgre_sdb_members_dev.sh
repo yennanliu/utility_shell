@@ -68,14 +68,14 @@ psql \
    --dbname=$dbname << EOF
 
 CREATE TABLE prc.sdb_members_dev AS
-  WITH waivers AS (
+WITH waivers AS (
          SELECT DISTINCT bpr.customer_id AS member_id,
             TRUE::bool AS has_had_any_per_trip_waiver
            FROM billed_products_raw bpr
           WHERE bpr.billing_product::text = 'FEES.PER_TRIP_WAIVER'::text AND bpr.net > 0::double precision
         ), credits AS (
          SELECT customer_credit.account_id AS member_id,
-            sum(customer_credit.available_amount) AS current_credit,
+            round(cast(sum(customer_credit.available_amount) as numeric),2) AS current_credit,
             min(customer_credit.end_date_utc) AS next_credit_expiry_date
            FROM rw.customer_credit
           WHERE customer_credit.end_date_utc > now() AND customer_credit.available_amount > 0::double precision
@@ -92,7 +92,7 @@ CREATE TABLE prc.sdb_members_dev AS
              LEFT JOIN ana.vehicles v ON v.vin::text = bo.vin::text
           WHERE bo.trip_duration > 0::double precision AND bo.booking_start_date < now()
         )
- SELECT DISTINCT mem.member_id ||'_zipcar' as subscriber_key,
+SELECT DISTINCT mem.member_id ||'_zipcar' as subscriber_key,
     mem.member_id as member_id_zc,
     initcap(mem.first_name::text) AS first_name_zc,
     initcap(mem.last_name::text) AS last_name_zc,
@@ -102,7 +102,7 @@ CREATE TABLE prc.sdb_members_dev AS
             WHEN (mem.birth_date + (((date_part('year'::text, 'now'::text::date)::integer - date_part('year'::text, mem.birth_date)::integer) || ' years'::text)::interval)) >= 'now'::text::date AND (mem.birth_date + (((date_part('year'::text, 'now'::text::date)::integer - date_part('year'::text, mem.birth_date)::integer) || ' years'::text)::interval)) <= ('now'::text::date + 7) THEN TRUE::bool
             ELSE FALSE::bool
         END AS has_birthday_this_week,
-    mem.email AS email_address_zc,
+    trim(mem.email) AS email_address_zc,
         CASE
             WHEN mem.email IS NULL THEN NULL::text
             ELSE lower("left"("substring"(mem.email::text, "position"(mem.email::text, '@'::text) + 1), "position"("substring"(mem.email::text, "position"(mem.email::text, '@'::text) + 1), '.'::text) - 1))
@@ -155,8 +155,7 @@ CREATE TABLE prc.sdb_members_dev AS
      LEFT JOIN credits c ON c.member_id::text = mem.member_id::text
      LEFT JOIN ana.z4b_members z4b ON z4b.member_id::text = mem.member_id::text
      LEFT JOIN bookings boo ON mem.member_id::text = boo.member_id::text
-  WHERE mem.test_account_p = 'f'::text ; 
-
+  WHERE mem.test_account_p = 'f'::text; 
 EOF
 
 
