@@ -95,6 +95,14 @@ for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
 }
 
 
+
+function kill_firefox_run_over_1_day() {
+PIDS="`ps -eo pid,cmd,etime | grep firefox/firefox | egrep "firefox" | grep " 1-" | awk '{print $1}'`"
+echo $PIDS 
+for i in ${PIDS}; do { echo "Killing $i"; kill -7 $i; }; done;
+}
+
+
 function kill_chrome_run_over_3_hr() {
 
 for ((i=3;i<=24;i++)); 
@@ -119,6 +127,31 @@ done
 
 }
 
+
+function kill_firefox_run_over_3_hr() {
+
+for ((i=3;i<=24;i++)); 
+do 
+if [ $i -lt 10 ];
+# for hour : 01, 02...09 
+then
+   echo 'elapsed hour =' 0$i
+   PIDS="`ps -eo pid,cmd,etime | grep firefox/firefox | egrep "firefox" | grep "0$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
+   echo $PIDS 
+   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+
+else 
+# for hour : 10, 11... 24 
+   echo 'elapsed hour  =' $i
+   PIDS="`ps -eo pid,cmd,etime | grep firefox/firefox | egrep "firefox" | grep "$i:[0-9][0-9]:[0-9][0-9]"  | awk '{print $1}'`"
+   echo $PIDS 
+   for k in ${PIDS}; do { echo "Killing $k"; kill -7 $k; }; done;
+
+fi 
+done
+
+}
+
 echo '*************'
 current_date_time_=`date "+%Y-%m-%d %H:%M:%S"`
 echo 'current_date_time_ : ' $current_date_time_;
@@ -128,10 +161,12 @@ echo '*************'
 echo "KILL idle jobs run over 1 day"
 echo ""
 kill_chrome_run_over_1_day
+kill_firefox_run_over_1_day
 
 echo "KILL idle jobs run over 3 hour"
 echo ""
-kill_chrome_run_over_3_hr 
+kill_chrome_run_over_3_hr
+kill_firefox_run_over_3_hr 
 
 
 
