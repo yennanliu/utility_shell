@@ -4,10 +4,10 @@
 function select_one()
 {
 psql \
-   host=$host \
-   port=$port \
-   username  $username\
-   dbname=$dbname << EOF
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
 SELECT * FROM ana.members LIMIT 1;
 EOF
 }
@@ -32,26 +32,31 @@ for x in ana.members\
          prc.v_mm_eligible_customers\
          prc.v_mm_eligible_customers_dev\
          prc.transactions\
-         mm_fulfillment\
-         temp_bru_mm_credits\
-         mm_successful_referrals\
-         rm.user_address_lonlat\
-         rm.user_address_nonnull_lonlat\
-         rm.v_cc_members
+         public.mm_fulfillment\
+         public.temp_bru_mm_credits\
+         rw.mm_successful_referrals\
+         rw.user_address_lonlat\
+         rw.user_address_nonnull_lonlat\
+         rw.v_cc_members
 
 do 
    echo 'table : ' $x
 
    psql \
-      host=$host \
-      port=$port \
-      username=$username\
-      dbname=$dbname << EOF
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
    SELECT * FROM $x LIMIT 1;
 EOF
 
 done 
 
 }
+
+
+
+
+
 
 for_loop_select
