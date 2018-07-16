@@ -22,7 +22,7 @@ for x in ana.members\
          ana.presales_signups\
          ana.member_lifetime\
          ana.member_month_details\
-         prc.sgb_members_dev\
+         prc.sdb_members_dev\
          prc.v_cc_individuals_brussels_table\
          prc.trips\
          prc.v_cc_member_first_res\
