@@ -137,11 +137,30 @@ echo '--- ana.membership_events_dev  ---'
        email = 'Forgotten_Value', 
        credit_card = 'Forgotten_Value',
        credit_card_name = 'Forgotten_Value'
-       
+
    WHERE member_id = '$member_id'
 
 EOF
 
+
+echo ' --- ana.member_month_details_table_dev --- '
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE ana.member_month_details_table_dev 
+      SET login = 'Forgotten_Value',  
+       last_name = 'Forgotten_Value', 
+       first_name = 'Forgotten_Value',
+       preferred_name = 'Forgotten_Value', 
+       birth_date = '25 May 2018'
+   WHERE member_id = '$member_id'
+
+EOF
 
 }
 
