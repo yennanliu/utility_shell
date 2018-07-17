@@ -186,6 +186,49 @@ echo ' --- prc.sdb_members_devdev --- '
 
 EOF
 
+
+echo ' --- prc.v_cc_individuals_brussels_table_dev  --- '
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE prc.v_cc_individuals_brussels_table_dev 
+      SET
+       first_name_zc = 'Forgotten_Value',
+       last_name_zc = 'Forgotten_Value',        
+       language = 'Forgotten_Value', 
+       birth_month_year = '25 May 2018', 
+       email_address_zc = 'Forgotten_Value',  
+       fleet_country_name = 'Forgotten_Value'
+   WHERE member_id_zc = '$member_id'
+
+EOF
+
+
+
+echo ' --- prc.trips_dev  --- '
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE prc.trips_dev
+      SET
+       start_lat = 0.00, 
+       start_lon = 0.00,         
+       end_lat = 0.00, 
+       end_lon = 0.00 
+   WHERE member_id = '$member_id'
+
+EOF
+
 }
 
 
