@@ -1,6 +1,8 @@
 #!/bin/sh
 
 
+member_id=$1
+
 function select_one()
 {
 psql \
@@ -59,6 +61,8 @@ done
 function for_loop_delete()
 {
 
+echo 'member_id : ' $member_id
+
 for x in ana.members_dev 
 
 do 
@@ -93,11 +97,12 @@ do
        billing_country = 'Forgotten_Value', 
        phone_number = 'Forgotten_Value',
        school = 'Forgotten_Value', 
+       email = 'Forgotten_Value', 
        credit_card = 'Forgotten_Value',
        credit_card_name = 'Forgotten_Value'
 
 
-    WHERE member_id = 'C000000005'
+    WHERE member_id = '$member_id'
 EOF
 
 done 
@@ -106,6 +111,8 @@ done
 
 
 #for_loop_select
+# example 
+# $ bash user_deletion_gdpr.sh C000000008
 for_loop_delete
 
 
