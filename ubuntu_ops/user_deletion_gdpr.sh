@@ -62,11 +62,7 @@ function for_loop_delete()
 {
 
 echo 'member_id : ' $member_id
-
-for x in ana.members_dev 
-
-do 
-   echo 'table : ' $x
+echo '--- ana.members_dev  ---'
 
    psql \
    --host=$host \
@@ -74,7 +70,7 @@ do
    --username  $username\
    --dbname=$dbname << EOF
 
-   UPDATE $x 
+   UPDATE ana.members_dev 
    SET login = 'Forgotten_Value',  
        last_name = 'Forgotten_Value', 
        first_name = 'Forgotten_Value',
@@ -105,7 +101,47 @@ do
     WHERE member_id = '$member_id'
 EOF
 
-done 
+echo '--- ana.membership_events_dev  ---'
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE ana.membership_events_dev 
+      SET login = 'Forgotten_Value',  
+       last_name = 'Forgotten_Value', 
+       first_name = 'Forgotten_Value',
+       middle_name = 'Forgotten_Value', 
+       preferred_name = 'Forgotten_Value', 
+       birth_date = '25 May 2018', 
+       driving_license = 'Forgotten_Value', 
+       driving_license_country = 'Forgotten_Value', 
+       driving_license_province = 'Forgotten_Value',      
+       address_1 = 'Forgotten_Value', 
+       address_2 = 'Forgotten_Value', 
+       city = 'Forgotten_Value', 
+       zipcode = 'Forgotten_Value',  
+       province = 'Forgotten_Value', 
+       country = 'Forgotten_Value',             
+       billing_address_1 = 'Forgotten_Value', 
+       billing_address_2 = 'Forgotten_Value', 
+       billing_city = 'Forgotten_Value', 
+       billing_zipcode = 'Forgotten_Value', 
+       billing_province = 'Forgotten_Value', 
+       billing_country = 'Forgotten_Value', 
+       phone_number = 'Forgotten_Value',
+       school = 'Forgotten_Value', 
+       email = 'Forgotten_Value', 
+       credit_card = 'Forgotten_Value',
+       credit_card_name = 'Forgotten_Value'
+       
+   WHERE member_id = '$member_id'
+
+EOF
+
 
 }
 
