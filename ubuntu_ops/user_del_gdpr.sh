@@ -15,6 +15,7 @@ EOF
 }
 
 
+
 function for_loop_select()
 {
 
@@ -53,6 +54,29 @@ do
 EOF
 
 done 
+
+}
+
+
+function delete_dev_table()
+{
+psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+      drop  table ana.members_dev  ; 
+      drop  table ana.membership_events_dev ; 
+      drop  table ana.member_month_details_table_dev; 
+      drop  table prc.sdb_members_devdev ; 
+      drop  table prc.v_cc_individuals_brussels_table_dev ; 
+      drop  table prc.trips_dev ; 
+      drop  table prc.v_cc_members_dev; 
+      drop  table rw.mm_successful_referrals_dev ; 
+      drop  table rw.user_address_lonlat_dev  ; 
+      drop  table rw.user_address_nonnull_lonlat_dev ; 
+EOF
 
 }
 
