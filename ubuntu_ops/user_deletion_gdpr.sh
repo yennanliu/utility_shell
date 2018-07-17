@@ -80,6 +80,7 @@ do
        first_name = 'Forgotten_Value',
        middle_name = 'Forgotten_Value', 
        preferred_name = 'Forgotten_Value', 
+       birth_date = '25 May 2018', 
        driving_license = 'Forgotten_Value', 
        driving_license_country = 'Forgotten_Value', 
        driving_license_province = 'Forgotten_Value',      
@@ -100,7 +101,6 @@ do
        email = 'Forgotten_Value', 
        credit_card = 'Forgotten_Value',
        credit_card_name = 'Forgotten_Value'
-
 
     WHERE member_id = '$member_id'
 EOF
