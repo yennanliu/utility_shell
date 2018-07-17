@@ -56,7 +56,59 @@ done
 
 
 
+function for_loop_delete()
+{
+
+for x in ana.members_dev 
+
+do 
+   echo 'table : ' $x
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE $x 
+   SET login = 'Forgotten_Value',  
+       last_name = 'Forgotten_Value', 
+       first_name = 'Forgotten_Value',
+       middle_name = 'Forgotten_Value', 
+       preferred_name = 'Forgotten_Value', 
+       driving_license = 'Forgotten_Value', 
+       driving_license_country = 'Forgotten_Value', 
+       driving_license_province = 'Forgotten_Value',      
+       address_1 = 'Forgotten_Value', 
+       address_2 = 'Forgotten_Value', 
+       city = 'Forgotten_Value', 
+       zipcode = 'Forgotten_Value',  
+       province = 'Forgotten_Value', 
+       country = 'Forgotten_Value',             
+       billing_address_1 = 'Forgotten_Value', 
+       billing_address_2 = 'Forgotten_Value', 
+       billing_city = 'Forgotten_Value', 
+       billing_zipcode = 'Forgotten_Value', 
+       billing_province = 'Forgotten_Value', 
+       billing_country = 'Forgotten_Value', 
+       phone_number = 'Forgotten_Value',
+       school = 'Forgotten_Value', 
+       credit_card = 'Forgotten_Value',
+       credit_card_name = 'Forgotten_Value'
+
+
+    WHERE member_id = 'C000000005'
+EOF
+
+done 
+
+}
+
+
+#for_loop_select
+for_loop_delete
 
 
 
-for_loop_select
+
+
