@@ -270,6 +270,25 @@ echo ' --- prc.v_cc_members_dev  --- '
 
 EOF
 
+echo ' --- rw.mm_successful_referrals_dev ---'
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+   UPDATE rw.mm_successful_referrals_dev 
+
+      SET customer_email = 'Forgotten_Value',  
+          customer_first_name = 'Forgotten_Value',
+          customer_surname = 'Forgotten_Value', 
+          reason = 'Forgotten_Value', 
+          referee_email  = 'Forgotten_Value',
+          referrer_email = 'Forgotten_Value'
+      WHERE referrer_merchant_customer_identifier = '$member_id'
+
+EOF
+
 
 echo ' ---  rw.user_address_lonlat_dev  --- '
 
