@@ -270,6 +270,27 @@ echo ' --- prc.v_cc_members_dev  --- '
 
 EOF
 
+
+echo ' ---  rw.user_address_lonlat_dev  --- '
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+   UPDATE rw.user_address_lonlat_dev
+
+      SET address = 'Forgotten_Value',  
+          zipcode = 'Forgotten_Value', 
+          lon_lat = '{Forgotten_Value,Forgotten_Value}',
+          lat = 0.00, 
+          lon = 0.00 
+   WHERE member_id = '$member_id'
+
+EOF
+
+
 }
 
 
