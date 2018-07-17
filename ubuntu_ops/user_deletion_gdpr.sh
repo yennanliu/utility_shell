@@ -162,6 +162,30 @@ echo ' --- ana.member_month_details_table_dev --- '
 
 EOF
 
+
+
+
+echo ' --- prc.sdb_members_devdev --- '
+
+
+   psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+   UPDATE prc.sdb_members_devdev 
+      SET
+       first_name_zc = 'Forgotten_Value',
+       last_name_zc = 'Forgotten_Value',        
+       language = 'Forgotten_Value', 
+       birth_month_year = '25 May 2018', 
+       email_address_zc = 'Forgotten_Value',  
+       fleet_country_name = 'Forgotten_Value'
+   WHERE member_id_zc = '$member_id'
+
+EOF
+
 }
 
 
