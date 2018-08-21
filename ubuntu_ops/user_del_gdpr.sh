@@ -81,6 +81,30 @@ EOF
 }
 
 
+function create_dev_table()
+{
+psql \
+   --host=$host \
+   --port=$port \
+   --username  $username\
+   --dbname=$dbname << EOF
+
+    create table ana.members_dev as (select * from ana.members ); 
+    create table ana.membership_events_dev  as (select * from ana.membership_events ); 
+    create table ana.member_month_details_table_dev as (select * from ana.member_month_details_table ); 
+    create table prc.sdb_members_devdev as (select * from prc.sdb_members_dev ); 
+    create table prc.v_cc_individuals_brussels_table_dev as (select * from prc.v_cc_individuals_brussels_table ); 
+    create table prc.trips_dev as (select * from prc.trips ); 
+    create table prc.v_cc_members_dev as (select * from prc.v_cc_members ); 
+    create table rw.mm_successful_referrals_dev as (select * from rw.mm_successful_referrals ); 
+    create table rw.user_address_lonlat_dev  as (select * from rw.user_address_lonlat ); 
+    create table rw.user_address_nonnull_lonlat_dev as (select * from rw.user_address_nonnull_lonlat ); 
+    
+EOF
+
+}
+
+
 
 function for_loop_delete()
 {
