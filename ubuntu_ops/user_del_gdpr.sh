@@ -99,7 +99,7 @@ psql \
     create table rw.mm_successful_referrals_dev as (select * from rw.mm_successful_referrals ); 
     create table rw.user_address_lonlat_dev  as (select * from rw.user_address_lonlat ); 
     create table rw.user_address_nonnull_lonlat_dev as (select * from rw.user_address_nonnull_lonlat ); 
-    
+
 EOF
 
 }
@@ -382,10 +382,24 @@ EOF
 }
 
 
-#for_loop_select
-# example 
-# $ bash user_deletion_gdpr.sh C000000008
+# 1) create test table 
+# create_dev_table
+
+# 2) delete test table 
+# delete_dev_table
+
+# 3) for_loop_select
+# for_loop_delete
+# run in command line :  
+# bash user_deletion_gdpr.sh C000000008
+
+
 for_loop_delete
+
+
+
+
+
 
 
 
