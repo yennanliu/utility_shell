@@ -8,5 +8,6 @@ cd ~  && cd "$1"
 git init
 git add --all
 git commit -m "Initial Commit"
-git remote add origin <your_repo_url>
+#git remote add origin https://github.com/yennanliu/"$1".git
+git remote add origin <ur_repo_url>
 git push -u origin master
