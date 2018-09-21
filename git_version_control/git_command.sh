@@ -47,5 +47,14 @@ git push origin <new-branch>
 
 
 
+# 5) delete local branch 
+# https://koukia.ca/delete-a-local-and-a-remote-git-branch-61df0b10d323
+git branch -D <branch_name>
+
+# 6) delete remote branch 
+#git push <remote_name> --delete <branch_name>
+git push origin :<branch_name>
+
+
 
 
