@@ -20,7 +20,15 @@ git merge dev  # dev to master
 
 
 
-# 3) revert to pervious commit 
+# 3) pull
+
+#git pull = git fetch + merge to local
+git fetch
+git pull
+
+
+
+# 4) revert to pervious commit 
 
 
 # git log --oneline 
@@ -36,7 +44,7 @@ git reset SHA-1 — hard # git reset ef3895b — hard  # in this example
 
 
 
-# 4) only PR (pull request) latest commits (cherry-pick) 
+# 5) only PR (pull request) latest commits (cherry-pick) 
 # https://stackoverflow.com/questions/5256021/send-a-pull-request-on-github-for-only-latest-commit
 # https://gitbook.tw/chapters/faq/cherry-pick.html
 git branch <new-branch> origin/master
@@ -44,6 +52,14 @@ git checkout <new-branch>
 # git log --oneline  # get the commit SHA ( b67627b for example )
 git cherry-pick <SHA hash of commit>
 git push origin <new-branch>
+
+
+
+
+# 6) get git config 
+cat .git/config
+
+
 
 
 
