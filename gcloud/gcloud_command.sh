@@ -31,7 +31,9 @@ gcloud auth login
 gcloud compute instances list --filter="zone:europe-north1-a"
 
 
-
+# 5) upload local files to gcloud
+# https://stackoverflow.com/questions/28409548/simply-uploading-a-file-to-google-compute 
+gcloud compute copy-files demo.csv  datascience-m:/home/yennanliu
 
 
 
