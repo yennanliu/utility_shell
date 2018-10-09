@@ -18,6 +18,18 @@ docker ps -a
 # List all containers (only IDs)
 docker ps -aq
 
+# List all images 
+docker images 
+
+
+# 3) RUN 
+
+# run container from image 
+docker run   yennanliu/mac_ds_ml_env:v1
+
+# run image 
+docker run -it  yennanliu/mac_ds_ml_env:v1
+
 
 # 3) STOP --------------------------
 
@@ -35,6 +47,17 @@ docker rmi $(docker images -q)
 docker rm $(docker ps -a -q)
 # remove all images in docker
 docker rmi $(docker images -q -a)
+
+
+
+
+# 5) OTHERS 
+
+# search docker online 
+docker search spark 
+
+
+
 
 
 
