@@ -21,7 +21,7 @@ wget --quiet http://apache.mirror.anlx.net/maven/maven-3/3.6.0/binaries/apache-m
 cd 
 mkdir maven || (echo 'maven file already exist, delete it and make again..'  &&  rm -fr maven  &&  mkdir maven) 
 my_route="/Users/$USER/maven"
-tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.tgz
+tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz     
 mv $PWD/Downloads/apache-maven-3.6.0 $my_route/apache-maven-3.6.0
 
 # step 3) 
