@@ -28,8 +28,6 @@ tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz  -C maven
 # nano .bash_profile
 # add these line in .bash_profile
 # https://superuser.com/questions/678113/how-to-add-a-line-to-bash-profile
-
-
 #-----------------------------
 # add Maven env variables 
 #export M3_HOME=/usr/local/maven/maven3.3.9
