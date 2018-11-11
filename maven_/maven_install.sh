@@ -20,9 +20,8 @@ wget --quiet http://apache.mirror.anlx.net/maven/maven-3/3.6.0/binaries/apache-m
 # unzip to user defined location (/Users/yennanliu/maven/apache-maven-3.6.0 for example)
 cd 
 mkdir maven || (echo 'maven file already exist, delete it and make again..'  &&  rm -fr maven  &&  mkdir maven) 
-my_route="/Users/$USER/maven"
-tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz     
-mv $PWD/Downloads/apache-maven-3.6.0 $my_route/apache-maven-3.6.0
+my_route="/Users/$USER/maven/"
+tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz  -C maven
 
 # step 3) 
 # edit env variables 
