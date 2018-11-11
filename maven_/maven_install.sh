@@ -14,7 +14,7 @@
 # Step 1)
 # download file :   apache-maven-3.3.9-bin.tar.gz  (http://maven.apache.org/download.cgi)
 cd 
-wget --quiet http://apache.mirror.anlx.net/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz
+wget --quiet http://apache.mirror.anlx.net/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz -P  Downloads 
 
 # step 2)
 # unzip to user defined location (/Users/yennanliu/maven/apache-maven-3.6.0 for example)
