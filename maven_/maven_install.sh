@@ -35,8 +35,8 @@ tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz  -C maven
 #export M3_HOME=/usr/local/maven/maven3.3.9
 #export PATH=$M3_HOME/bin:$PATH
 #-----------------------------
-sudo echo 'export export /Users/$USER/maven/apache-maven-3.6.0' >> .bash_profile
-sudo echo 'export PATH=$M3_HOME/bin:$PATH' >> .bash_profile
+sudo echo "export M3_HOME=/Users/$USER/maven/apache-maven-3.6.0" >> .bash_profile
+sudo echo "export PATH=$M3_HOME/bin:$PATH" >> .bash_profile
 
 
 # step 4) make changes in  step 3) work 
