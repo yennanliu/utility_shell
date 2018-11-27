@@ -47,6 +47,7 @@ if [ $A = $B ] ; then
 else echo "A != B" 
 fi 
 
+
 # -----------------------------------
 echo 'DEMO 2)'
 
@@ -63,7 +64,6 @@ elif [ -n "$F" ]; then
 fi
 
 
-
 # -----------------------------------
 echo 'DEMO 3)'
 
@@ -71,6 +71,7 @@ if [ $C -lt $D ] ; then  # C less than D
 	echo " C is less than D " 
 else echo " C is not less than D " 
 fi 
+
 
 # -----------------------------------
 echo 'DEMO 4)'
