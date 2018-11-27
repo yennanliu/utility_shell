@@ -24,8 +24,6 @@
 '
 
 
-
-
 A=abc 
 B=def 
 C=123
@@ -41,6 +39,7 @@ echo E = $E
 echo ''
 
 
+# -----------------------------------
 echo 'DEMO 1)'
 
 if [ $A = $B ] ; then 
@@ -48,7 +47,7 @@ if [ $A = $B ] ; then
 else echo "A != B" 
 fi 
 
-
+# -----------------------------------
 echo 'DEMO 2)'
 
 if [ -z "$D" ]; then
@@ -65,7 +64,7 @@ fi
 
 
 
-
+# -----------------------------------
 echo 'DEMO 3)'
 
 if [ $C -lt $D ] ; then  # C less than D 
@@ -73,7 +72,7 @@ if [ $C -lt $D ] ; then  # C less than D
 else echo " C is not less than D " 
 fi 
 
-
+# -----------------------------------
 echo 'DEMO 4)'
 
 if [ $C -lt $D ] && [ $A  = $B  ] ; then  # C less than D  and A = B 
@@ -82,8 +81,8 @@ else echo " C is not less than D  OR A != B "
 fi 
 
 
-
-echo 'DEMO 4)'
+# -----------------------------------
+echo 'DEMO 5)'
 
 if [ $C -lt $D ] || [ $A  = $B  ] ; then  # C less than D  OR A = B 
 	echo " C is less than D or A = B " 
