@@ -54,12 +54,12 @@ echo ${Fruits[@]:0:2}  # Range (from position 0, length 2)
 echo 'DEMO 2)'
 Fruits2=('Apple' 'Banana' 'Orange')      # define an array 
 Fruits2=("${Fruits[@]}" "Watermelon")    # Push
-echo ${Fruits2[@]}						 # Apple Banana Orange Watermelon
+echo ${Fruits2[@]}                       # Apple Banana Orange Watermelon
 unset Fruits2[2]                         # Remove one item
-echo ${Fruits2[@]}						 # Apple Banana Orange Watermelon
+echo ${Fruits2[@]}                       # Apple Banana Orange Watermelon
 
 Fruits3=("${Fruits2[@]}")                # Duplicate
-echo ${Fruits3[@]}						 # Apple Banana Orange Watermelon
+echo ${Fruits3[@]}                       # Apple Banana Orange Watermelon
 
 
 # -----------------------------------
