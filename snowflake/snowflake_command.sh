@@ -13,3 +13,6 @@ drop database datawarehouse2;
 create database datawarehouse2 clone datawarehouse1 ;
 
 
+# 4) copy table from the other exist table 
+# CLONE DATAWAREHOUSE.STAGING.EASY_DATA to DATAWAREHOUSE.STAGING.EASY_DATA_DEV
+create table DATAWAREHOUSE.STAGING.EASY_DATA_DEV  clone DATAWAREHOUSE.STAGING.EASY_DATA;
