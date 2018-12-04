@@ -1,19 +1,25 @@
 
 # --------- PART 1 )  GENERAL COMMANDS 
 
+/*
+
+GRANT USAGE DATABASE -->. GRANT ACCESS SCHEMA --> GRANT ALL TABLES IN SCHEMA 
+
+*/
+
 
 #https://docs.snowflake.net/manuals/sql-reference/sql/grant-privilege-share.html
 
-# grant user to see the db 
+-- grant user to see the db 
 GRANT USAGE ON DATABASE your_datawarehouse_name_DATAWAREHOUSE TO ROLE DATA_SCIENCE;
 
-# grant user to select under schema 
-GRANT SELECT ON ALL TABLES IN SCHEMA your_datawarehouse_name_DATAWAREHOUSE.IMPACT TO ROLE DATA_SCIENCE;
+-- grant access schema 
+-- https://support.snowflake.net/s/article/how-to-grant-a-role-access-to-database-objects-in-a-schema
+GRANT USAGE ON SCHEMA your_datawarehouse_name_DATAWAREHOUSE.STAGING TO ROLE DATA_SCIENCE;
 
-# grant select 
+
+-- grant user to select under schema 
 GRANT SELECT ON ALL TABLES IN SCHEMA your_datawarehouse_name_DATAWAREHOUSE.STAGING TO ROLE DATA_SCIENCE;
-
-
 
 
 
