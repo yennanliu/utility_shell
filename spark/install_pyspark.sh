@@ -25,7 +25,7 @@ echo $my_route
 
 # set dev env 
 echo '>>>> STEP 1)  set dev env'
-conda create -n pyspark_dev python=3.5
+yes Y | conda create -n pyspark_dev python=3.5
 source activate pyspark_dev
 
 
