@@ -48,7 +48,6 @@ pip install pyspark
 
 # declare env parameter
 #export SPARK_HOME=/Users/yennanliu/spark
-#export SPARK_HOME=/Users/yennanliu/spark
 echo '>>>> STEP 3)  declare env parameter'
 export SPARK_HOME=$my_route/spark
 export PATH=$SPARK_HOME/bin:$PATH
@@ -59,11 +58,12 @@ echo '>>>> STEP 4)  install jupyter notebook'
 pip install jupyter
 
 
+echo '######################## SPARK INSTALL SUCCESS ########################'
 
-echo '######## SPARK INSRTALL SUCCESS ########'
 echo 'PLEASE RUN it via cona env : pyspark_dev '
 echo 'source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PATH=$SPARK_HOME/bin:$PATH && pyspark'
-echo '######## SPARK INSRTALL SUCCESS ########'
+
+echo '######################## SPARK INSTALL SUCCESS ########################'
 
 
 
