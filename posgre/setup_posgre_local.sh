@@ -7,25 +7,32 @@
 # https://wiki.postgresql.org/wiki/Homebrew
 # https://postgresapp.com/
 # http://postgresguide.com/setup/install.html
-echo '>>> STEP1 Download posgre, psql'
+echo '>>> STEP 1 Download posgre, psql'
 brew install postgresql
 
 
 # 2) Download demo DB 
 # http://postgresguide.com/setup/example.html
-echo '>>> STEP2 Download demo DB '
+echo '>>> STEP 2 Download demo DB '
 curl -L -O http://cl.ly/173L141n3402/download/example.dump
+psql -c "DROP DATABASE  IF EXISTS pgguide "
 createdb pgguide
 pg_restore --no-owner --dbname pgguide example.dump
-psql --dbname pgguide
-\d
-\q  
-
+psql  --dbname pgguide  -c "\d"
+psql  --dbname pgguide  -c "\q"
+# work with posgre via CLI 
+# psql  --dbname pgguide 
 
 # 3) run the demo query 
-echo '>>> STEP3 Run the demo query'
+echo '>>> STEP 3 Run the demo query'
 echo 'TABLE LIST :'
 psql  --dbname pgguide  -c "\d"
 echo 'DEMO QUERY :'
 psql  --dbname pgguide  -c "select * from products;"
+
+
+# 4) work with posgre via CLI 
+echo '>>> STEP 4 work with posgre via CLI'
+# psql  --dbname pgguide 
+
 
