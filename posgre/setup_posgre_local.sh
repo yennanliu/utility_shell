@@ -11,9 +11,14 @@ echo '>>> STEP 1 Download posgre, psql'
 brew install postgresql
 
 
-# 2) Download demo DB 
+# 2) Run Posgre server local 
+echo '>>> STEP 2 Run Posgre server local '
+#https://stackoverflow.com/questions/7975556/how-to-start-postgresql-server-on-mac-os-x
+pg_ctl -D /usr/local/var/postgres start
+
+# 3) Download demo DB 
 # http://postgresguide.com/setup/example.html
-echo '>>> STEP 2 Download demo DB '
+echo '>>> STEP 3 Download demo DB '
 curl -L -O http://cl.ly/173L141n3402/download/example.dump
 psql -c "DROP DATABASE  IF EXISTS pgguide "
 createdb pgguide
@@ -23,16 +28,16 @@ psql  --dbname pgguide  -c "\q"
 # work with posgre via CLI 
 # psql  --dbname pgguide 
 
-# 3) run the demo query 
-echo '>>> STEP 3 Run the demo query'
+# 4) run the demo query 
+echo '>>> STEP 4 Run the demo query'
 echo 'TABLE LIST :'
 psql  --dbname pgguide  -c "\d"
 echo 'DEMO QUERY :'
 psql  --dbname pgguide  -c "select * from products;"
 
 
-# 4) work with posgre via CLI 
-echo '>>> STEP 4 work with posgre via CLI'
+# 5) work with posgre via CLI 
+echo '>>> STEP 5 work with posgre via CLI'
 # psql  --dbname pgguide 
 
 
