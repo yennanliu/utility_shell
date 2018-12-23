@@ -6,6 +6,9 @@
 #################################################################
 
 
+# https://dba.stackexchange.com/questions/1285/how-do-i-list-all-databases-and-tables-using-psql
+# https://stackoverflow.com/questions/10335561/use-database-name-command-in-postgresql
+
 
 <<COMMENT1
 yennanliu@yennanliu-MacBook-Pro:~/data_science_repo/de_airflow_docker_dev$ psql
