@@ -34,11 +34,13 @@ docker run -it  yennanliu/mac_ds_ml_env:v1
 # 3) STOP --------------------------
 
 # Stop all running containers
+# https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
 docker stop $(docker ps -aq)
+#docker stop $(docker ps -a -q)
+
 
 
 # 4) REMOVE --------------------------
-
 # Remove all containers
 docker rm $(docker ps -aq)
 # Remove all images
@@ -47,7 +49,6 @@ docker rmi $(docker images -q)
 docker rm $(docker ps -a -q)
 # remove all images in docker
 docker rmi $(docker images -q -a)
-
 
 
 
