@@ -19,7 +19,9 @@ PYTHONPATH=./ddl alembic downgrade head
 
 
 
-## 2'') update DB table (alembic).version before re-run the migration command 
+## 2'') update DB table (alembic).version before re-run the migration command
+# check ddl version :   select * from  <ur_datawarehouse>.alembic.alembic_version;
+   
 ## inside DB console
 # 0db6c2334442 <---- new  migration python script version 
 
