@@ -22,3 +22,6 @@ export M3_HOME=/Users/yennanliu/maven/apache-maven-3.6.0
 export PATH=$M3_HOME/bin:$PATH
 
 
+# export SPARK_HOME 
+export SPARK_HOME=/Users/$USER/spark
+export PATH=$SPARK_HOME/bin:$PATH

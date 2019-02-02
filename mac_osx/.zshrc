@@ -1,6 +1,12 @@
 # set anaconda python 3 as default python 
 export PATH=~/anaconda3/bin:$PATH
 
+
+# export SPARK_HOME 
+export SPARK_HOME=/Users/$USER/spark
+export PATH=$SPARK_HOME/bin:$PATH
+
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
