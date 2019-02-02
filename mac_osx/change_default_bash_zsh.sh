@@ -16,3 +16,12 @@ chsh -s /bin/zsh
 
 # STEP 3) VALID DEFIULT SHELL 
 echo $SHELL        
+
+# STEP 4) MODIFY ZSH PROFILE FULE 
+# ref bash profile : .bash_profile  
+nano .zshrc 
+
+# STEP 5) activate zsh profile setting 
+source .zshrc
+
+# STEP 6) CHECK NEW TERMIANL layout (terminate terminal, and open the APP again)
