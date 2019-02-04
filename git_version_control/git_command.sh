@@ -64,8 +64,10 @@ git branch -D <branch_name>
 git push origin :<branch_name>
 
 
+# 7) git pull remote branch 
+git pull  origin <branch_name>
 
-# 6) get git config 
+# 8) get git config 
 cat .git/config
 
 
