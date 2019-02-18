@@ -8,14 +8,23 @@
 
 <<COMMENT1
 
-# demo 
-get the pid of the process 
+ 
+1) get the port using details  (5423 port for example)
+lsof -i tcp:5432
+
+2) kill all processed with given port (8000 port for example)
+sudo lsof -t -i tcp:8000 | xargs kill -9
+
+3)  get the pid of the process (8000 port for example)
 # $sudo lsof -i:8080
-# kill it 
+
+4) kill it 
 # $kill -9 <pid>
 
 COMMENT1
 
+
+function kill_process_with_port_V1(){
 
 # STEP 1) get the process pid 
 echo '* Following processes are using port :' $1 
@@ -28,18 +37,23 @@ for pid in $pids;
 	do 
 		echo 'kill : ' $pid ;
 		kill -9 $pid
-	done 
+	done; 
+
+}
 
 
+function kill_process_with_port_V2(){
 
+echo '* Following processes are using port :' $1
+echo '* Pid list :'  $pids
+for pid in $pids;
+	do 
+		echo 'kill : ' $pid ; 
+		sudo lsof -t -i tcp:$pid | xargs kill -9
+	done; 
 
+}
 
-
-
-
-
-
-
-
-
-
+# kill process using port with func V2 
+# bash utility_shell/network/clean_port.sh 8888 5432 
+kill_process_with_port_V2
