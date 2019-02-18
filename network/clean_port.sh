@@ -44,9 +44,9 @@ for pid in $pids;
 
 function kill_process_with_port_V2(){
 
-echo '* Following processes are using port :' $1
-echo '* Pid list :'  $pids
-for pid in $pids;
+echo '* Following processes are using port :' $*
+echo '* Pid list :'  $*
+for pid in "$*";
 	do 
 		echo 'kill : ' $pid ; 
 		sudo lsof -t -i tcp:$pid | xargs kill -9
@@ -56,4 +56,4 @@ for pid in $pids;
 
 # kill process using port with func V2 
 # bash utility_shell/network/clean_port.sh 8888 5432 
-kill_process_with_port_V2
+kill_process_with_port_V2 $*
