@@ -1,4 +1,9 @@
 #!/bin/sh
+# https://github.com/twtrubiks/docker-tutorial
+
+#################################################################
+# DOCKER OP USEFUL COMMANDS  
+#################################################################
 
 
 <<COMMENT1
