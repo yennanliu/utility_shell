@@ -1,6 +1,43 @@
 #!/bin/sh
 
 
+<<COMMENT1
+"""
+
+# https://github.com/twtrubiks/docker-tutorial
+
+### CONCEPT ###
+
+
+1) image  :  like a VM Guest OS, read only (R\O), a image can make multiple containers
+
+2) container : made by image, can be launch/stop/remove/split. read and write (R\W)
+
+
+e.g. 
+
+---------------
+container later   -> container layer 
+---------------
+
+91e54d1179
+d7405fb234
+...            -> image layer 
+..
+..
+
+---------------
+
+
+3) Registry : github for docker (check Docker Hub)
+
+
+
+"""
+COMMENT1
+
+
+
 
 # 1) LAUNCH --------------------------
 # launch docker 
@@ -12,9 +49,9 @@ docker
 docker ps
 #To show all containers use the given command:
 docker ps -a
-# List all containers (only IDs)
+# List all CONTAINERS  (only IDs)
 docker ps -aq
-# List all images 
+# List all IMAGES 
 docker images 
 
 
