@@ -22,7 +22,7 @@ container later   -> container layer
 
 91e54d1179
 d7405fb234
-...            -> image layer 
+...            -> image layers 
 ..
 ..
 
@@ -44,6 +44,9 @@ COMMENT1
 docker 
 
 
+# 1) docker tag 
+docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
 # 2) LIST/SHOW --------------------------
 # To show only running containers use the given command:
 docker ps
@@ -54,22 +57,37 @@ docker ps -aq
 # List all IMAGES 
 docker images 
 
+# 3) show docker layer 
+docker history [OPTIONS] IMAGE
 
-# 3) RUN 
-# run container from image 
-docker run   yennanliu/mac_ds_ml_env:v1
-# run image 
-docker run -it  yennanliu/mac_ds_ml_env:v1
+# 4) RUN 
+# run via image 
+docker run -it  <Image ID> bash
+
+# run via container
+docker exec -it  <Container ID> bash
 
 
-# 3) STOP --------------------------
+# 5) CHECK LOG 
+docker logs [OPTIONS] CONTAINER
+
+# 6) SHOW RESOURCE USING 
+docker stats [OPTIONS] [CONTAINER...]
+
+# 7) PAUSE IN-CONTAINER ALL PROCESSES
+docker pause CONTAINER [CONTAINER...]
+# 7') RESTART PAUSE (IN-CONTAINER ) PROCESSES 
+docker unpause CONTAINER [CONTAINER...]
+
+
+# 8) STOP --------------------------
 # Stop all running containers
 # https://medium.com/the-code-review/top-10-docker-commands-you-cant-live-without-54fb6377f481
 docker stop -f $(docker ps -aq)
 #docker stop $(docker ps -a -q)
 
 
-# 4) REMOVE --------------------------
+# 9) REMOVE --------------------------
 # Remove all containers
 docker rm -f $(docker ps -aq)
 # Remove all images
@@ -80,7 +98,7 @@ docker rm -f $(docker ps -a -q)
 docker rmi -f $(docker images -q -a)
 
 
-# 5) OTHERS 
+# 10) OTHERS 
 # search docker online 
 docker search spark 
 
