@@ -44,13 +44,13 @@ for pid in $pids;
 
 function kill_process_with_port_V2(){
 
-echo '* Following processes are using port :' $*
-echo '* Pid list :'  $*
-for port in "$*";
+echo '* Following processes are using port :' $@
+echo '* Pid list :'  "$@"
+for port in "$@";
 	do 
 		#echo 'kill the process with : ' $port  || echo 'the process not exist'; 
 		pid=$(lsof -t -i tcp:$port)
-		if [ $pid > 0 ]; 
+		if [ "$pid" > 0 ]; 
 			then 
 				echo 'kill the process with : ' $port; 
 				sudo lsof -t -i tcp:$port | xargs kill -9;
