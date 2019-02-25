@@ -23,5 +23,14 @@
 
 
 
-
+# 1) access CLI
 snowsql -a <account_name> -u <user_name>
+
+
+# 2) RUN MULTIPLE COMMAND AS .sql 
+# https://docs.snowflake.net/manuals/user-guide/snowsql-use.html#running-while-connecting-f-connection-parameter
+snowsql -a <account_name> -u <user_name> -f <sql_command>.sql  
+
+
+
+
