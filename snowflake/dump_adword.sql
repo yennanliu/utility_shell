@@ -1,0 +1,813 @@
+-- TRUNCATE
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPCROSSDEVICESTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AD_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_846_445_0947;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPCROSSDEVICESTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AD_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_336_727_9774;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPCROSSDEVICESTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AD_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_894_635_1017;
+TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
+-- COPY INTO
+
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Campaign_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_AdGroupBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_AdGroup_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AD_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Ad_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Audience_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Customer_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_AudienceConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_CriteriaBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Criteria_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_Keyword_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_KeywordStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_KeywordCrossDeviceStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_paidOrganicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_SearchQueryConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_ShoppingproductStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_336_727_9774
+        FROM s3://data-backups/adwords/336_727_9774/p_ClickStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Campaign_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_AdGroupBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_AdGroup_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AD_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Ad_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Audience_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Customer_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_AudienceConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_CriteriaBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Criteria_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_Keyword_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_KeywordStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_KeywordCrossDeviceStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_paidOrganicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_SearchQueryConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_ShoppingproductStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017
+        FROM s3://data-backups/adwords/894_635_1017/p_ClickStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CAMPAIGN_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Campaign_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUPBASICSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_AdGroupBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_ADGROUP_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_AdGroup_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AD_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Ad_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCE_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Audience_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CUSTOMER_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Customer_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCEBASICSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_AudienceBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_AUDIENCECONVERSIONSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_AudienceConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIABASICSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_CriteriaBasicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CRITERIA_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Criteria_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORD_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_Keyword_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_KeywordStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_KEYWORDCROSSDEVICESTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_KeywordCrossDeviceStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_paidOrganicStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SEARCHQUERYCONVERSIONSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_SearchQueryConversionStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_ShoppingproductStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+        
+
+
+        COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_846_445_0947
+        FROM s3://data-backups/adwords/846_445_0947/p_ClickStats_/backfill/
+        CREDENTIALS=(
+        AWS_KEY_ID=''
+        AWS_SECRET_KEY=''
+        )
+        FILE_FORMAT=(
+        TYPE=JSON
+        )
+        FORCE=TRUE;
+
+
