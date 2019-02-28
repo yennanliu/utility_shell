@@ -254,7 +254,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_336_727_9774
-        FROM s3://data-backups/adwords/336_727_9774/p_paidOrganicStats_/backfill/
+        FROM s3://data-backups/adwords/336_727_9774/p_PaidOrganicStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
@@ -282,7 +282,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_336_727_9774
-        FROM s3://data-backups/adwords/336_727_9774/p_ShoppingproductStats_/backfill/
+        FROM s3://data-backups/adwords/336_727_9774/p_ShoppingProductStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
@@ -506,7 +506,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_894_635_1017
-        FROM s3://data-backups/adwords/894_635_1017/p_paidOrganicStats_/backfill/
+        FROM s3://data-backups/adwords/894_635_1017/p_PaidOrganicStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
@@ -534,7 +534,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_894_635_1017
-        FROM s3://data-backups/adwords/894_635_1017/p_ShoppingproductStats_/backfill/
+        FROM s3://data-backups/adwords/894_635_1017/p_ShoppingProductStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
@@ -758,7 +758,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_PAIDORGANICSTATS_846_445_0947
-        FROM s3://data-backups/adwords/846_445_0947/p_paidOrganicStats_/backfill/
+        FROM s3://data-backups/adwords/846_445_0947/p_PaidOrganicStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
@@ -786,7 +786,7 @@ TRUNCATE TABLE DATAWAREHOUSE.STAGING.ADWORDS_P_CLICKSTATS_894_635_1017;
 
 
         COPY INTO DATAWAREHOUSE.STAGING.ADWORDS_P_SHOPPINGPRODUCTSTATS_846_445_0947
-        FROM s3://data-backups/adwords/846_445_0947/p_ShoppingproductStats_/backfill/
+        FROM s3://data-backups/adwords/846_445_0947/p_ShoppingProductStats_/backfill/
         CREDENTIALS=(
         AWS_KEY_ID=''
         AWS_SECRET_KEY=''
