@@ -1,6 +1,10 @@
 #!/bin/bash
 
 
+#################################################################
+# HELP COMMANDS RUN GIT VERSION CONTROL OP
+#################################################################
+
 
 # 1) check commit histroy
 
@@ -38,10 +42,7 @@ git pull
 # ef3895b Create README.md
 
 
-
 git reset SHA-1 — hard # git reset ef3895b — hard  # in this example
-
-
 
 
 # 5) only PR (pull request) latest commits (cherry-pick) 
@@ -52,7 +53,6 @@ git checkout <new-branch>
 # git log --oneline  # get the commit SHA ( b67627b for example )
 git cherry-pick <SHA hash of commit>
 git push origin <new-branch>
-
 
 
 # 5) delete local branch 
@@ -72,7 +72,10 @@ cat .git/config
 
 
 
+# 9) undo last commit 
+# https://sethrobertson.github.io/GitFixUm/fixup.html
+git reset --hard HEAD^
 
-
-
-
+# 10) undo last X commit 
+# https://sethrobertson.github.io/GitFixUm/fixup.html
+git reset --hard HEAD~2  # git reset --hard HEAD~X <--- the last X commit you want to revert 
