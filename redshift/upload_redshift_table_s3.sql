@@ -1,5 +1,5 @@
 -- https://docs.aws.amazon.com/redshift/latest/dg/t_Unloading_tables.html
-
+-- https://stackoverflow.com/questions/24681214/unloading-from-redshift-to-s3-with-headers
 
 UNLOAD ('
 
