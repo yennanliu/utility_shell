@@ -1,6 +1,14 @@
+
+#################################################################
+# on my zsh setting file
+#################################################################
+
+# to modify this file 
+# vi ~/.zshrc
+
+
 # set anaconda python 3 as default python 
 export PATH=~/anaconda3/bin:$PATH
-
 
 # export SPARK_HOME 
 export SPARK_HOME=/Users/$USER/spark
