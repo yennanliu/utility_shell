@@ -1,0 +1,7 @@
+# elsaticsearch config 
+# https://www.elastic.co/guide/en/elasticsearch/reference/5.3/disk-allocator.html
+
+cluster.routing.allocation.disk.threshold_enabled:False
+cluster.routing.allocation.disk.watermark.low: "80%"
+cluster.routing.allocation.disk.watermark.high: "50gb"
+#cluster.info.update.interval: "1m"
