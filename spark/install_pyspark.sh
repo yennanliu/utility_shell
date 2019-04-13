@@ -2,8 +2,6 @@
 
 # ref 
 # https://blog.sicara.com/get-started-pyspark-jupyter-guide-tutorial-ae2fe84f594f
-
-
 <<COMMENT1
 #-------------------
 Process : 
@@ -33,15 +31,13 @@ source activate pyspark_dev
 # download here  : http://spark.apache.org/downloads.html
 echo '>>>> STEP 2)  install pyspark'
 cd ~
-wget --quiet http://apache.mirror.anlx.net/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz
-tar -xzf $my_route/Downloads/spark-2.3.0-bin-hadoop2.7.tgz
-#mv spark-2.3.0-bin-hadoop2.7 /Users/yennanliu/spark-2.3.0-bin-hadoop2.7
-mv $my_route/Downloads/spark-2.3.0-bin-hadoop2.7 $my_route/spark-2.3.0-bin-hadoop2.7
+wget --quiet http://apache.mirror.anlx.net/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz
+tar -xzf $my_route/Downloads/spark-2.4.1-bin-hadoop2.7.tgz
+mv $my_route/Downloads/spark-2.4.1-bin-hadoop2.7 $my_route/spark-2.4.1-bin-hadoop2.7
 
 cd ~
 #mkdir spark
-#cp -R /Users/yennanliu/spark-2.3.0-bin-hadoop2.7 /Users/yennanliu/spark
-cp -R $my_route/spark-2.3.0-bin-hadoop2.7 $my_route/spark
+cp -R $my_route/spark-2.4.1-bin-hadoop2.7 $my_route/spark
 
 # install python pyspark library 
 pip install pyspark
@@ -52,11 +48,9 @@ echo '>>>> STEP 3)  declare env parameter'
 export SPARK_HOME=$my_route/spark
 export PATH=$SPARK_HOME/bin:$PATH
 
-
 echo '>>>> STEP 4)  install jupyter notebook'
 # install jupyter notebook 
 pip install jupyter
-
 
 echo '######################## SPARK INSTALL SUCCESS ########################'
 
@@ -64,7 +58,3 @@ echo 'PLEASE RUN it via cona env : pyspark_dev '
 echo 'source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PATH=$SPARK_HOME/bin:$PATH && pyspark'
 
 echo '######################## SPARK INSTALL SUCCESS ########################'
-
-
-
-
