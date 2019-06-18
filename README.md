@@ -1,6 +1,11 @@
 # utility_shell
 
-
+- Collection of `shell scripts/commands` for purposes 
+  - environment set up 
+  - system configuration 
+  - DB operation commands 
+  - file/data manipulation  
+  - programming scripts trigger 
 
 RUN DEMO 
 ```bash
@@ -214,10 +219,7 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 
 ```
 
-
-
 ## Ref 
-
 
 ### Posgre
 * Posgre UDF 
@@ -228,9 +230,6 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 * Posgre cursor 
 	* http://www.postgresqltutorial.com/plpgsql-cursor/
 
-### Pipeline 
-* dev 
-
-
-
-
+### TODO 
+* pipeline 
+  * dev 
