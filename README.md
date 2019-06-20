@@ -7,7 +7,46 @@
   - file/data manipulation  
   - programming scripts trigger 
 
-RUN DEMO 
+
+## File structure
+```bash
+# ├── GPG
+# ├── Jenkins
+# ├── README.md
+# ├── airflow
+# ├── alembic
+# ├── archive
+# ├── bq
+# ├── dbt
+# ├── docker
+# ├── elasticsearch
+# ├── example.dump
+# ├── file_op
+# ├── gcloud
+# ├── git_version_control
+# ├── hadoop_cluster
+# ├── json_csv_xml_txt
+# ├── linux
+# ├── mac_osx
+# ├── mac_ubuntu
+# ├── maven_
+# ├── mongo
+# ├── mysql
+# ├── network
+# ├── pipeline
+# ├── posgre
+# ├── redshift
+# ├── regular_expressions
+# ├── snowflake
+# ├── spark
+# ├── sqlite
+# ├── string_op
+# └── ubuntu_ops
+
+```
+
+
+## RUN DEMO 
 ```bash
 # run the demo shell
 $ bash system_info.sh
