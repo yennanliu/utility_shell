@@ -1,6 +1,14 @@
 delimiter //
 
-# https://stackoverflow.com/questions/5125096/for-loop-example-in-mysql
+-- https://stackoverflow.com/questions/5125096/for-loop-example-in-mysql
+-- execute the mysql procedure :
+-- mysql> call for_loop_example();
+-- +-------------------+
+-- | str               |
+-- +-------------------+
+-- | -5,-4,-3,-2,-1,0, |
+-- +-------------------+
+-- 1 row in set (0.00 sec)
 
 CREATE procedure yourdatabase.for_loop_example()
 wholeblock:BEGIN

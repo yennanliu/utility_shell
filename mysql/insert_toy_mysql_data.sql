@@ -1,5 +1,4 @@
-# table 1  : exchange_rates
-
+-- table 1  : exchange_rates
 drop table if exists exchange_rates;
 create table exchange_rates(
 ts timestamp ,
@@ -34,7 +33,7 @@ values
 ('2018-04-01 05:22:00', 'EUR', 'HUF', '0.062')
 ;
 
-# table 2 :  transactions
+-- table 2 :  transactions
 drop table if exists transactions;
 create table transactions (
 ts timestamp,
