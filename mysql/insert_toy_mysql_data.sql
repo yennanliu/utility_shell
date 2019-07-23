@@ -27,8 +27,7 @@ values
 ('2018-04-01 03:00:05', 'EUR', 'GBP', '1.82'),
 ('2018-04-01 04:01:00', 'EUR', 'GBP', '1.92'),
 ('2018-04-01 05:22:00', 'EUR', 'GBP', '1.62'),
-('2018-04-01 05:22:00', 'EUR', 'HUF', '0.062')
-;
+('2018-04-01 05:22:00', 'EUR', 'HUF', '0.062');
 
 /*
 ### table 2 :  transactions
@@ -53,8 +52,7 @@ values
 ('2018-04-01 18:00:00', 2, 'EUR', 12.45),
 ('2018-04-01 18:01:00', 3, 'GBP', 2),
 ('2018-04-01 00:01:00', 4, 'USD', 2),
-('2018-04-01 00:01:00', 4, 'GBP', 2)
-;
+('2018-04-01 00:01:00', 4, 'GBP', 2);
 
 /*
 ### table 3 : Trips 
@@ -85,3 +83,27 @@ insert into Users (Users_Id, Banned, Role) values ('10', 'No', 'driver');
 insert into Users (Users_Id, Banned, Role) values ('11', 'No', 'driver');
 insert into Users (Users_Id, Banned, Role) values ('12', 'No', 'driver');
 insert into Users (Users_Id, Banned, Role) values ('13', 'No', 'driver'); 
+
+/*
+### table 5 : Activity
+*/
+Create table If Not Exists Activity (player_id int, device_id int,  event_date timestamp, games_played int);
+Truncate table Activity;
+insert into Activity
+values
+('1', '2', '2016-03-01', '5'),
+('1', '2', '2016-05-02', '6'),
+('2', '3', '2016-06-25', '1'),
+('3', '1', '2016-03-02', '0'),
+('3', '4', '2018-07-03 ', '5'); 
+
+/*
+### table 6 : Result
+*/
+Create table If Not Exists Result (player_id int, device_id int);
+Truncate table Result;
+insert into Result
+values
+('1', '2'),
+('2', '3'),
+('3', '1'); 
