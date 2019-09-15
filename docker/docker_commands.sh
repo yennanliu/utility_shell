@@ -1,11 +1,8 @@
 #!/bin/sh
 # https://github.com/twtrubiks/docker-tutorial
-
 #################################################################
 # DOCKER OP USEFUL COMMANDS  
 #################################################################
-
-
 <<COMMENT1
 """
 
@@ -41,9 +38,6 @@ d7405fb234
 """
 COMMENT1
 
-
-
-
 # 1) LAUNCH --------------------------
 # launch docker 
 docker 
@@ -51,6 +45,7 @@ docker
 
 # 1) docker tag 
 docker tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
 
 # 2) LIST/SHOW --------------------------
 # To show only running containers use the given command:
@@ -62,8 +57,10 @@ docker ps -aq
 # List all IMAGES 
 docker images 
 
+
 # 3) show docker layer 
 docker history [OPTIONS] IMAGE
+
 
 # 4) RUN 
 # run via image 
@@ -76,8 +73,10 @@ docker exec -it  <Container ID> bash
 # 5) CHECK LOG 
 docker logs [OPTIONS] CONTAINER
 
+
 # 6) SHOW RESOURCE USING 
 docker stats [OPTIONS] [CONTAINER...]
+
 
 # 7) PAUSE IN-CONTAINER ALL PROCESSES
 docker pause CONTAINER [CONTAINER...]
@@ -106,9 +105,4 @@ docker rmi -f $(docker images -q -a)
 # 10) OTHERS 
 # search docker online 
 docker search spark 
-
-
-
-
-
 

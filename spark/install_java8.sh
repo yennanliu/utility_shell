@@ -1,8 +1,5 @@
 #!/bin/sh
-
-
 #######################################################
-
 # REF 
 # https://stackoverflow.com/questions/46513639/how-to-downgrade-java-from-9-to-8-on-a-macos-eclipse-is-not-running-with-java-9
 
@@ -17,11 +14,7 @@ java -version
 # 0'') export java 8 home 
 # Java 8
 #export JAVA_HOME=$(/usr/libexec/java_home -v 8)
-
-
 #######################################################
-
-
 
 # 1) intall JAVA 8 
 # http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
@@ -36,9 +29,7 @@ sudo nano ~/.bash_profile
 #Now Press CTRL+X to exit the bash. Press 'Y' to save changes.
 
 
-
 # 4) Reload bash_profile
-
 source ~/.bash_profile
 # 5) Confirm current version of Java
 java -version

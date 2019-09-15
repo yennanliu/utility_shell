@@ -1,13 +1,9 @@
 #!/bin/sh
 # https://github.com/twtrubiks/docker-tutorial
 # https://docs.docker.com/engine/reference/commandline/network_disconnect/
-
-
 #################################################################
 # DOCKER NETWORK COMMANDS  
 #################################################################
-
-
 <<COMMENT1
 """
 
@@ -20,8 +16,6 @@
 
 """
 COMMENT1
-
-
 
 # 1) CHECK CURRENT DOCKER NETWORK LIST 
 docker network ls [OPTIONS]
@@ -49,7 +43,3 @@ docker network disconnect [OPTIONS] NETWORK CONTAINER
 
 # 7) User-defined networks
 # dev 
-
-
-
-

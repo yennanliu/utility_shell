@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 # list all running instances 
 docker ps -a 
 
