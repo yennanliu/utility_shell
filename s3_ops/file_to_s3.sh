@@ -1,9 +1,18 @@
-# file to s3 
+#!/bin/sh
 # https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
+
+#################################################################
+# BASH COMMANDS UPLOAD LOCAL FILE TO S3 
+#################################################################
 
 # V0
 
 # V1
+# https://docs.aws.amazon.com/cli/latest/reference/s3/index.html
+# aws s3 cp . s3://yennanliu-s3/dev-data-upload --recursive \
+#     --exclude "*" --include "*.csv" --include "*.txt" --include "*.json"
+aws s3 cp . s3://<s3_bucket_name>/<s3_file_name> --recursive \
+    --exclude "*" --include "*.csv" --include "*.txt" --include "*.json"
 
 # V2
 # https://gist.github.com/chrismdp/6c6b6c825b07f680e710
