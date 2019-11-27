@@ -51,3 +51,8 @@ aws emr create-cluster \
     --applications Name=Spark \
     --steps file://step.json \
     --auto-terminate
+
+# 3) run a simple pyspark job with emr 
+# https://stackoverflow.com/questions/23302184/running-pyspark-script-on-emr
+aws emr add-steps --cluster-id j-ON9Z8VHKC8FD \
+    --steps Name=Spark,Jar=s3://eu-west-1.elasticmapreduce/libs/script-runner/script-runner.jar,Args=[/home/hadoop/spark/bin/spark-submit,--deploy-mode,cluster,s3://etl-spark-bucket/pyspark_script/spark_helloworld.py],ActionOnFailure=CONTINUE
