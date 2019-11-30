@@ -11,14 +11,17 @@ aws s3 ls
 aws s3 ls s3://<s3_bucket_name>
 
 # upload files 
-aws s3 upload <file_name> s3://<s3_bucket_name>
+aws s3 cp <file_name> s3://<s3_bucket_name>
+
+# upload all local files to s3 
+aws s3  cp --recursive spark_emr_dev/ s3://etl-spark-bucket/spark_emr_dev/
+
+# copy all local files to s3 bucket include/exclud sth 
+aws s3 cp . s3://<s3_bucket_name/<s3_file_name>  --recursive \
+    --exclude "*" --include "*.csv.gz"
 
 # upload all files under directory 
-aws s3 sync . s3://<s3_bucket_name/<s3_file_name> --exclude "*.txt"
-
-# copy all local files to s3 bucket 
-aws s3 cp . s3://<s3_bucket_name/<s3_file_name>  --recursive \
-    --exclude "*" --include "*.csv.gz" 
+aws s3 sync . s3://<s3_bucket_name/<s3_file_name> --exclude "*.txt" 
 
 # copy all files from s3 to another s3 
 aws s3  cp --recursive s3://<from_s3_bucket_name/<s3_file_name>  s3://<to_s3_bucket_name/<s3_file_name>
