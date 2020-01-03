@@ -3,14 +3,21 @@
 # USEFUL COMMAND RUNNING OP ON HADOOP CLUSTER MACHINE 
 #################################################################
 
-<<COMMENT1
-
-COMMENT1
-
-
-# login 
+# 1) login 
 chmod 600 <ssh_key>
 ssh -i <ssh_key> <user>@<hadoop_ip>
 
-# copy files to local 
+# 2) copy files to local 
 scp -i  <ssh_key> -r <ssh_key> <user>@<hadoop_ip> . 
+
+# 3) copy file from s3 
+
+hadoop fs -get s3://<s3_bucket>/<s3_directory>/<s3_file>
+
+# 4) dump file to s3
+hadoop fs -put <binary_file_name> s3://<s3_bucket>/<s3_directory>/<s3_file>
+
+# 5) run hive script
+hive -f <hive_script>.q 
+
+# 6) run pig script 
