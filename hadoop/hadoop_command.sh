@@ -1,6 +1,4 @@
 #!/bin/sh
-
-
 #################################################################
 # USEFUL COMMAND RUNNING OP ON HADOOP CLUSTER MACHINE 
 #################################################################
@@ -16,16 +14,3 @@ ssh -i <ssh_key> <user>@<hadoop_ip>
 
 # copy files to local 
 scp -i  <ssh_key> -r <ssh_key> <user>@<hadoop_ip> . 
-
-
-
-
-
-
-
-
-
-
-
-
-
