@@ -3,6 +3,8 @@
 # USEFUL COMMAND RUNNING OP ON HADOOP CLUSTER MACHINE 
 #################################################################
 
+# hadoop command : https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#cat
+
 # 1) login 
 chmod 600 <ssh_key>
 ssh -i <ssh_key> <user>@<hadoop_ip>
@@ -22,8 +24,10 @@ hive -f <hive_script>.q
 # 6) run pig script 
 
 # 7) list HDFS files
+# hadoop fs -ls data
 hadoop fs -ls 
  
 # 8) view HDFS file
+# hadoop fs -cat /data/kv1.txt
 hdfs dfs -cat 'hdfs://localhost:9000/pig_Output/part-m-00000' 
 
