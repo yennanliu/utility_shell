@@ -269,6 +269,10 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 * Posgre cursor 
 	* http://www.postgresqltutorial.com/plpgsql-cursor/
 
+## Shell OP
+* use `sed` to find and  replace string in file
+  * https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
+
 ### TODO 
 * pipeline 
   * dev 
