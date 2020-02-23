@@ -10,39 +10,56 @@
 
 ## File structure
 ```bash
-# ├── GPG
-# ├── Jenkins
-# ├── README.md
-# ├── airflow
-# ├── alembic
-# ├── archive
-# ├── bq
-# ├── dbt
-# ├── docker
-# ├── elasticsearch
-# ├── example.dump
-# ├── file_op
-# ├── gcloud
-# ├── git_version_control
-# ├── hadoop_cluster
-# ├── json_csv_xml_txt
-# ├── linux
-# ├── mac_osx
-# ├── mac_ubuntu
-# ├── maven_
-# ├── mongo
-# ├── mysql
-# ├── network
-# ├── pipeline
-# ├── posgre
-# ├── redshift
-# ├── regular_expressions
-# ├── snowflake
-# ├── spark
-# ├── sqlite
-# ├── string_op
-# └── ubuntu_ops
-
+├── GPG
+├── Jenkins
+├── README.md
+├── airflow
+├── alembic
+├── archived
+├── bq
+├── check_ip.sh
+├── command_menu.sh
+├── dbt
+├── df_test.csv
+├── docker
+├── elasticsearch
+├── emr
+├── example.dump
+├── file_op
+├── gcloud
+├── git_version_control_github
+├── github_push_when_2factor_auth.sh
+├── github_save_userid_pass.sh
+├── hadoop
+├── json_csv_xml_txt
+├── kafka
+├── linux
+├── mac_anaconda_env_start.sh
+├── mac_change_kernels_jupyter_notebook.sh
+├── mac_osx
+├── mac_ubuntu
+├── maven_
+├── mongo
+├── mysql
+├── nb_2_html_markdown.sh
+├── nb_show_nbhtml.sh
+├── network
+├── pig
+├── pipeline
+├── postgre
+├── redis
+├── redshift
+├── regular_expressions
+├── s3_ops
+├── set_up_ssh_key.sh
+├── show_crontab.sh
+├── snowflake
+├── spark
+├── sqlite
+├── string_op
+├── system_info.sh
+├── system_path.sh
+└── ubuntu_ops
 ```
 
 
@@ -287,4 +304,4 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 * pipeline 
   * dev 
 
-<details>
+</details>
