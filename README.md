@@ -47,6 +47,11 @@
 
 
 ## RUN DEMO 
+
+<details>
+<summary>RUN DEMO</summary>
+
+
 ```bash
 # run the demo shell
 $ bash system_info.sh
@@ -257,6 +262,7 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 ######## SPARK INSTALL SUCCESS ########
 
 ```
+</details>
 
 ## Ref 
 
@@ -269,10 +275,16 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 * Posgre cursor 
 	* http://www.postgresqltutorial.com/plpgsql-cursor/
 
-## Shell OP
+### Shell OP
 * use `sed` to find and  replace string in file
   * https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
 
 ### TODO 
+
+<details>
+<summary>TODO</summary>
+
 * pipeline 
   * dev 
+
+<details>
