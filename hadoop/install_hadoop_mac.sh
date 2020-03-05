@@ -12,7 +12,7 @@ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
 
 # STEP 3) modfify hadoop-env.sh
 # nano /Users/$USER/hadoop/etc/hadoop/hadoop-env.sh
-# export JAVA_HOME=/usr/bin/java
+# export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
 # STEP 4) modfify core-site.xml
 # nano /Users/$USER/hadoop/etc/hadoop/core-site.xml
@@ -59,3 +59,50 @@ cat ~/.ssh/id_dsa.pub >> ~/.ssh/authorized_keys
 #         <value>98.5</value>
 #     </property>
 # </configuration>
+
+# STEP 8) Initialize Hadoop Cluster
+bin/hdfs namenode -format
+
+# SPEP 8') (optional) modify the default location of name node configuration
+# hdfs-site.xml 
+# <property>
+#     <name>dfs.name.dir</name>
+#     <value>/usr/local/hadoop/dfs/name</value>
+#     <final>true</final>
+# </property>
+
+# STEP 9) Start Hadoop Cluster
+sbin/start-dfs.sh
+
+# STEP 10) Check the running 
+jps 
+
+# STEP 11) Configure HDFS Home Directories
+bin/hdfs dfs -mkdir /user
+# plz modify with your username below
+bin/hdfs dfs -mkdir /user/yennanliu 
+
+# STEP 12) Run Yarn manager
+sbin/start-yarn.sh
+
+# STEP 13) Check Hadoop installation
+# http://localhost:50070/dfshealth.html 
+
+
+# STEP 14) Check Hadoop installation via YARN
+# http://localhost:8088/cluster 
+
+# STEP 15)  Run Sample MapReduce Job
+bin/hdfs dfs -copyFromLocal etc/hadoop/core-site.xml 
+# check the result
+# http://localhost:50070/explorer.html
+
+# STEP 16)  Run A simple MarReduce job
+bin/hadoop jar share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar grep ./core-site.xml output ‘configuration’
+# check the ouptut 
+bin/hdfs dfs -get output/* .
+cat part*
+
+# STEP 17) Stop Hadoop/YARN Cluster
+sbin/stop-yarn.sh
+sbin/stop-dfs.sh
