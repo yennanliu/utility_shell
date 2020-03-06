@@ -23,3 +23,6 @@ brew install hive
 # STEP 5) CONFIG HIVE
 # https://cwiki.apache.org/confluence/display/Hive/AdminManual+Configuration#AdminManualConfiguration-hive-site.xmlandhive-default.xml.template
 # https://stackoverflow.com/questions/27099898/java-net-urisyntaxexception-when-starting-hive
+
+# TODO 
+# TEST AGAIN with https://www.datageekinme.com/setup/setting-up-my-mac-hive/
