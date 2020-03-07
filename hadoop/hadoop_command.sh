@@ -31,3 +31,5 @@ hadoop fs -ls
 # hadoop fs -cat /data/kv1.txt
 hdfs dfs -cat 'hdfs://localhost:9000/pig_Output/part-m-00000' 
 
+# 9) copy emr file to HDFS 
+hadoop fs -put NYC_Taxi_Pipeline/data data
