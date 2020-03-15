@@ -25,3 +25,8 @@ export PATH=$M3_HOME/bin:$PATH
 # export SPARK_HOME 
 export SPARK_HOME=/Users/$USER/spark
 export PATH=$SPARK_HOME/bin:$PATH
+
+# elsatic search
+export ES_HOME=/usr/local/bin/elasticsearch
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=$ES_HOME/bin:$JAVA_HOME/bin:$PATH
