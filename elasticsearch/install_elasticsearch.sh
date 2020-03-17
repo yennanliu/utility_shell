@@ -13,7 +13,7 @@ COMMENT1
 brew update && brew install elasticsearch 
 
 # get install info.
-brew info elasticsearch
+brew info elasticsearch@6.8.7
 
 # METHOD 2 ) install manually 
 # STEP 1) install Java : http://www.oracle.com/technetwork/java/javase/downloads/index.html
