@@ -9,9 +9,11 @@
 
 COMMENT1
 
-
 # METHOD 1 ) : via brew 
 brew update && brew install elasticsearch 
+
+# get install info.
+brew info elasticsearch
 
 # METHOD 2 ) install manually 
 # STEP 1) install Java : http://www.oracle.com/technetwork/java/javase/downloads/index.html

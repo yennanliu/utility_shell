@@ -8,6 +8,9 @@
 brew tap elastic/tap
 brew install elastic/tap/kibana-full
 
+# get install info.
+brew info kibana
+
 # config file 
 
 # 1) home
