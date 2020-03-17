@@ -29,6 +29,7 @@ brew info kibana
 
 # 3) config
 # /usr/local/etc/kibana/kibana.yml
+# kibana-6.8.7-darwin-x86_64/config/kibana.yml
 
 # 4) data 
 # /usr/local/var/lib/kibana
