@@ -5,15 +5,21 @@
 # SCRIPT HELP INSTALL kibana  
 #################################################################
 
-# install kibana  (here I install kibana 6.8.7, since my elasticsearch is 6.8.7 as well)
+# install kibana  7.6.1 (here I install kibana 7.6.1)  -> THIS VERSION DOESNT HAVE X-PACK ISSUE, WORKS OK
+# https://www.elastic.co/downloads/kibana-oss
+# file location 
+# /Users/yennanliu/kibana-7.6.1-darwin-x86_64
+
+# install kibana 6.8.7 (here I install kibana 6.8.7, since my elasticsearch is 6.8.7 as well)
 # https://www.elastic.co/guide/en/kibana/6.8/targz.html
 # https://www.elastic.co/downloads/past-releases/kibana-6-8-7
-curl -O https://artifacts.elastic.co/downloads/kibana/kibana-6.8.7-darwin-x86_64.tar.gz
-shasum -a 512 kibana-6.8.7-darwin-x86_64.tar.gz 
-tar -xzf kibana-6.8.7-darwin-x86_64.tar.gz
-cd kibana-6.8.7-darwin-x86_64/ 
+# curl -O https://artifacts.elastic.co/downloads/kibana/kibana-6.8.7-darwin-x86_64.tar.gz
+# shasum -a 512 kibana-6.8.7-darwin-x86_64.tar.gz 
+# tar -xzf kibana-6.8.7-darwin-x86_64.tar.gz
+# cd kibana-6.8.7-darwin-x86_64/ 
 
 # run kibana
+cd kibana-7.6.1-darwin-x86_64
 ./bin/kibana 
 
 # get install info.
