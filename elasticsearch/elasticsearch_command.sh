@@ -13,3 +13,9 @@ curl http://localhost:9200/logstash
 # https://stackoverflow.com/questions/22924300/removing-data-from-elasticsearch
 # (delete index with logstash-* pattern )
 curl -XDELETE localhost:9200/logstash-*
+
+# 4) list all index
+curl http://localhost:9200/_cat/indices
+
+# 5) list all command 
+curl http://localhost:9200/_cat
