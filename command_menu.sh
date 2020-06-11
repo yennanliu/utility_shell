@@ -1,8 +1,5 @@
 #!/bin/sh
 
-### function
-
-
 function to_upper () {
 read -p "plz enter a string : " string 
 #input="$1"
@@ -22,9 +19,6 @@ command="/usr/bin/cal"
 fi
 $command
 }
-
-###
-
 
 while true  
 do

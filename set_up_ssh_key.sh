@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
 
-
 # how to generate ssh key via unix 
 
-# ref 
-# https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
-
-
+# ref https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
 
 # `1) Step One—Create the RSA Key Pair
 
