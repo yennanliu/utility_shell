@@ -1,5 +1,3 @@
-
-
 -- #################################################################
 -- # REGULAR EXPRESSIONS SQL DEMO   
 -- #################################################################
@@ -44,9 +42,3 @@ SELECT REGEXP_SUBSTR('ABC', '[A-Z]'), REGEXP_SUBSTR('ABC', '[A-Z][A-Z]'), REGEXP
 
 -- 4-3 [^ ] matches any character not contained in the set. E.g. [^123] matches any character that is not 1, 2 or 3.
 SELECT REGEXP_SUBSTR('123', '[^123]'), REGEXP_SUBSTR('123', '[^45][^45][^45]'),  '123';
-
-
-
-
-
-

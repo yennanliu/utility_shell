@@ -1,5 +1,3 @@
-
-
 -- 0)
 select * from YENNANL_DEVELOPMENT_DATAWAREHOUSE.ADYEN.YEN_DEV31;
 
@@ -18,8 +16,4 @@ SELECT value:"json":"url"::varchar AS url,
 FROM YENNANL_DEVELOPMENT_DATAWAREHOUSE.ADYEN.YEN_DEV31 "a",
      LATERAL FLATTEN(INPUT => "a"."json", OUTER => TRUE) "b",
              LATERAL FLATTEN(INPUT => "b":"boundingPoly", OUTER => TRUE) "c"
-
-
-
-
-
+             

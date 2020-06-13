@@ -1,10 +1,7 @@
 #!/bin/sh
 
-
 # snowflake command 
-# ref 
-# https://docs.snowflake.net/manuals/user-guide/data-load-external-tutorial.html
-
+# ref https://docs.snowflake.net/manuals/user-guide/data-load-external-tutorial.html
 
 # 1) make a Stage Object
 # https://docs.snowflake.net/manuals/user-guide/data-load-external-tutorial-create-stage.html
@@ -27,5 +24,3 @@ COPY INTO <DATAWAREHOUSE>.<table>
         AWS_KEY_ID='☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺'
         AWS_SECRET_KEY='☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺☺'
     )
-
-

@@ -4,7 +4,6 @@
 # COMMAND HELP ACCESS SNOWFLAKE CLI   
 #################################################################
 
-
 # Congratulations! Software installation complete.
 # Complete the following steps to connect to Snowflake:
 #     1.    Open a new terminal window.
@@ -22,15 +21,9 @@
 # See the Snowflake documentation https://docs.snowflake.net/manuals/user-guide/snowsql.html for more information.
 
 
-
 # 1) access CLI
 snowsql -a <account_name> -u <user_name>
-
 
 # 2) RUN MULTIPLE COMMAND AS .sql 
 # https://docs.snowflake.net/manuals/user-guide/snowsql-use.html#running-while-connecting-f-connection-parameter
 snowsql -a <account_name> -u <user_name> -f <sql_command>.sql  
-
-
-
-

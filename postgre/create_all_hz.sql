@@ -1,14 +1,9 @@
-
 ######################################################################## 
 -- 0) intro
 # please run following code step by step  
 # step 1) create table 
 # step 2) insert data  
 ######################################################################## 
-
-
-
-
 
 ######################################################################## 
 -- 1) create table 
@@ -31,16 +26,11 @@ WITH (
 
 /*CREATE INDEX homezone_geom_idx ON rw.ldn_homezone USING gist (geom) */
 
-
 ######################################################################## 
 -- 2) insert data 
 ######################################################################## 
 
-
-
 -- 2-1) add zone_id, name , areakm2, remote_p 
-
-
 
 INSERT INTO  rw.ldn_all_homezone (zone_id, name,area_km2,remote_p)
 VALUES 
@@ -48,10 +38,7 @@ VALUES
 
 #-------------------------------------------
 
-
-
 -- 2-2) add geojson 
-
 
 UPDATE rw.ldn_homezone SET geojson=
 
@@ -45853,8 +45840,6 @@ UPDATE rw.ldn_homezone SET wkt=(select * from wkt )
 where zone_id = 9;
 
 
-
-
 -----------------
 
 with wkt as (
@@ -45866,8 +45851,6 @@ SELECT ST_AsText(ST_GeomFromGeoJSON('{
 
 UPDATE rw.ldn_homezone SET wkt=(select * from wkt )
 where zone_id = 10;
-
-
 
 
 -----------------
@@ -45984,7 +45967,6 @@ where zone_id = 9;
 
 -----------------
 
-
 with geom as ( select 
 ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
 where zone_id = 10)
@@ -45994,17 +45976,9 @@ where zone_id = 10;
 
 -----------------
 
-
 with geom as ( select 
 ST_GeomFromText( WKT,  4326) from  rw.ldn_homezone
 where zone_id = 11)
 
 UPDATE rw.ldn_homezone SET geom=(select * from geom )
 where zone_id = 11;
-
-
-
-#-------------------------------------------
-
-
-

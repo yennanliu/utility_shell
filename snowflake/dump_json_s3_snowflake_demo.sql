@@ -1,12 +1,9 @@
-
-
 -- 1) create table 
 CREATE TABLE 
 <datawarehouse>.<schema>.<table_name>
 (
   "json_info" variant
 );
-
 
 -- 2) dump into table 
 COPY INTO <datawarehouse>.<schema>.<table_name>
@@ -25,10 +22,3 @@ COPY INTO <datawarehouse>.<schema>.<table_name>
 select * from <datawarehouse>.<schema>.<table_name>;
 
 select "json_info":"cropHintsAnnotation":"cropHints" from <datawarehouse>.<schema>.<table_name>;
-
-
-
-
-
-
-

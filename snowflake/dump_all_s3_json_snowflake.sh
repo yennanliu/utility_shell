@@ -1,13 +1,8 @@
-
-
 #!/bin/sh
 
 #################################################################
 # COMMAND COPY ALL FILTED S3 JSON FILES TO DB 
 #################################################################
-
-
-
 
 COPY INTO <dw_name>.<schema_name>.<table_name>
 FROM s3://<s3_bucket_name>

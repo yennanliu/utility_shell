@@ -49,12 +49,7 @@ WHERE a.event_id < b.event_id
 
 ---
 
-
-
 */
-
-
-
 
 
 DELETE
@@ -64,5 +59,3 @@ FROM
 WHERE
     a.id < b.id
     AND a.fruit = b.fruit;
-
-    

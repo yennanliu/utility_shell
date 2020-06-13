@@ -1,7 +1,5 @@
 # snowflake command 
 
-
-
 # 1) use datawarehouse 
 use database datawarehouse1; 
 
