@@ -29,3 +29,7 @@ minikube stop
 # Step 9) Delete the local Minikube cluster
 minikube delete
 
+
+# Ref command 
+# minikube hashboard
+minikube dashboard
