@@ -1,6 +1,6 @@
 # https://kubernetes.io/docs/tasks/tools/install-minikube/
 
-# for mac OSX
+# for Mac OSX
 
 # Step 1) validate if VMX exists
 sysctl -a | grep -E --color 'machdep.cpu.features|VMX'
