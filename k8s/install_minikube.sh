@@ -12,7 +12,7 @@ sysctl -a | grep -E --color 'machdep.cpu.features|VMX'
 brew install minikube
 
 # Step 3) Confirm Installation 
-minikube start --driver=minikube_driver
+minikube start --driver=virtualbox
 
 # Step 4) Check status 
 minikube status
