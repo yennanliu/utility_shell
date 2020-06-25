@@ -25,6 +25,10 @@ az group delete --name <your_resource_group> --yes --no-wait
 ### part 2 : k8s dashboard ###  
 # https://docs.microsoft.com/zh-tw/azure/aks/kubernetes-dashboard
 
+# grant access to k8s dashboard
+# https://github.com/Azure/AKS/issues/601
+kubectl create clusterrolebinding kubernetes-dashboard --clusterrole=cluster-admin --serviceaccount=kube-system:kubernetes-dashboard
+
 # launch k8s dashboard
 #az aks browse --resource-group aks --name airflow-k8s
 az aks browse --resource-group <your_resource_group> --name <k8s_cluster_namer>
