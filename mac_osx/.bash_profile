@@ -4,6 +4,9 @@ export PATH=~/anaconda3/bin:$PATH
 # https://stackoverflow.com/questions/22773432/mac-using-default-python-despite-anaconda-install
 export PATH="$HOME/anaconda/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
 
+# java8 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # Gloud 
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/Users/yennanliu/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/yennanliu/Downloads/google-cloud-sdk/path.bash.inc'; fi

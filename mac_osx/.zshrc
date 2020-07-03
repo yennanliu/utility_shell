@@ -24,6 +24,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# java8 
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # export SPARK_HOME 
 export SPARK_HOME=/Users/$USER/spark
 export PATH=$SPARK_HOME/bin:$PATH
