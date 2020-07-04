@@ -7,7 +7,6 @@
   - file/data manipulation  
   - programming scripts trigger 
 
-
 ## File structure
 ```bash
 ├── GPG
