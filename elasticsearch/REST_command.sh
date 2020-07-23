@@ -4,12 +4,21 @@
 
 ### Indside kibana UI ###
 
-GET / 
+# REST COMMAND 
+# 1. GET
+# 2. PUT
+# 3. POST
+# 4. DELETE
+# 5. PATCH
+
+# get
+GET /9300 
 
 GET /_cat/health?v
 
 GET /_cat/master?v
 
+# put
 PUT twitter/_doc/2
 {
   "user": "GBaxewfewx",
@@ -22,21 +31,21 @@ PUT twitter/_create/10
   
 }
 
+GET twitter/_doc/WBk8e3MBpFYgZiusgXSc
+
+GET twitter/_doc/WBk8e3MBpFYgZiusgXSc/_source
+
+GET twitter/_doc/1?_source=city,user
+
+GET twitter/_doc/1
+
+
 POST twitter/_doc/
 {
   "user": "xxx",
   "uid": "2",
   "city": "TOKYO"
 }
-
-GET twitter/_doc/WBk8e3MBpFYgZiusgXSc
-
-GET twitter/_doc/WBk8e3MBpFYgZiusgXSc/_source
-
-GET twitter/_doc/1?_souce=city
-
-GET twitter/_doc/1
-
 
 GET twitter
 
@@ -57,5 +66,14 @@ GET _search
 {
   "query": {
     "match_all": {}
+  }
+}
+
+# update
+POST twitter/_update/1
+{
+  "doc":{
+    "city": "taipei",
+    "user" :"taiwan"
   }
 }
