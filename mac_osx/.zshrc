@@ -31,6 +31,12 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export SPARK_HOME=/Users/$USER/spark
 export PATH=$SPARK_HOME/bin:$PATH
 
+# maven
+export M2_HOME=/Users/yennanliu/apache-maven-3.6.3
+export M2=$M2_HOME/bin
+export MAVEN_OPTS="-Xmx1048m -Xms256m -XX:MaxPermSize=312M"
+export PATH=$M2:$PATH
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
