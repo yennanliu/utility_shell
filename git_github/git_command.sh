@@ -1,5 +1,4 @@
 #!/bin/bash
-
 #################################################################
 # HELP COMMANDS RUN GIT VERSION CONTROL OP
 #################################################################
@@ -10,11 +9,15 @@ git log --oneline
 git reflog
 
 # 2) merge 
+# https://git-scm.com/book/zh-tw/v2/%E4%BD%BF%E7%94%A8-Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E5%92%8C%E5%90%88%E4%BD%B5%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95
 # git branch 
 # * master 
 # * dev 
 git checkout master  # go to master branch 
-git merge dev  # dev to master 
+git merge dev  # merge dev to master 
+# or 
+git checkout dev2
+git merge master # merge master to dev2 
 
 # 3) pull
 #git pull = git fetch + merge to local
@@ -65,3 +68,19 @@ git reset --hard HEAD~2  # git reset --hard HEAD~X <--- the last X commit you wa
 # https://stackoverflow.com/questions/1125968/how-do-i-force-git-pull-to-overwrite-local-files
 git fetch --all
 git reset --hard origin/master
+
+# 13) check all branches (include remote)
+git branch -a
+
+# 14) rebase
+# https://www.maxlist.xyz/2020/05/02/git-merge-rebase/
+git checkoutd dev1
+# set up master branch as new basis of branch dev1 
+git rebase master
+
+# rebase with commit id
+# http://sdlong.logdown.com/posts/736902-sharing-organize-commit-in-git-rebase-to-techniques-and-concepts
+git checkout dev1 
+# now consider the last commit in master branch is "a90538b1cca7e"
+# so now run git branch make basis on mastet's last commit
+git rebase a90538b1cca7e
