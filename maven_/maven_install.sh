@@ -1,15 +1,17 @@
 #!/bin/sh
-
+########################################################## 
+# Install Maven for MAC OSX
 ########################################################## 
 
-# DOWNLOAD maven for MAC OSX
+### BEWARE TO INSTALL THE BINARY VERSION
+# https://maven.apache.org/download.cgi
+# for example 
+# http://ftp.mirror.tw/pub/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
 
 # http://maven.apache.org/download.cgi
 # https://juejin.im/post/5b0c08b16fb9a009d16211c8
 # https://blog.csdn.net/u011619283/article/details/56671530
-
-########################################################## 
-
+# https://www.baeldung.com/install-maven-on-windows-linux-mac
 
 # Step 1)
 # download file :   apache-maven-3.3.9-bin.tar.gz  (http://maven.apache.org/download.cgi)
@@ -36,7 +38,6 @@ tar -xzf $PWD/Downloads/apache-maven-3.6.0-bin.tar.gz  -C maven
 sudo echo "export M3_HOME=/Users/$USER/maven/apache-maven-3.6.0" >> .bash_profile
 sudo echo "export PATH=$M3_HOME/bin:$PATH" >> .bash_profile
 
-
 # step 4) make changes in  step 3) work 
 source .bash_profile
 
@@ -44,8 +45,3 @@ source .bash_profile
 echo $M3_HOME
 echo $PATH
 mvn -version
-
-
-
-
-
