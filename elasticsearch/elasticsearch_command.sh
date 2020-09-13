@@ -24,6 +24,11 @@ curl -XDELETE localhost:9200/logstash # (delete index with logstash pattern )
 # 4) list all index
 curl http://localhost:9200/_cat/indices
 
+# 4) *** List all data under index ***
+# https://stackoverflow.com/questions/17497075/efficient-way-to-retrieve-all-ids-in-elasticsearch
+curl -XGET 'http://localhost:9200/library/_search?pretty'  # index = library
+curl -XGET 'http://localhost:9200/my_index/_search?pretty' # index = my_index
+
 # 5) list all command 
 curl http://localhost:9200/_cat
 
