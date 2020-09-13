@@ -1,4 +1,5 @@
 #!/bin/sh
+# for elasticsearch-7.9.1
 
 # 1) Create index 
 #curl -XPUT "http://localhost:9200/IndexName/TypeName"
@@ -17,8 +18,8 @@ curl http://localhost:9200/logstash
 
 # 3) Delete index 
 # https://stackoverflow.com/questions/22924300/removing-data-from-elasticsearch
-# (delete index with logstash-* pattern )
-curl -XDELETE localhost:9200/logstash-*
+curl -XDELETE localhost:9200/logstash-* # (delete index with logstash-* pattern )
+curl -XDELETE localhost:9200/logstash # (delete index with logstash pattern )
 
 # 4) list all index
 curl http://localhost:9200/_cat/indices
@@ -50,3 +51,9 @@ curl -XGET 'http://localhost:9200/library/_all/1?pretty' # id = 1 but in all typ
 
 # 8) delete data
 curl -XDELETE 'http://localhost:9200/library/book/1?pretty' # type = book, id = 1 
+
+# 9) clean cache (index)
+curl -XPOST 'http://localhost:9200/library/_cache/clear'
+
+# 9) refresh cache (index)
+curl -XPOST 'http://localhost:9200/library/_refresh'
