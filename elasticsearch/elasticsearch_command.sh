@@ -4,6 +4,12 @@
 #curl -XPUT "http://localhost:9200/IndexName/TypeName"
 curl -XPUT "http://localhost:9200/logstash"
 
+# 1)' check if index exists
+curl -XHEAD -i "http://localhost:9200/logstash"
+
+# 1)' get index detail inform.
+curl -XGET -i "http://localhost:9200/logstash?pretty"
+
 # 2) Query elasticsearch
 # https://stackoverflow.com/questions/42993351/how-to-query-elasticsearch-when-it-is-used-as-an-output-plugin-in-logstash
 # query index = logstash 
@@ -29,7 +35,7 @@ curl -XPUT 'http://localhost:9200/library/book/1?pretty' -H 'Content-Type: appli
 }'
 
 # 6)' insert data (via XPOST) (no need to set up id)
-# index = library, type = booK
+# index = library, type = book
 curl -XPOST 'http://localhost:9200/library/book?pretty' -H 'Content-Type: application/json' -d '
 {
 "author" : "JK ROLLING",
@@ -37,6 +43,10 @@ curl -XPOST 'http://localhost:9200/library/book?pretty' -H 'Content-Type: applic
 "page" : 777
 }'
 
-# 7) query data (with index name and id)
-curl -XGET 'http://localhost:9200/library/book/1?pretty'
-curl -XGET 'http://localhost:9200/library/book/6SUWhXQBjtaA1DFIuiYb?pretty'
+# 7) query data (with book, index name and id)
+curl -XGET 'http://localhost:9200/library/book/1?pretty' # type = book, id = 1 
+curl -XGET 'http://localhost:9200/library/book/6SUWhXQBjtaA1DFIuiYb?pretty' # type = book, id = 6SUWhXQBjtaA1DFIuiYb
+curl -XGET 'http://localhost:9200/library/_all/1?pretty' # id = 1 but in all type (_all)
+
+# 8) delete data
+curl -XDELETE 'http://localhost:9200/library/book/1?pretty' # type = book, id = 1 
