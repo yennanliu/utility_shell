@@ -46,8 +46,9 @@ git push origin <new-branch>
 git branch -D <branch_name>
 
 # 7) delete remote branch 
-#git push <remote_name> --delete <branch_name>
-git push origin :<branch_name>
+# git push <remote_name> --delete <branch_name>
+# e.g. : git push origin --delete my_remote_branch
+git push origin --delete <branch_name>
 
 # 8) git pull remote branch 
 git checout <branch_name>
@@ -60,7 +61,7 @@ cat .git/config
 # https://sethrobertson.github.io/GitFixUm/fixup.html
 git reset --hard HEAD^
 
-# 11) undo last X commit 
+# 11) undo last X commits 
 # https://sethrobertson.github.io/GitFixUm/fixup.html
 git reset --hard HEAD~2  # git reset --hard HEAD~X <--- the last X commit you want to revert 
 
