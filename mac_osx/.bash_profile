@@ -7,6 +7,9 @@ export PATH="$HOME/anaconda/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PA
 # java8 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 
+# RabbitMQ
+export PATH=$PATH:/usr/local/sbin
+
 # Gloud 
 # The next line updates PATH for the Google Cloud SDK.
 #if [ -f '/Users/yennanliu/Downloads/google-cloud-sdk/path.bash.inc' ]; then source '/Users/yennanliu/Downloads/google-cloud-sdk/path.bash.inc'; fi
