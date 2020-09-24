@@ -11,6 +11,9 @@
 # 4. DELETE
 # 5. PATCH
 
+#-------------------------------
+# basic command
+#-------------------------------
 # get
 GET /9300 
 
@@ -78,8 +81,12 @@ POST twitter/_update/1
   }
 }
 
-# create new datatype (for index)
-PUT dev_index?include_type_name=true
+
+#-------------------------------
+# create datatype (for index)
+#-------------------------------
+# create dtype 
+PUT dev_index2?include_type_name=true
 {
    "mappings": {
      "student": { 
@@ -90,3 +97,13 @@ PUT dev_index?include_type_name=true
      }
    }
  }
+ 
+# insert data (id = 3) 
+PUT dev_index2/_doc/3
+{
+  "name" : "es",
+  "age"  : 123
+}
+
+# query all data from with the index name
+GET dev_index2/_search?pretty
