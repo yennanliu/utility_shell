@@ -77,3 +77,16 @@ POST twitter/_update/1
     "user" :"taiwan"
   }
 }
+
+# create new datatype (for index)
+PUT dev_index?include_type_name=true
+{
+   "mappings": {
+     "student": { 
+       "properties": { 
+         "name":     { "type": "keyword"  },
+         "age":      { "type": "integer" }  
+         }
+     }
+   }
+ }
