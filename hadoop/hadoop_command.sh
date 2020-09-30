@@ -33,3 +33,14 @@ hdfs dfs -cat 'hdfs://localhost:9000/pig_Output/part-m-00000'
 
 # 9) copy emr file to HDFS 
 hadoop fs -put NYC_Taxi_Pipeline/data data
+
+# 10) HDFS remove directory
+# https://stackoverflow.com/questions/13529114/how-to-delete-a-directory-from-hadoop-cluster-which-is-having-comma-in-its-na
+hdfs dfs -rm -r <directory_name>
+
+# 11) HDFS check file size
+hdfs dfs -du <directory_name>
+
+# 11)' HDFS check file size (in GB)
+hadoop fs -du -s <directory_name>/* | awk '{s+=$1} END {printf "%.3fGB\n", s/1000000000}'
+
