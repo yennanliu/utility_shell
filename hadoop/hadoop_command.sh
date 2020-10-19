@@ -40,6 +40,8 @@ hdfs dfs -rm -r <directory_name>
 
 # 11) HDFS check file size
 hdfs dfs -du <directory_name>
+# or
+hdfs dfs -du -h <directory_name>
 
 # 11)' HDFS check file size (in GB)
 hadoop fs -du -s <directory_name>/* | awk '{s+=$1} END {printf "%.3fGB\n", s/1000000000}'
@@ -49,5 +51,3 @@ hdfs dfs -mkdir -p <new_directory_name>
 
 # 13) HDFS list all files with condition (uid=999 in this example)
 hdfs dfs -ls /user/my_user/realtime/firm=*/year=*/month=*/day=*/hour=*/uid=999 | less
-
-
