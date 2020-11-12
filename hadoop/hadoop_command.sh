@@ -51,3 +51,16 @@ hdfs dfs -mkdir -p <new_directory_name>
 
 # 13) HDFS list all files with condition (uid=999 in this example)
 hdfs dfs -ls /user/my_user/realtime/firm=*/year=*/month=*/day=*/hour=*/uid=999 | less
+
+# 14) find HDFS url
+# https://community.cloudera.com/t5/Support-Questions/How-to-get-the-full-file-path-to-my-hdfs-root/td-p/126962
+# example :
+# if hdfs-site.xml is as below : 
+#  <property>
+#     <name>dfs.namenode.rpc-address</name>
+#     <value>sandbox.hortonworks.com:8020</value>
+#  </property>
+# then the HDFS url should be :
+# hdfs://sandbox.hortonworks.com:8020
+# so, the command : 
+# hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
