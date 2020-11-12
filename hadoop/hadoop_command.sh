@@ -64,3 +64,5 @@ hdfs dfs -ls /user/my_user/realtime/firm=*/year=*/month=*/day=*/hour=*/uid=999 |
 # hdfs://sandbox.hortonworks.com:8020
 # so, the command : 
 # hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
+cat hdfs-site.xml | grep 8020 # get the HDFS url
+hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
