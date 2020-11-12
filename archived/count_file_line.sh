@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 function is_file {	
 if [ ! -f "$1" ] ; then 
 	echo "$1 does not seem to be a file"
@@ -23,8 +22,4 @@ clean_file "$REPLY"
 #is_file "$1"
 exit 1 
 
-
-
 # bash count_file_line.sh
-
-

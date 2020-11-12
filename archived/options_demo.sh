@@ -16,6 +16,3 @@ set -o nocaseglob  # Case insensitive globs
 set -o globdots    # Wildcards match dotfiles ("*.sh" => ".foo.sh")
 set -o globstar    # Allow ** for recursive matches ('lib/**/*.rb' => 'lib/a/b/c.rb')
 '
-
-
-# dev 

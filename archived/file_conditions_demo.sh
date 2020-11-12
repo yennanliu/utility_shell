@@ -2,7 +2,6 @@
 
 # https://devhints.io/bash
 
-
 : '
 
 ### FILE CONDITIONS 
@@ -20,7 +19,6 @@
 [ FILE1 -ef FILE2 ]	Same files
 '
 
-
 # -----------------------------------
 echo 'DEMO 1)'
 
@@ -28,7 +26,6 @@ if [ -e "file_conditions_demo.sh" ] ; then
 	echo "file_conditions_demo.sh exist " 
 else echo "file_conditions_demo.sh not exist" 
 fi 
-
 
 # -----------------------------------
 echo 'DEMO 2)'
@@ -41,7 +38,6 @@ do
 	fi 
 done 
 
-
 # -----------------------------------
 echo 'DEMO 3)'
 
@@ -53,7 +49,6 @@ do
 	fi 
 done 
 
-
 # -----------------------------------
 echo 'DEMO 4)'
 
@@ -64,9 +59,3 @@ do
 	else echo "Size is = 0 bytes "  $i
 	fi 
 done 
-
-
-
-
-
-

@@ -2,7 +2,6 @@
 
 # https://devhints.io/bash
 
-
 : '
 ### Defining arrays
 Fruits=('Apple' 'Banana' 'Orange')
@@ -33,8 +32,6 @@ for i in "${arrayName[@]}"; do
 done
 '
 
-
-
 # -----------------------------------
 echo 'DEMO 1)'
 
@@ -49,7 +46,6 @@ echo ${#Fruits[2]}     # String length of the Nth element (i.e. length of Orange
 echo ${Fruits[@]:0:2}  # Range (from position 0, length 2)
 ######################
 
-
 # -----------------------------------
 echo 'DEMO 2)'
 Fruits2=('Apple' 'Banana' 'Orange')      # define an array 
@@ -61,7 +57,6 @@ echo ${Fruits2[@]}                       # Apple Banana Orange Watermelon
 Fruits3=("${Fruits2[@]}")                # Duplicate
 echo ${Fruits3[@]}                       # Apple Banana Orange Watermelon
 
-
 # -----------------------------------
 echo 'DEMO 3)'
 Fruits4=('Apple' 'Banana' 'Orange')      # define an array 
@@ -69,7 +64,3 @@ Fruits4=('Apple' 'Banana' 'Orange')      # define an array
 for i in "${Fruits4[@]}" ; do 
 	echo $i 
 done 
-
-
-
-

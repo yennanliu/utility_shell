@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 cd ~ && cd noths-airflow
 astro airflow kill
 astro airflow start 

@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 func()
 {
 echo '-----------'
@@ -10,9 +9,7 @@ echo "# 1 parameter = $1" # show 1st parameter
 echo "# 2 parameter = $2" # show 2rd parameter
 echo "# 3 parameter = $3" # show 3rd parameter
 echo "# 4 parameter = $*" # show all parameter
-
 }
-
 
 func 
 func 1 

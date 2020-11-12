@@ -1,23 +1,15 @@
 #!/bin/sh
 
-
-
 # https://alembic.zzzcomputing.com/en/latest/tutorial.html
-
 
 # 1). create migration DB python script
 alembic revision -m "create ur_table_name table"
 
-
 # 2) run the migration job (upgrade)
 PYTHONPATH=./ddl alembic upgrade head
 
-
 # 2') rollback (downgrade)
 PYTHONPATH=./ddl alembic downgrade head
-
-
-
 
 ## 2'') update DB table (alembic).version before re-run the migration command
 # check ddl version :   select * from  <ur_datawarehouse>.alembic.alembic_version;
@@ -33,11 +25,3 @@ PYTHONPATH=./ddl alembic downgrade head
 ######################################
 
 ```insert into   alembic.alembic_version  ("VERSION_NUM") values ('0db6c2334442');``` 
-
-
-
-
-
-
-
-

@@ -10,7 +10,6 @@ $((RANDOM%=200))  # Random number 0..200
 
 '
 
-
 # -----------------------------------
 echo 'DEMO 1)'
 
@@ -21,11 +20,7 @@ echo 'mynumber - 10 ='  $((mynumber-10))
 echo 'mynumber * 10 ='  $((mynumber*10))
 echo 'mynumber / 50 ='  $((mynumber/50))
 
-
 # -----------------------------------
 echo 'DEMO 2)'
 
 echo 'Random number 0..200 =' $((RANDOM%=200))  # Random number 0..200
-
-
-

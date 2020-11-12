@@ -1,11 +1,7 @@
 #!/bin/sh
-
 #################################################################
 # HELP COMMANDS DOING AISTRO AIRFLOW OP  
 #################################################################
-
-
-
 
 # 1) access postgres_default posgre 
 <<COMMENT1
@@ -20,6 +16,3 @@ docker exec -it <posgre_container_id> bash
 # bash-4.3#psql --host localhost -U postgres
 # postgres=# \l
 # postgres=# \d 
-
-
-

@@ -1,8 +1,6 @@
 #!/bin/sh
 
-
 # V1 
-
 echo "Number of arguments $#   (V1)"
 while [ -n "$1" ] && [ -n "$2" ]  && [ -n "$3" ] ; do 
 	echo "$1 $2 $3"
@@ -15,11 +13,6 @@ else
 echo $1
 fi   
  
-
-
-
-
-
 # V2 
 echo "Number of arguments $#   (V2)"
 while [ -n "$1" ] && [ -n "$2" ]  && [ -n "$3" ] ; do 
@@ -28,12 +21,3 @@ while [ -n "$1" ] && [ -n "$2" ]  && [ -n "$3" ] ; do
 done 
 
 echo $@  # if not input at least 3 arguments, just print all input arguments instead 
- 
-
-
-
-
-
-
-
-

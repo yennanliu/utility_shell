@@ -2,8 +2,6 @@
 
 # https://devhints.io/bash
 
-
-
 echo {A,B}     # A  B 
 echo {A,B}.js  # A.js B.js
 echo {1..5}    # 1 2 4 5 6 
