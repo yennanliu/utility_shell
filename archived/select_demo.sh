@@ -1,6 +1,5 @@
 #!/bin/sh
 
-
 echo 'select an item'
 echo 
 
@@ -10,6 +9,3 @@ do
 done 
 echo
 echo " here is your choice : $fruit "
-
-
-

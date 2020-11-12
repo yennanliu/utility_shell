@@ -2,9 +2,7 @@
 
 what_day()
 {
-
 date +%A
-
 }
 
 is_monday()
@@ -17,7 +15,6 @@ is_monday()
 	fi 
 }
 
-
 echo '-----------'
 echo "today is : "  
 what_day
@@ -25,12 +22,3 @@ echo '-----------'
 is_monday && echo "it's weekday"
 is_monday || echo "it's weekend"
 echo '-----------'
-
-
-
-
-
-
-
-
-

@@ -2,7 +2,6 @@
 
 # https://devhints.io/bash
 
-
 name="John"
 echo ${name}
 echo ${#name}       #=> "4", length of "john" 

@@ -2,18 +2,11 @@
 
 # https://devhints.io/bash
 
-
-
-
 : '
 ### EXAMPLE 
 (cd somedir; echo 'I am now in $PWD')
 pwd # still in first directory
 '
-
-
-
-
 
 # -----------------------------------
 echo 'DEMO 1)'
