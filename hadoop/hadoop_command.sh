@@ -66,3 +66,6 @@ hdfs dfs -ls /user/my_user/realtime/firm=*/year=*/month=*/day=*/hour=*/uid=999 |
 # hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
 cat hdfs-site.xml | grep 8020 # get the HDFS url
 hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
+# or you could find the key word (8080) within all files 
+# https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux
+grep -rnw '.' -e '8020'
