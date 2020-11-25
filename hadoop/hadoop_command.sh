@@ -52,6 +52,10 @@ hdfs dfs -rm -r <directory_name>
 #The -v option will display the names of columns as a header line.
 #The -x option will exclude snapshots from the result calculation. Without the -x option (default), the result is always calculated from all INodes, including all snapshots under the given path.
 
+# https://www.edureka.co/community/2733/how-to-check-size-of-hdfs-directory
+# The first column shows the actual size (raw size) of the files that users have placed in the various HDFS directories.
+# The second column shows the actual space consumed by those files in HDFS.
+
 # hdfs dfs -du <directory_name>
 # or
 hdfs dfs -du -h <directory_name>
