@@ -5,35 +5,25 @@
 #################################################################
 <<COMMENT1
 """
-
 # https://github.com/twtrubiks/docker-tutorial
 
 ### CONCEPT ###
-
-
 1) image  :  like a VM Guest OS, read only (R\O), a image can make multiple containers
-
 2) container : made by image, can be launch/stop/remove/split. read and write (R\W)
 
-
 e.g. 
-
 ---------------
 container later   -> container layer 
 ---------------
-
 91e54d1179
 d7405fb234
 ...            -> image layers 
 ..
 ..
-
 ---------------
 
 
 3) Registry : github for docker (check Docker Hub)
-
-
 
 """
 COMMENT1
@@ -66,8 +56,13 @@ docker history [OPTIONS] IMAGE
 # run via image 
 docker run -it  <Image ID> bash
 
+
 # run via container
 docker exec -it  <Container ID> bash
+
+
+# run via container (as root)
+docker exec -u root -it <Container ID> bash 
 
 
 # 5) CHECK LOG 
@@ -105,4 +100,3 @@ docker rmi -f $(docker images -q -a)
 # 10) OTHERS 
 # search docker online 
 docker search spark 
-
