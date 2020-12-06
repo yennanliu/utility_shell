@@ -1,7 +1,6 @@
 # elsaticsearch config 
 # https://www.elastic.co/guide/en/elasticsearch/reference/5.3/disk-allocator.html
 
-
 # update the config file 
 # nano /usr/local/var/lib/elasticsearch/elasticsearch.yml
 node.name: "elasticsearch_yennanliu"

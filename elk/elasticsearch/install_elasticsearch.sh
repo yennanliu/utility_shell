@@ -4,20 +4,17 @@
 # SCRIPT HELP INSTALL elasticsearch  
 #################################################################
 
-
 # METHOD 1 ) : download via UI 
 # (should install elasticsearch 7.6.1) -> THIS VERSION DOESNT HAVE X-PACK ISSUE, WORKS OK
 # https://www.elastic.co/downloads/elasticsearch
 # file location : 
 # /Users/yennanliu/elasticsearch-7.6.1
 
-
 # METHOD 1') : via brew 
 # (should install elasticsearch 6.8.7)
 # brew update && brew install elasticsearch 
 # get install info.
 #brew info elasticsearch
-
 
 # METHOD 2 ) install manually 
 # STEP 1) install Java : http://www.oracle.com/technetwork/java/javase/downloads/index.html

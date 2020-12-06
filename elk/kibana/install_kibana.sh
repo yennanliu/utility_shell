@@ -45,4 +45,3 @@ brew info kibana
 
 # 6) plugin
 # /usr/local/var/homebrew/linked/kibana-full/plugins
-
