@@ -19,7 +19,7 @@
 # cd kibana-6.8.7-darwin-x86_64/ 
 
 # run kibana
-cd kibana-7.6.1-darwin-x86_64
+cd kibana-6.8.7-darwin-x86_64
 ./bin/kibana 
 
 # get install info.

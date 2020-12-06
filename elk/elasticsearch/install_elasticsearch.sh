@@ -30,4 +30,4 @@ export PATH=$ES_HOME/bin:$JAVA_HOME/bin:$PATH
 
 # RUN elasticsearch
 cd elasticsearch-7.6.1
-elasticsearch
+bin/elasticsearch

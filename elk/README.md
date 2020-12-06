@@ -8,12 +8,12 @@ export PATH=$ES_HOME/bin:$JAVA_HOME/bin:$PATH
 
 # RUN elasticsearch
 cd elasticsearch-7.6.1
-elasticsearch
+bin/elasticsearch
 ```
 
 ### Run Kibana
 ```bash
-cd kibana-7.6.1-darwin-x86_64
+cd kibana-6.8.7-darwin-x86_64
 ./bin/kibana 
 ```
 
