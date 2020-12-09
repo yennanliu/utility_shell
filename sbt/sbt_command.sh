@@ -31,3 +31,6 @@ sbt clean update
 # APPROACH 3)
 # Try removing the specific dependency that is causing the problem:
 rm -rf ~/.ivy2/cache/commons-codec
+
+5) sbt-buildinfo
+# https://index.scala-lang.org/sbt/sbt-buildinfo/sbt-buildinfo/0.10.0?target=_2.12_1.0
