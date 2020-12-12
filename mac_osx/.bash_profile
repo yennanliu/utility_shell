@@ -6,6 +6,9 @@ export PATH="$HOME/anaconda/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PA
 
 # java8 
 export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+# for macbook air
+# https://justinbagley.rbind.io/2020/01/05/how-to-check-java-version-on-mac/
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
 
 # RabbitMQ
 export PATH=$PATH:/usr/local/sbin
