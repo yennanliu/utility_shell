@@ -5,6 +5,7 @@ export PATH=~/anaconda3/bin:$PATH
 
 # java_home
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home
 
 # hadoop_home
 export HADOOP_HOME=hadoop
@@ -16,8 +17,6 @@ export HADOOP_HDFS_HOME=$HADOOP_HOME
 export YARN_HOME=$HADOOP_HOME
 export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native export
 PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
-
-
 
 # added by travis gem
 [ -f /Users/yennanliu/.travis/travis.sh ] && source /Users/yennanliu/.travis/travis.sh
@@ -43,7 +42,6 @@ export HIVE_HOME=/usr/local/Cellar/hive
 export PATH=$PATH:$HIVE_HOME/3.1.2/bin
 export CLASSPATH=$CLASSPATH:/usr/local/Hadoop/lib/*:.
 export CLASSPATH=$CLASSPATH:/usr/local/hive/lib/*:.
-
 
 # added by travis gem
 [ -f /Users/yennanliu/.travis/travis.sh ] && source /Users/yennanliu/.travis/travis.sh
