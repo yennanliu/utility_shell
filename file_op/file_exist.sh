@@ -1,6 +1,4 @@
  #!/bin/sh
-
-
 <<COMMENT1
 # check if file/directory exist  in Unix 
 # https://unix.stackexchange.com/questions/383773/bash-script-test-whether-file-exists
@@ -25,7 +23,4 @@ else
     echo "the file does not exist."
 fi }
 
-
 file_exist
-
-

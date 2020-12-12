@@ -1,15 +1,7 @@
-
-
 #!/bin/sh
 
-
-
-
 read -r filename
-
-
 #echo ${#filename}
-
 while  [ ! -f $filename ] && [ ${#filename} -gt 0 ] ; 
 do 
 	echo $filename 'not exist'
@@ -21,4 +13,3 @@ done
 	else 
 		echo  $filename 'exist'
 	fi 
-

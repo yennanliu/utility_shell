@@ -1,5 +1,3 @@
-
-
 #!/bin/sh
 
 echo '-------------'
@@ -39,9 +37,3 @@ echo '#### check if directory exist ####'
 [ -d /Users/yennanliu/utility_shell/docker ]
 echo $?
 echo '-------------'
-
-
-
-
-
-

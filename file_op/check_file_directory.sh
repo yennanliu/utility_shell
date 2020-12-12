@@ -1,7 +1,4 @@
 #!/bin/sh
-
-
-
 for name in `ls "$1"` ; do
 
 if 
