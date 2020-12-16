@@ -99,4 +99,8 @@ docker rmi -f $(docker images -q -a)
 
 # 10) OTHERS 
 # search docker online 
-docker search spark 
+docker search spark
+
+# 11) Clean docker cache
+# https://forums.docker.com/t/where-are-images-stored-on-mac-os-x/17165/7
+# ~/Library/Containers/com.docker.docker/Data
