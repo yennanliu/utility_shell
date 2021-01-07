@@ -88,3 +88,31 @@ hadoop fs -ls hdfs://sandbox.hortonworks.com:8020
 # or you could find the key word (8080) within all files 
 # https://stackoverflow.com/questions/16956810/how-do-i-find-all-files-containing-specific-text-on-linux
 grep -rnw '.' -e '8020'
+
+# 13) compress file (BZip2Codec)
+hadoop jar <hadoop_home>/hadoop-streaming-3.1.1.3.1.4.0-315.jar \
+  -Dmapred.job.name=compress_job \
+  -Dmapred.reduce.tasks=5 \
+  -Dmapred.output.compression.codec=org.apache.hadoop.io.compress.BZip2Codec \
+  -Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.BZip2Codec \
+  -input $input \
+  -output $output
+ 
+# 14) check hdfs file size/count
+for y in {2018..2021}
+  do
+   for m in {1..12}
+     do 
+      for d in {1..31}
+        do
+          echo "----"
+          path=hdfs://<hdfs_path>/acc=*/aid=*/date=$y-$m-$d/hour=*
+          echo $path
+          echo "file size :"
+          hadoop fs -du -s $path | awk '{s+=$1} END {printf "%.3fGB\n", s/1000000000}'
+          echo "file count :"
+          hdfs dfs -ls $path | wc -l
+        done
+    done
+ done
+ 
