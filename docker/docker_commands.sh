@@ -68,6 +68,9 @@ docker exec -u root -it <Container ID> bash
 # 5) CHECK LOG 
 docker logs [OPTIONS] CONTAINER
 
+# 5)' CHECK live tail LOG
+# https://stackoverflow.com/questions/52119832/how-to-tail-a-docker-log-from-the-current-position-in-the-log-without-seeing-the
+docker logs -f --tail 10  <ur_docker_instance_id>
 
 # 6) SHOW RESOURCE USING 
 docker stats [OPTIONS] [CONTAINER...]
