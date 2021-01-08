@@ -37,3 +37,7 @@ yennanl@macbookpro:~$ docker logs fb52a9ca0f03
 COMMENT1
 
 docker logs  <ur_docker_instance_id>
+
+# check live tail logs
+# https://stackoverflow.com/questions/52119832/how-to-tail-a-docker-log-from-the-current-position-in-the-log-without-seeing-the
+docker logs -f --tail 10  <ur_docker_instance_id>
