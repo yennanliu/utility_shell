@@ -122,3 +122,6 @@ for y in {2018..2021}
 # chown USER:GROUP FILE
 # example :
 # sudo chown dev_user:dev_user /opt/dev/file
+
+# 16) count HDFS files
+hdfs dfs -count <HDFS_FILE_PATH>/*
