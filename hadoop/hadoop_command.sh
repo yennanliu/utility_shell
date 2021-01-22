@@ -5,6 +5,10 @@
 
 # hadoop command : https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#cat
 
+# 0) show all hidden files
+# https://www.tecmint.com/hide-files-and-directories-in-linux/#:~:text=To%20view%20hidden%20files%2C%20run,al%20flag%20for%20long%20listing.&text=From%20a%20GUI%20file%20manager,view%20hidden%20files%20or%20directories.
+ls -al <path>
+
 # 1) login 
 chmod 600 <ssh_key>
 ssh -i <ssh_key> <user>@<hadoop_ip>
