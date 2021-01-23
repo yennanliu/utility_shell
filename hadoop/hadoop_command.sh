@@ -13,6 +13,16 @@ ls -al <path>
 chmod 600 <ssh_key>
 ssh -i <ssh_key> <user>@<hadoop_ip>
 
+# https://www.youtube.com/watch?v=hrZv4xG6VHM&list=PLmOn9nNkQxJEs3ixNOLlilPnNarGtywL9&index=85
+# 2) push file from here to another server
+scp -r <file> <user>@<hadoop_ip>/<file>
+
+# 2)' pull file from another server to here
+scp -r <user>@<hadoop_ip>/<file> <file> 
+
+# 2)' copy from serverto server
+scp -r <user>@<hadoop1_ip>/<file> <user>@<hadoop2_ip>/<file>
+
 # 2) copy files to local 
 scp -i  <ssh_key> -r <ssh_key> <user>@<hadoop_ip> . 
 
