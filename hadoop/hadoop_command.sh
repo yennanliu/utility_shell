@@ -145,8 +145,8 @@ for y in {2018..2021}
 hdfs dfs -count <HDFS_FILE_PATH>/*
 
 # 17) read HDFS data
-hdfs dfs -text  <HDFS_FILE> | shuf -n 3
+hdfs dfs -text  <HDFS_FILE> 
 
-# 17)' read HDFS data (first N lines)
+# 17)' read HDFS data (first 3 lines)
 # https://stackoverflow.com/questions/22090833/get-a-few-lines-of-hdfs-data
-hdfs dfs -text  <HDFS_FILE>
+hdfs dfs -text  <HDFS_FILE> | shuf -n 3
