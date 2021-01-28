@@ -28,6 +28,10 @@ d7405fb234
 """
 COMMENT1
 
+# 0) Find machine internal ip
+# https://apple.stackexchange.com/questions/20547/how-do-i-find-my-ip-address-from-the-command-line
+ipconfig getifaddr en0
+
 # 1) LAUNCH --------------------------
 # launch docker 
 docker 
