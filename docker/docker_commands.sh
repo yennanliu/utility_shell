@@ -111,3 +111,19 @@ docker search spark
 # 11) Clean docker cache
 # https://forums.docker.com/t/where-are-images-stored-on-mac-os-x/17165/7
 # ~/Library/Containers/com.docker.docker/Data
+
+# 13) connect to local machine from docker instance
+# examples 
+# root@fb34d5dc1b8e:/opt/airflow# ssh yennan.liu@192.168.0.178
+# Password:
+# Last login: Thu Jan 28 16:57:06 2021
+# (base) yenliu.liu@SOMEPC30008 ~ %
+# (base) yenliu.liu@SOMEPC30008 ~ %
+# (base) yenliu.liu@SOMEPC30008 ~ %
+# (base) yenliu.liu@SOMEPC30008 ~ % Connection to 192.168.0.178 closed by remote host.
+# check local machine inernal ip:
+ipconfig getifaddr en0
+# ssh to local machine
+ssh <local_user>@<local_ip>
+# input password
+# enjoy!
