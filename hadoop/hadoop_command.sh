@@ -150,3 +150,23 @@ hdfs dfs -text  <HDFS_FILE>
 # 17)' read HDFS data (first 3 lines)
 # https://stackoverflow.com/questions/22090833/get-a-few-lines-of-hdfs-data
 hdfs dfs -text  <HDFS_FILE> | shuf -n 3
+
+# 18) distcp (copy HDFS files)
+hadoop distcp \
+ -Dmapred.job.name='distcp job' \
+ -Dmapreduce.job.hdfs-servers.token-renewal.exclude=<name_service> \
+ -Dmapreduce.map.memory.mb=8192 -Dmapred.job.reduce.memory.mb=8192 \
+ -atomic -p -m 200 -bandwidth 4000 \
+ $from_path $to_path
+ 
+# 19) compress HDFS
+# we need "-mapper "cut -f 1" in the compress command to remove key prefix in the output data 
+# https://stackoverflow.com/questions/7153087/hadoop-compress-file-in-hdfs/9572706
+hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.1.1.3.1.4.0-315.jar \
+ -Dmapred.job.name=compress_job \
+ -Dmapred.reduce.tasks=5 \
+ -Dmapreduce.output.fileoutputformat.compress=true \
+ -Dmapred.output.compression.codec=org.apache.hadoop.io.compress.BZip2Codec \
+ -Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.BZip2Codec \
+ -input $from_path \
+ -output $to_path -mapper "cut -f 1"
