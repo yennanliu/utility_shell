@@ -127,3 +127,13 @@ ipconfig getifaddr en0
 ssh <local_user>@<local_ip>
 # input password
 # enjoy!
+
+# 11) get container id (airflow_jpw_worker_1 as example here)
+containers_id="`docker ps -a | grep airflow_jpw_worker_1 | awk '{print $1}'`"
+echo $containers_id
+
+# 12) outside container and run command on it (container), (airflow_jpw_worker_1 as example here)
+containers_id="`docker ps -a | grep airflow_jpw_worker_1 | awk '{print $1}'`"
+echo $containers_id
+docker exec -it $containers_id /bin/sh -c "pwd && ls"
+docker exec -it $containers_id /bin/sh -c "python"
