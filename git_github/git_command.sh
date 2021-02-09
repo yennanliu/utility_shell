@@ -85,3 +85,8 @@ git checkout dev1
 # now consider the last commit in master branch is "a90538b1cca7e"
 # so now run git branch make basis on mastet's last commit
 git rebase a90538b1cca7e
+
+# 15) statsh and apply stash
+# https://stackoverflow.com/questions/20409853/git-stash-and-apply
+git stash
+git stash apply
