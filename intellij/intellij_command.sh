@@ -17,3 +17,7 @@ shift + shift
 
 # 5) Change font size
 # preferences -> Editor -> Font
+
+# 6) format code
+# open intellJ and click the script/program you wanna format in the intellJ console
+command + option + L
