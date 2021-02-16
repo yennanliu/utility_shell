@@ -137,3 +137,15 @@ containers_id="`docker ps -a | grep airflow_jpw_worker_1 | awk '{print $1}'`"
 echo $containers_id
 docker exec -it $containers_id /bin/sh -c "pwd && ls"
 docker exec -it $containers_id /bin/sh -c "python"
+
+# 13) solve "The path /tmp/flink-savepoints-directory is not shared from the host and is not known to Docker." issue
+# https://www.ionos.com/digitalguide/server/configuration/showing-hidden-files-on-a-mac/
+# 1) click docker icon
+# 2) click "Preferences"
+# 3) click "Resources" -> click "FILE SHARING"
+# 4) click "+"
+# 5) and press `cmd + shift + [.] ` in order to show "hidden" path (e.g. /tmp, /opt...)
+# 6) add the all needed paths (as error msg show in CLI when build docker-compose)
+# 7) re-start the docker app
+# 8) build again
+# 9) done!
