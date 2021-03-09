@@ -36,10 +36,7 @@
 #for i in ${PIDS}; do { echo "Killing $i"; kill -9 $i; }; done;
 
 
-
-
 ### backup last version script ###
-
 
 function kill_chrome_run_over_3_hour() {
 
@@ -75,12 +72,7 @@ done
 
 """
 COMMENT1
-
-
 #======================
-
-
-
 
 function kill_chrome_run_over_1_day() {
 # FINAL VERSION 
@@ -167,19 +159,3 @@ echo "KILL idle jobs run over 3 hour"
 echo ""
 kill_chrome_run_over_3_hr
 kill_firefox_run_over_3_hr 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
