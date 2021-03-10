@@ -44,4 +44,8 @@ ALTER TABLE test_table SET SERDEPROPERTIES ('ignore.malformed.json' = 'true');
 
 # 10) load HDFS data into table (dev)
 # load hdfs raw data into hive table
-load data inpath '<hdfs_data_path>' into table test_table; --partition(uid=1557);
+# https://bigdataprogrammers.com/load-files-into-hive-partitioned-table/
+# https://stackoverflow.com/questions/39666932/loading-data-to-hive-static-partition-table-using-load-command
+load data inpath '<hdfs_data_path>' into table test_table partition(uid=1556);
+load data inpath '<hdfs_data_path>' into table test_table partition(uid=1557);
+load data inpath '<hdfs_data_path>' into table test_table partition(uid=1558);
