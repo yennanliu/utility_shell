@@ -21,3 +21,8 @@ shift + shift
 # 6) format code
 # open intellJ and click the script/program you wanna format in the intellJ console
 command + option + L
+
+# 7) auto generate getter, setter (java)
+# https://www.jetbrains.com/help/idea/generating-code.html#generate-getters-setters
+# code -> generate -> getter
+# code -> generate -> setter
