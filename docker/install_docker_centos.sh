@@ -19,7 +19,8 @@ sudo yum-config-manager \
 # install Docker Engine
 #sudo yum install docker-ce docker-ce-cli containerd.io --skip-broken
 
-VERSION_STRING=18.09.1
+#VERSION_STRING=18.09.1
+VERSION_STRING=17.12.1.ce-1.el7.centos
 sudo yum install docker-ce-$VERSION_STRING docker-ce-cli-$VERSION_STRING containerd.io
 
 # start docker
