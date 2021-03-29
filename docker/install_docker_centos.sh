@@ -25,3 +25,9 @@ sudo yum install docker-ce-$VERSION_STRING docker-ce-cli-$VERSION_STRING contain
 
 # start docker
 sudo systemctl start docker
+
+
+# remove installed docker engine
+sudo yum remove docker-ce docker-ce-cli containerd.io
+sudo rm -rf /var/lib/docker
+sudo rm -rf /var/lib/containerd
