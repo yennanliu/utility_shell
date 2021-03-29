@@ -32,3 +32,9 @@ sudo systemctl start docker
 sudo yum remove docker-ce docker-ce-cli containerd.io
 sudo rm -rf /var/lib/docker
 sudo rm -rf /var/lib/containerd
+# https://blog.csdn.net/weimenglala/article/details/102736921
+# check to-delete list
+yum list installed | grep docker
+yum -y remove docker.x86_64
+yum -y remove docker-client.x86_64
+yum -y remove docker-common.x86_64
