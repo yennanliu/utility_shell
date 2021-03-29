@@ -1,4 +1,5 @@
-# ref : https://docs.docker.com/engine/install/centos/
+# ref1 : https://docs.docker.com/engine/install/centos/
+# ref2 : https://phoenixnap.com/kb/how-to-install-docker-centos-7
 # login as root user
 
 # uninstall old versions
