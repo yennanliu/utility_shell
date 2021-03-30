@@ -180,3 +180,8 @@ hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.1.1.3.1.4.0-315.jar \
  -Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.BZip2Codec \
  -input $from_path \
  -output $to_path -mapper "cut -f 1"
+ 
+ # 20) use different hadoop clinet (same server)
+ # kdestroy : destroy current hadoop client profile
+ kdestroy && source <hadoop_client>/.bashrc &&  KRB5_CONFIG='<hadoop_client>/krb5.conf' kinit -kt <hadoop_key_tab>.keytab user@aaa.HADOOP.bbb.COM
+ 
