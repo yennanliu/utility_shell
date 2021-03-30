@@ -9,21 +9,31 @@
 # https://www.tecmint.com/hide-files-and-directories-in-linux/#:~:text=To%20view%20hidden%20files%2C%20run,al%20flag%20for%20long%20listing.&text=From%20a%20GUI%20file%20manager,view%20hidden%20files%20or%20directories.
 ls -al <path>
 
+# 0)' Change file permission (root -> user)
+# sudo chown user@user module/ -R
+ sudo chown <user>@<user> <file_name>/ -R
+
 # 1) login 
 chmod 600 <ssh_key>
 ssh -i <ssh_key> <user>@<hadoop_ip>
 
+# 2) push file from current server to another server
+# -r : recursion
+# pattern :  scp -r $pdir/$filename $user@$host$pdir/$filename
 # https://www.youtube.com/watch?v=hrZv4xG6VHM&list=PLmOn9nNkQxJEs3ixNOLlilPnNarGtywL9&index=85
-# 2) push file from here to another server
+# https://www.youtube.com/watch?v=GkqVLAEK_08&list=PLmOn9nNkQxJEs3ixNOLlilPnNarGtywL9&index=33
+# scp -r module root@haoop102:/opt/module
 scp -r <file> <user>@<hadoop_ip>/<file>
 
 # 2)' pull file from another server to here
+# scp -r module user@haoop101:/opt/module ./
 scp -r <user>@<hadoop_ip>/<file> <file> 
 
-# 2)' copy from serverto server
+# 2)'''' copy from the other server to another server
+# scp -r root@haoop101:/opt/module root@haoop104:/opt/module
 scp -r <user>@<hadoop1_ip>/<file> <user>@<hadoop2_ip>/<file>
 
-# 2) copy files to local 
+# 2)''' copy files to local 
 scp -i  <ssh_key> -r <ssh_key> <user>@<hadoop_ip> . 
 
 # 3) copy file from s3 
