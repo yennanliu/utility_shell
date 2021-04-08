@@ -193,3 +193,7 @@ hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.1.1.3.1.4.0-315.jar \
  #  -> https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileStatus.html
  #  -> example scala code : val subPaths = fs.listFiles(basePath, true)
 hdfs dfs -checksum  <hdfs_file_path>
+
+# 21) get stats (file created time ..)
+# https://www.edureka.co/community/6712/hadoop-fs-stat-command
+hdfs dfs -stat   <hdfs_file_path>
