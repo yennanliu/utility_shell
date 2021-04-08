@@ -185,3 +185,11 @@ hadoop jar share/hadoop/tools/lib/hadoop-streaming-3.1.1.3.1.4.0-315.jar \
  # kdestroy : destroy current hadoop client profile
  kdestroy && source <hadoop_client>/.bashrc &&  KRB5_CONFIG='<hadoop_client>/krb5.conf' kinit -kt <hadoop_key_tab>.keytab user@aaa.HADOOP.bbb.COM
  
+ # 20) get checksum
+ # https://stackoverflow.com/questions/31920033/checksum-verification-in-hadoop
+ # note : checksum can only work on SINGLE file, if want to check multiple files, need to for loop every file
+ #  -> hadoop java client offers lib doing "recursive" hdfs dfs -ls 
+ #  -> https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileSystem.html
+ #  -> https://hadoop.apache.org/docs/r2.8.2/api/org/apache/hadoop/fs/FileStatus.html
+ #  -> example scala code : val subPaths = fs.listFiles(basePath, true)
+hdfs dfs -checksum  <hdfs_file_path>
