@@ -65,6 +65,8 @@ hadoop fs -put NYC_Taxi_Pipeline/data data
 # 10) HDFS remove directory
 # https://stackoverflow.com/questions/13529114/how-to-delete-a-directory-from-hadoop-cluster-which-is-having-comma-in-its-na
 hdfs dfs -rm -r <directory_name>
+# 10)' HDFS delete by batch
+# check by hdfs dfs -count <path> to see the no. of files -> and delete in each batch
 
 # 11) HDFS check file size
 # Ref 1)
