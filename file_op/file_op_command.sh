@@ -9,3 +9,7 @@ rm -v --  -Dmapred.job.reduce.memory.mb=8192
 # https://stackoverflow.com/questions/9081/grep-a-file-but-show-several-surrounding-lines
 # grep -B 3 -A 2 foo README.txt
 cat my_job.log | grep Failed -B 3 -A 2
+
+# 3) get unique output from cat file
+# https://stackoverflow.com/questions/618378/select-unique-or-distinct-values-from-a-list-in-unix-shell-script
+cat test.txt | sort | uniq
