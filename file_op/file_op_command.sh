@@ -13,3 +13,7 @@ cat my_job.log | grep Failed -B 3 -A 2
 # 3) get unique output from cat file
 # https://stackoverflow.com/questions/618378/select-unique-or-distinct-values-from-a-list-in-unix-shell-script
 cat test.txt | sort | uniq
+
+# 3-1)' get unique output and count it from cat file
+# https://stackoverflow.com/questions/380817/best-way-to-simulate-group-by-from-bash
+cat test.txt | sort | uniq -c
