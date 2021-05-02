@@ -20,8 +20,10 @@ export PATH=$PATH:/usr/local/sbin
 # The next line enables shell command completion for gcloud.
 #if [ -f '/Users/yennanliu/Downloads/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/yennanliu/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
-# maven
-export M2_HOME=/Users/yennanliu/apache-maven-3.6.3
+# maven ( need to download the Binary tar.gz file)
+# https://maven.apache.org/download.cgi
+# https://maven.apache.org/install.html
+export M2_HOME=/Users/$USER/apache-maven-3.6.3
 export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xmx1048m -Xms256m -XX:MaxPermSize=312M"
 export PATH=$M2:$PATH
