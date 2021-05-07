@@ -91,6 +91,8 @@ hdfs dfs -rm -r <directory_name>
 # hdfs dfs -du <directory_name>
 # or
 hdfs dfs -du -h <directory_name>
+# or 
+hdfs dfs -du -h -s <directory_name>  # sum 
 
 # 11)' HDFS check file size (in GB)
 hadoop fs -du -s <directory_name>/* | awk '{s+=$1} END {printf "%.3fGB\n", s/1000000000}'
@@ -199,3 +201,21 @@ hdfs dfs -checksum  <hdfs_file_path>
 # 21) get stats (file created time ..)
 # https://www.edureka.co/community/6712/hadoop-fs-stat-command
 hdfs dfs -stat   <hdfs_file_path>
+
+# 22) permission
+# https://hadoop.apache.org/docs/r2.4.1/hadoop-project-dist/hadoop-common/FileSystemShell.html
+# -chgrp, -chmod, -chown
+
+# Change group association of files.
+hdfs dfs -chgrp  <hdfs_file_path>
+
+# Change the permissions of files
+hdfs dfs -chmod  <hdfs_file_path>
+
+# Change the owner of files
+hdfs dfs -chown  <hdfs_file_path>
+
+# 23) HDFS Resource Manager API (hadoop 3.x)
+# https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html
+# curl http://<HDFS_RM_URI>:8088/ws/v1/cluster
+# curl http://<HDFS_RM_URI>:8088/ws/v1/cluster/apps
