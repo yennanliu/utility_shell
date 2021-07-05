@@ -3,6 +3,6 @@
 vi <file_name>
 # in the edit mood
 :set paste
-# then press i, should see the insert <paste> mood
+# then press i, should see the "-- INSERT (paste) --" mood
 i
 # paste code with format
