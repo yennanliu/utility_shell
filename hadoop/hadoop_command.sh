@@ -219,3 +219,6 @@ hdfs dfs -chown  <hdfs_file_path>
 # https://hadoop.apache.org/docs/current/hadoop-yarn/hadoop-yarn-site/ResourceManagerRest.html
 # curl http://<HDFS_RM_URI>:8088/ws/v1/cluster
 # curl http://<HDFS_RM_URI>:8088/ws/v1/cluster/apps
+
+# 23) check if HDFS path exists
+hdfs dfs -test -d <hdfs_path>
