@@ -222,3 +222,15 @@ hdfs dfs -chown  <hdfs_file_path>
 
 # 23) check if HDFS path exists
 hdfs dfs -test -d <hdfs_path>
+
+# 24) check HDFS last modified time
+# https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html#stat
+# https://www.reddit.com/r/bigdata/comments/cbhk9p/is_there_a_way_to_find_the_last_accessed_time_of/
+# https://www.modb.pro/db/27010
+#-----------------------------------------------------------------------------------------
+# NOTE :
+# atime : file last access time
+# mtime : file's data last modified time (file content was changed)
+# ctime : file status last changed time (could be write in, auth change, link...)
+#------------------------------------------------------------------------------------------
+hadoop fs -stat "type:%F perm:%a %u:%g size:%b mtime:%y atime:%x name:%n" <Complete_HDFS_Path>
