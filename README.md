@@ -300,7 +300,4 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 <details>
 <summary>TODO</summary>
 
-* pipeline 
-  * dev 
-
 </details>
