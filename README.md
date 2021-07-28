@@ -1,4 +1,4 @@
-# utility_shell
+# Utility_Shell
 
 - Collection of `shell scripts/commands` for purposes 
   - environment set up 
