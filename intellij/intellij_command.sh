@@ -3,6 +3,9 @@
 # 1) OFFICIAL SHORTCUT FOR MAC
 # https://www.jetbrains.com/help/rider/Reference_Keymap_Rider_OSX.html#top
 
+# 2) intellJ short cut viddeo
+# https://www.youtube.com/watch?v=qxkheCo8oF4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=410
+
 # 2) find code used in project 
 cmd + b
 
@@ -26,3 +29,7 @@ command + option + L
 # https://www.jetbrains.com/help/idea/generating-code.html#generate-getters-setters
 # code -> generate -> getter
 # code -> generate -> setter
+
+# 8) Change font size via mouse wheel
+# https://www.youtube.com/watch?v=qxkheCo8oF4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=410
+# preference -> Editor -> General -> Mouse control -> Change font size with Command + Mouse wheel
