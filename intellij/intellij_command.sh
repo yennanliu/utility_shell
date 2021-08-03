@@ -33,3 +33,8 @@ command + option + L
 # 8) Change font size via mouse wheel
 # https://www.youtube.com/watch?v=qxkheCo8oF4&list=PLmOn9nNkQxJH0qBIrtV6otI0Ep4o2q67A&index=410
 # preference -> Editor -> General -> Mouse control -> Change font size with Command + Mouse wheel
+
+# 9) stackoverflow when build/run
+# https://stackoverflow.com/questions/44675448/intellij-idea-stackoverflowerror-on-build-project
+# If you are getting the issue in Run/Debug configuration, 
+#  -> you can change the same in Run->Edit Configurations->VM parameters: -Xms512M -Xmx1024M -Xss4M -XX:+CMSClassUnloadingEnabled
