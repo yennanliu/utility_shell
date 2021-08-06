@@ -2,6 +2,9 @@
 
 SELECT
 time_stamp,
-year(from_utc_timestamp(from_unixtime(time_stamp), 'Asia/Tokyo')) 
+year(from_utc_timestamp(from_unixtime(time_stamp), 'Asia/Tokyo')) AS year,
+month(from_utc_timestamp(from_unixtime(time_stamp), 'Asia/Tokyo')) AS month,
+day(from_utc_timestamp(from_unixtime(time_stamp), 'Asia/Tokyo')) AS day,
+hour(from_utc_timestamp(from_unixtime(time_stamp), 'Asia/Tokyo')) AS hour
 FROM 
 hive_table
