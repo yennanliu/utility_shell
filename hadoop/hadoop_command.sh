@@ -72,16 +72,16 @@ hdfs dfs -rm -r <directory_name>
 # Ref 1)
 # http://hadoop.apache.org/docs/r3.0.0/hadoop-project-dist/hadoop-common/FileSystemShell.html#du
 # * du
-# 	Usage: hadoop fs -du [-s] [-h] [-v] [-x] URI [URI ...]
+#   Usage: hadoop fs -du [-s] [-h] [-v] [-x] URI [URI ...]
 #
-# 	Displays sizes of files and directories contained in the given directory or the length of a file in case its just a file.
+#   Displays sizes of files and directories contained in the given directory or the length of a file in case its just a file.
 #
-# 	Options:
+#   Options:
 #
-# 		The -s option will result in an aggregate summary of file lengths being displayed, rather than the individual files. Without the -s option, calculation is done by going 1-level deep from the given path.
-# 		The -h option will format file sizes in a “human-readable” fashion (e.g 64.0m instead of 67108864)
-# 		The -v option will display the names of columns as a header line.
-# 		The -x option will exclude snapshots from the result calculation. Without the -x option (default), the result is always calculated from all INodes, including all snapshots under the given path.
+#     The -s option will result in an aggregate summary of file lengths being displayed, rather than the individual files. Without the -s option, calculation is done by going 1-level deep from the given path.
+#     The -h option will format file sizes in a “human-readable” fashion (e.g 64.0m instead of 67108864)
+#     The -v option will display the names of columns as a header line.
+#     The -x option will exclude snapshots from the result calculation. Without the -x option (default), the result is always calculated from all INodes, including all snapshots under the given path.
 #
 # Ref 2)
 # https://www.edureka.co/community/2733/how-to-check-size-of-hdfs-directory
@@ -242,8 +242,8 @@ hdfs debug recoverLease -path <hdfs_path>
 # 25') for loop doing above (all paths under a file)
 paths=$(hdfs dfs -ls <hdfs_path>)
 for path in $paths
-	do
-		if [[ $path == *"hdfs://<nameservice>/user/<user>/warehouse"* ]]; then
-			hdfs dfs -checksum $path
-		fi
-	done
+  do
+    if [[ $path == *"hdfs://<nameservice>/user/<user>/warehouse"* ]]; then
+      hdfs dfs -checksum $path
+    fi
+  done
