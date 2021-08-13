@@ -234,3 +234,16 @@ hdfs dfs -test -d <hdfs_path>
 # ctime : file status last changed time (could be write in, auth change, link...)
 #------------------------------------------------------------------------------------------
 hadoop fs -stat "type:%F perm:%a %u:%g size:%b mtime:%y atime:%x name:%n" <Complete_HDFS_Path>
+
+# 25) Force closing a HDFS file still open (because uncorrectly copied)
+# https://community.cloudera.com/t5/Support-Questions/Force-closing-a-HDFS-file-still-open-because-uncorrectly/td-p/180647
+hdfs debug recoverLease -path <hdfs_path>
+
+# 25') for loop doing above (all paths under a file)
+paths=$(hdfs dfs -ls <hdfs_path>)
+for path in $paths
+	do
+		if [[ $path == *"hdfs://<nameservice>/user/<user>/warehouse"* ]]; then
+			hdfs dfs -checksum $path
+		fi
+	done
