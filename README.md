@@ -1,13 +1,13 @@
 # Utility_Shell
 
-- Collection of `shell scripts/commands` for purposes 
+- Collection of `shell scripts/commands` for cases 
   - environment set up 
   - system configuration 
   - DB operation commands 
   - file/data manipulation  
   - programming scripts trigger 
 
-## File structure
+## File Structure
 ```bash
 ├── GPG
 ├── Jenkins
