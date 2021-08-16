@@ -5,7 +5,7 @@
   - system configuration 
   - DB operation commands 
   - file/data manipulation  
-  - programming scripts trigger
+  - useful bash scripts
   - others
 
 ## File Structure
