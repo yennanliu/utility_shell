@@ -13,36 +13,41 @@
 ├── GPG
 ├── Jenkins
 ├── README.md
+├── Vagrant
 ├── airflow
 ├── alembic
 ├── archived
 ├── bq
+├── cat
+├── centos
 ├── check_ip.sh
 ├── command_menu.sh
+├── create_yaml_with_pass.sh
+├── data
 ├── dbt
 ├── df_test.csv
 ├── docker
-├── elasticsearch
+├── elk
 ├── emr
-├── example.dump
 ├── file_op
+├── flink
 ├── gcloud
-├── git_version_control_github
-├── github_push_when_2factor_auth.sh
-├── github_save_userid_pass.sh
+├── git_github
 ├── hadoop
+├── hive
+├── intellij
+├── internet
+├── iterm
 ├── json_csv_xml_txt
+├── k8s
 ├── kafka
 ├── linux
-├── mac_anaconda_env_start.sh
-├── mac_change_kernels_jupyter_notebook.sh
 ├── mac_osx
+├── mac_osx_m1
 ├── mac_ubuntu
 ├── maven_
 ├── mongo
 ├── mysql
-├── nb_2_html_markdown.sh
-├── nb_show_nbhtml.sh
 ├── network
 ├── pig
 ├── pipeline
@@ -51,15 +56,15 @@
 ├── redshift
 ├── regular_expressions
 ├── s3_ops
-├── set_up_ssh_key.sh
-├── show_crontab.sh
+├── sbt
 ├── snowflake
 ├── spark
+├── sql_sever_database
 ├── sqlite
 ├── string_op
-├── system_info.sh
-├── system_path.sh
-└── ubuntu_ops
+├── text
+├── ubuntu_ops
+└── yarn
 ```
 
 
@@ -95,8 +100,6 @@ map auto_home          0         0         0   100%       0                   0 
 </pre>
       
 ***********************************
-
-
 ```
 
 ```bash
