@@ -1,9 +1,8 @@
 # Utility_Shell
 
 - Collection of `shell scripts/commands` for cases 
-  - environment set up 
-  - system configuration 
-  - DB operation commands 
+  - env set up 
+  - system config 
   - file/data manipulation  
   - useful bash scripts
   - others
