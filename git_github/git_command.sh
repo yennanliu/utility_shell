@@ -90,3 +90,9 @@ git rebase a90538b1cca7e
 # https://stackoverflow.com/questions/20409853/git-stash-and-apply
 git stash
 git stash apply
+
+# 16) git clone repo with SPECIFIC branch from remote
+# https://stackoverflow.com/questions/1911109/how-do-i-clone-a-specific-git-branch
+git clone -b <branch_name> <remote_repo>
+# example :
+# git feature001/run-on-py38 https://github.com/yennanliu/dj-restaurants.git
