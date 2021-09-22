@@ -247,3 +247,8 @@ for path in $paths
       hdfs dfs -checksum $path
     fi
   done
+  
+# 26) hdfs grant file permission
+# plz ref linux file permission, same idea
+# e.g. 755 : owner/group/others
+hdfs dfs -chmod -R 755 <hdfd_path>
