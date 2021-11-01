@@ -252,3 +252,10 @@ for path in $paths
 # plz ref linux file permission, same idea
 # e.g. 755 : owner/group/others
 hdfs dfs -chmod -R 755 <hdfd_path>
+
+# 26) record count for files under HDFS directory
+# count on 1 hdfs file
+hdfs dfs -text hdfs://<nameservice>/user/<user>/warehouse//year=2021/month=10/day=30/hour=00/event=<event>/<file_name> | wc -l
+# count on files under HDFS directory
+hdfs dfs -text hdfs://<nameservice>/user/<user>/warehouse//year=2021/month=10/day=30/hour=*/event=*/* | wc -l
+
