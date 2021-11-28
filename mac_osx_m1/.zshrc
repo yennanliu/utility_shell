@@ -101,5 +101,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# alias conda
-alias conda="/Users/yennanliu/miniforge3/bin/conda"
+#alias conda="/Users/yennanliu/miniforge3/bin/conda"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/yennanliu/miniforge3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
+        . "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
+    fi
+fi
+#unset __conda_setup
+# <<< conda initialize <<<
