@@ -10,5 +10,9 @@ mv Miniforge3-MacOSX-arm64.sh ~/
 Chmod +x Miniforge3-MacOSX-arm64.sh
 ./Miniforge3-MacOSX-arm64.sh
 
-# Step 4) validate (close the terminal and restart)
+# step 4) (optional) alias conda
+# https://stackoverflow.com/questions/8967843/how-do-i-create-a-bash-alias
+alias conda="/Users/yennanliu/miniforge3/bin/conda"
+
+# Step 5) validate (close the terminal and restart)
 conda --version
