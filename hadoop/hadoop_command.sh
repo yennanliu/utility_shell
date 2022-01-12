@@ -259,3 +259,12 @@ hdfs dfs -text hdfs://<nameservice>/user/<user>/warehouse//year=2021/month=10/da
 # count on files under HDFS directory
 hdfs dfs -text hdfs://<nameservice>/user/<user>/warehouse//year=2021/month=10/day=30/hour=*/event=*/* | wc -l
 
+# 27) check keytab Principal
+klist -kte <ur_key_tab>.keytab
+# example output
+# Keytab name: FILE:<ur_key_tab>.keytab
+# KVNO Timestamp Principal
+# ---- ------------------- ------------------------------------------------------
+# 2 02/09/2018 08:05:38 user@xx.yyy.zzz.COM (aes256-cts-hmac-sha1-96)
+# 2 02/09/2018 08:05:38 user@xx.yyy.zzz.COM (aes128-cts-hmac-sha1-96)
+# 2 02/09/2018 08:05:38 user@xxx.yyy.zzz.COM (arcfour-hmac)
