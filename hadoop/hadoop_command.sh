@@ -268,3 +268,20 @@ klist -kte <ur_key_tab>.keytab
 # 2 02/09/2018 08:05:38 user@xx.yyy.zzz.COM (aes256-cts-hmac-sha1-96)
 # 2 02/09/2018 08:05:38 user@xx.yyy.zzz.COM (aes128-cts-hmac-sha1-96)
 # 2 02/09/2018 08:05:38 user@xxx.yyy.zzz.COM (arcfour-hmac)
+
+# 28) get file data count
+hr_array=()
+data_count=()
+for hr in {00..23}
+do
+    HDFS_PATH=hdfs://<my_hdfs_path>/month=$month/day=$day/hour=$hr/*/*
+    echo '---->' $hr $HDFS_PATH
+    data_count+=("$hr")
+    data_count+=(`hdfs dfs -text $HDFS_PATH | wc -l`)
+    echo $data_count
+done
+
+for i in "${hr_array[@]}"; 
+    do 
+      echo "${hr_array[$i]}" "${data_count[$i]}"
+    done
