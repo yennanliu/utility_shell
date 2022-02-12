@@ -38,3 +38,10 @@ command + option + L
 # https://stackoverflow.com/questions/44675448/intellij-idea-stackoverflowerror-on-build-project
 # If you are getting the issue in Run/Debug configuration, 
 #  -> you can change the same in Run->Edit Configurations->VM parameters: -Xms512M -Xmx1024M -Xss4M -XX:+CMSClassUnloadingEnabled
+
+# 10) auto try-catch-finally (intellJ @ macbook)
+# https://stackoverflow.com/questions/2583983/wrap-with-try-catch-in-intellij/2583999
+# step 1) select plan-to-change-code
+# step 2) "command" + "option" + "t"
+# step 3) select "try-catch-finally"
+# done !
