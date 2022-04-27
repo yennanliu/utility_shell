@@ -290,6 +290,9 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 
 ## Ref 
 
+<details>
+<summary>Ref</summary>
+		
 ### Posgre
 * Posgre UDF 
 	* https://www.tutorialspoint.com/postgresql/postgresql_functions.htm
@@ -303,6 +306,8 @@ source activate pyspark_dev && export SPARK_HOME=/Users/$USER/spark && export PA
 * use `sed` to find and  replace string in file
   * https://linuxize.com/post/how-to-use-sed-to-find-and-replace-string-in-files/
 
+</details>
+		
 ### TODO 
 
 <details>
