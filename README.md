@@ -8,6 +8,10 @@
   - others
 
 ## File Structure
+
+<details>
+<summary>File Structure</summary>
+	
 ```bash
 ├── GPG
 ├── Jenkins
@@ -65,8 +69,9 @@
 ├── ubuntu_ops
 └── yarn
 ```
-
-
+	
+</details>
+	
 ## RUN DEMO 
 
 <details>
