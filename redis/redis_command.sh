@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# 0) connect to local redis (defult, no pwd)
+brew services start redis
+redis-cli 
+
 # 1) connect to remote redis
 # https://www.1ju.org/redis/redis-quick-guide
 redis-cli -h host -p port -a password
