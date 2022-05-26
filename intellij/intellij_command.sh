@@ -45,3 +45,9 @@ command + option + L
 # step 2) "command" + "option" + "t"
 # step 3) select "try-catch-finally"
 # done !
+
+# 11) delete intellJ (mac)
+# https://www.jetbrains.com/help/idea/uninstall.html#standalone
+# step 1) delete app under Applications
+# step 2) delete cache
+ls ~/Library/Caches/JetBrains/
