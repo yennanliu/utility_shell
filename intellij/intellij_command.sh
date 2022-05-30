@@ -58,3 +58,11 @@ ls ~/Library/Caches/JetBrains/
 # step 3) in popup, enter new lines of code
 # step 4) click "replace all"
 # step 5) done!
+
+# 13) make code as source code / source test...
+# solve intellJ error : java file outside of source root
+# https://blog.csdn.net/ZHOU_VIP/article/details/117453177
+# https://blog.csdn.net/weixin_43876778/article/details/109036140
+# step 1) right click Directory
+# step 2) Mark Directory as --> Sources Root(tell IntelliJ IDEA，Java文件夹及其子文件夹中包含的源代码，可以编译为构建过程的一部分)
+# step 3) done
