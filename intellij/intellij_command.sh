@@ -51,3 +51,10 @@ command + option + L
 # step 1) delete app under Applications
 # step 2) delete cache
 ls ~/Library/Caches/JetBrains/
+
+# 12) replace code block (multi-line of code)
+# step 1) select lines of code
+# step 2) command + shift + r
+# step 3) in popup, enter new lines of code
+# step 4) click "replace all"
+# step 5) done!
