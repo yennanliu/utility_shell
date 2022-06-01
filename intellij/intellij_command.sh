@@ -64,5 +64,11 @@ ls ~/Library/Caches/JetBrains/
 # https://blog.csdn.net/ZHOU_VIP/article/details/117453177
 # https://blog.csdn.net/weixin_43876778/article/details/109036140
 # step 1) right click Directory
-# step 2) Mark Directory as --> Sources Root(tell IntelliJ IDEA，Java文件夹及其子文件夹中包含的源代码，可以编译为构建过程的一部分)
+# step 2) Mark Directory as --> Sources Root(tell IntelliJ IDEA，Java文件夹及其子文件夹中包含的源代码，可以编译为构建过程的一部分) (So
 # step 3) done
+
+# 14) load different projects under one intelliJ window
+# step 1) create a blank directory (e.g. workspace)
+# step 2) intelliJ -> "File" -> "New" -> "Project" 
+# step 3) "File" -> "New" -> "Module" -> select the project you want to import (location, and remember use jdk 1.8) -> repeat ...
+# step 4) done 
