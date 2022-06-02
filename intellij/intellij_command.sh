@@ -72,3 +72,6 @@ ls ~/Library/Caches/JetBrains/
 # step 2) intelliJ -> "File" -> "New" -> "Project" 
 # step 3) "File" -> "New" -> "Module" -> select the project you want to import (location, and remember use jdk 1.8) -> repeat ...
 # step 4) done 
+
+# 15) Enable JDK in project
+#  File -> project structure -> select your SDK (JDK)
