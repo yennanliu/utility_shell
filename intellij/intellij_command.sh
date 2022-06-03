@@ -68,6 +68,7 @@ ls ~/Library/Caches/JetBrains/
 # step 3) done
 
 # 14) load different projects under one intelliJ window
+# example : https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
 # step 1) create a blank directory (e.g. workspace)
 # step 2) intelliJ -> "File" -> "New" -> "Project" 
 # step 3) "File" -> "New" -> "Module" -> select the project you want to import (location, and remember use jdk 1.8) -> repeat ...
