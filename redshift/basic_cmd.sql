@@ -2,6 +2,8 @@
 -- 1) create table and insert data
 ----------------------------------
 
+-- https://www.obstkel.com/redshift-create-table-example
+
 -- DDL for city table (redshift)
 
 CREATE TABLE city (
