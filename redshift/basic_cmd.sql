@@ -20,3 +20,11 @@ values
 (3, 'Kim', 'UK', 'LDN'),
 (4, 'Ana', 'FR', 'PARIS'),
 (5, 'Jack', 'JP', 'TOKYO');
+
+----------------------------------
+-- 2) get recent error query
+----------------------------------
+SELECT
+	*
+from sys_load_error_detail order by start_time desc limit 10;
+	
