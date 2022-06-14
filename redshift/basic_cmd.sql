@@ -21,9 +21,8 @@ values
 (4, 'Ana', 'FR', 'PARIS'),
 (5, 'Jack', 'JP', 'TOKYO');
 
-
 ----------------------------------
--- 1) create table and insert random data
+-- 2) create table and insert random data
 ----------------------------------
 
 
@@ -44,3 +43,9 @@ select ......
     ORDER BY seq
   ) 
 
+----------------------------------
+-- 3) get recent error query
+----------------------------------
+SELECT
+	*
+from sys_load_error_detail order by start_time desc limit 10;
