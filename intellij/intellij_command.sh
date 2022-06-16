@@ -76,3 +76,13 @@ ls ~/Library/Caches/JetBrains/
 
 # 15) Enable JDK in project
 #  File -> project structure -> select your SDK (JDK)
+
+# 16) Init blank project
+# https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
+# file -> new -> project -> Empty project
+
+# 17) Init modules with sparing initializer in project
+# NOTE : have to install "sparing initializer" in market place first
+# https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
+
+
