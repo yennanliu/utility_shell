@@ -91,3 +91,7 @@ ls ~/Library/Caches/JetBrains/
 # step 3) load module : File -> module from existing source (choose "maven" as build framework) -> module is loaded
 # step 4) repeat above steps ...
 # step 5) done!
+
+# 19) intellJ compile module to jar
+# https://youtu.be/0yzA8_In-vg?t=271
+# maven tool -> mvn package -> compiled jar is in /target path
