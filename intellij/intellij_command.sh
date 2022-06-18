@@ -85,10 +85,9 @@ ls ~/Library/Caches/JetBrains/
 # NOTE : have to install "sparing initializer" in market place first
 # https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
 
-# 17) Open project with multiple modules via IntellJ
+# 18) Open project with multiple modules via IntellJ
 # step 1) File -> proejct from existing source -> open project
 # step 2) wait till project is loaded
 # step 3) load module : File -> module from existing source (choose "maven" as build framework) -> module is loaded
 # step 4) repeat above steps ...
 # step 5) done!
-
