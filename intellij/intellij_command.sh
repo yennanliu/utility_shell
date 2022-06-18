@@ -81,9 +81,13 @@ ls ~/Library/Caches/JetBrains/
 # https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
 # file -> new -> project -> Empty project
 
-# 17) Init modules with sparing initializer in project
-# NOTE : have to install "sparing initializer" in market place first
+# 17) Init modules with spring initializer in project
+# NOTE : have to install "sparing initializer" in market place first -> restart intelliJ
 # https://www.youtube.com/watch?v=tF_Y4G1FovQ&list=PLmOn9nNkQxJESDPnrV6v_aiFgsehwLgku&index=33
+# step 1) new new project
+# step 2) with spring initializer
+# step 3) select depdency, group name, ..
+# step 4) done !
 
 # 18) Open project with multiple modules via IntellJ
 # step 1) File -> proejct from existing source -> open project
