@@ -11,3 +11,6 @@
 # METHOD 2)
 # https://zhidao.baidu.com/question/463469527.html
 # terminal -> last | grep reboot
+
+# 3) clean mac system data
+# https://applealmond.com/posts/130727
