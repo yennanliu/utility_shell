@@ -100,7 +100,7 @@ ls ~/Library/Caches/JetBrains/
 # https://youtu.be/0yzA8_In-vg?t=271
 # maven tool -> mvn package -> compiled jar is in /target path
 
-# 12) intellJ load local modules
+# 20) intellJ load local modules
 # https://github.com/yennanliu/SpringPlayground/tree/main/DownloadServiceV2
 # - How to use local modules ?
 #     - step 1) add module to pom.xml
@@ -116,4 +116,3 @@ ls ~/Library/Caches/JetBrains/
 #             <version>1.0-SNAPSHOT</version>
 #         </dependency>
 #         <!-- add local module dep -->
-     
