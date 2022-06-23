@@ -99,3 +99,21 @@ ls ~/Library/Caches/JetBrains/
 # 19) intellJ compile module to jar
 # https://youtu.be/0yzA8_In-vg?t=271
 # maven tool -> mvn package -> compiled jar is in /target path
+
+# 12) intellJ load local modules
+# https://github.com/yennanliu/SpringPlayground/tree/main/DownloadServiceV2
+# - How to use local modules ?
+#     - step 1) add module to pom.xml
+#         - https://github.com/yennanliu/SpringPlayground/blob/main/DownloadServiceV2/download-service-api/pom.xml#L21
+#         - https://github.com/yennanliu/SpringPlayground/blob/main/DownloadServiceV2/download-service-web/pom.xml#L22
+#     - step 2) at intellJ, reload pom.xml (click "wheel")
+#     - step 3) then you should be able to import class from local modules
+# example
+#         <!-- add local module dep -->
+#         <dependency>
+#             <groupId>org.example</groupId>
+#             <artifactId>download-service-api</artifactId>
+#             <version>1.0-SNAPSHOT</version>
+#         </dependency>
+#         <!-- add local module dep -->
+     
