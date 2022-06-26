@@ -116,3 +116,6 @@ ls ~/Library/Caches/JetBrains/
 #             <version>1.0-SNAPSHOT</version>
 #         </dependency>
 #         <!-- add local module dep -->
+
+# 21) spring maven enable "hot deployment"
+# https://youtu.be/vaTDClYcjIc?t=138
