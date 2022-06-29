@@ -102,6 +102,8 @@ ls ~/Library/Caches/JetBrains/
 
 # 20) intellJ load local modules
 # https://github.com/yennanliu/SpringPlayground/tree/main/DownloadServiceV2
+# ref video:
+#   https://youtu.be/D1pH2Ee88OM?t=385
 # - How to use local modules ?
 #     - step 1) add module to pom.xml
 #         - https://github.com/yennanliu/SpringPlayground/blob/main/DownloadServiceV2/download-service-api/pom.xml#L21
