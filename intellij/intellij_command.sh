@@ -120,5 +120,7 @@ ls ~/Library/Caches/JetBrains/
 # 21) spring maven enable "hot deployment"
 # https://youtu.be/vaTDClYcjIc?t=138
 
-# 22) enable "run dashboard" -> run multiple services at once
+# 22) enable "Run Dashboard" -> run multiple services at once
 # https://youtu.be/38XoPk5l5DQ?t=429
+# step 1) open maven project directory -> .idea -> modify workspace.xml
+# if success, can find "Run Dashboard" via : View -> Tool Windows -> Run Dashboard
