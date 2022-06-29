@@ -119,3 +119,6 @@ ls ~/Library/Caches/JetBrains/
 
 # 21) spring maven enable "hot deployment"
 # https://youtu.be/vaTDClYcjIc?t=138
+
+# 22) enable "run dashboard" -> run multiple services at once
+# https://youtu.be/38XoPk5l5DQ?t=429
