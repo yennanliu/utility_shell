@@ -102,8 +102,6 @@ ls ~/Library/Caches/JetBrains/
 
 # 20) intellJ load local modules
 # https://github.com/yennanliu/SpringPlayground/tree/main/DownloadServiceV2
-# ref video:
-#   https://youtu.be/D1pH2Ee88OM?t=385
 # - How to use local modules ?
 #     - step 1) add module to pom.xml
 #         - https://github.com/yennanliu/SpringPlayground/blob/main/DownloadServiceV2/download-service-api/pom.xml#L21
@@ -118,6 +116,22 @@ ls ~/Library/Caches/JetBrains/
 #             <version>1.0-SNAPSHOT</version>
 #         </dependency>
 #         <!-- add local module dep -->
+
+# 20') intellJ load local modules V2
+# ref video:
+#   https://youtu.be/D1pH2Ee88OM?t=385
+# ref code:
+# https://github.com/yennanliu/SpringPlayground/blob/main/springCloud1/cloud-provider-payment8001/pom.xml#L26
+# https://github.com/yennanliu/SpringPlayground/blob/main/springCloud1/cloud-consumer-order80/pom.xml#L17
+#         <!--
+#         use our own defined module
+#         https://youtu.be/D1pH2Ee88OM?t=385
+#         -->
+#         <dependency>
+#             <groupId>com.yen</groupId>
+#             <artifactId>cloud-api-commons</artifactId>
+#             <version>${project.version}</version>
+#         </dependency>
 
 # 21) spring maven enable "hot deployment"
 # https://youtu.be/vaTDClYcjIc?t=138
