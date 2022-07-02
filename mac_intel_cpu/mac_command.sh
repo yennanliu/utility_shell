@@ -14,3 +14,8 @@
 
 # 3) clean mac system data
 # https://applealmond.com/posts/130727
+
+# 4) modify mac hosts file
+# https://setapp.com/how-to/edit-mac-hosts-file
+# https://youtu.be/ukm7jep5doc?t=241
+nano /etc/hosts
