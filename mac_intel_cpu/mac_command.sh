@@ -19,3 +19,8 @@
 # https://setapp.com/how-to/edit-mac-hosts-file
 # https://youtu.be/ukm7jep5doc?t=241
 nano /etc/hosts
+
+# example :
+# 127.0.0.1 eureka7001.com
+# 127.0.0.1 eureka7002.com
+# 127.0.0.1 eureka7003.com
