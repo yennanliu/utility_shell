@@ -8,6 +8,10 @@ brew services stop zookeeper
 # 2) ZK CLI
 zkCli
 ls /
+ls /services
+# get node info
+# exmaple :
+# get /services/cloud-provider-payment/95644d59-29d5-47a3-86ae-fda24689cb8b
 
 
 # 2') ZK CLI example
