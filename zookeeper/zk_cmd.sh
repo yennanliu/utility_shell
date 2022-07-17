@@ -5,7 +5,12 @@
 brew services start zookeeper
 brew services stop zookeeper
 
-# 2) ZK CLI example
+# 2) ZK CLI
+zkCli
+ls /
+
+
+# 2') ZK CLI example
 # https://youtu.be/eKnWj_rDQO0?t=553
 # step 1) /.zkServer.sh start
 # step 2) /.zkCli.sh
