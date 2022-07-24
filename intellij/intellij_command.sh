@@ -1,5 +1,9 @@
 # FOR MAC OSX
 
+# 0) AUTO complete : alt+enter(windows), option+enter(Macos)
+# https://blog.csdn.net/Hu_wenpeng/article/details/104902723
+# for mac -> option + enter
+
 # 1) OFFICIAL SHORTCUT FOR MAC
 # https://www.jetbrains.com/help/rider/Reference_Keymap_Rider_OSX.html#top
 
