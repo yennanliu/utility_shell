@@ -144,3 +144,9 @@ ls ~/Library/Caches/JetBrains/
 # https://youtu.be/38XoPk5l5DQ?t=429
 # step 1) open maven project directory -> .idea -> modify workspace.xml
 # if success, can find "Run Dashboard" via : View -> Tool Windows -> Run Dashboard
+
+# 23) remove installed plugin
+# plugin -> installed -> click plugin, remove it -> apply
+# https://www.jetbrains.com/help/idea/managing-plugins.html
+
+
