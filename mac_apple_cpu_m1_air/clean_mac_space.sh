@@ -1,0 +1,2 @@
+# 1) clear cache
+# https://macpaw.com/how-to/clean-up-other-storage-on-mac?campaign=cmmx_search_seo_ww_en&ci=344590086&adgroupid=97472848262&adpos=&ck=how%20to%20reduce%20system%20storage%20on%20mac&targetid=kwd-903229246245&match={if:e}&gnetwork=g&creative=597271103516&placement=&placecat=&accname=cmm&gclid=CjwKCAjw9suYBhBIEiwA7iMhNAB50lWxdR353Co8tRGs2rGprwGkfrHKp7YnR2jbkzD87jEvITMMWBoCmpkQAvD_BwE
