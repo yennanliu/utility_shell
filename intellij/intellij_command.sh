@@ -149,4 +149,6 @@ ls ~/Library/Caches/JetBrains/
 # plugin -> installed -> click plugin, remove it -> apply
 # https://www.jetbrains.com/help/idea/managing-plugins.html
 
-
+# 24) reformat code
+# https://cloud.tencent.com/developer/article/1908850#:~:text=%E9%80%9A%E8%BF%87File%20%E7%9A%84Settings%20%E5%8F%AF%E4%BB%A5,%E4%B8%BACtrl%2BAlt%2BL%E3%80%82
+# command + option + l
