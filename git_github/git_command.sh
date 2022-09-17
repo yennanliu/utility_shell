@@ -96,3 +96,17 @@ git stash apply
 git clone -b <branch_name> <remote_repo>
 # example :
 # git feature001/run-on-py38 https://github.com/yennanliu/dj-restaurants.git
+
+# 17) roll back to specific previous commit
+# https://stackoverflow.com/questions/3639115/reverting-to-a-specific-commit-based-on-commit-id-with-git
+#git git reset --hard c14809fac
+git git reset --hard <commit_id>
+
+# 18) git force push to remote branch
+# https://gitbook.tw/chapters/github/using-force-push
+git push -f origin <branch_name>
+
+
+
+
+
