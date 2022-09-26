@@ -152,3 +152,10 @@ ls ~/Library/Caches/JetBrains/
 # 24) reformat code
 # https://cloud.tencent.com/developer/article/1908850#:~:text=%E9%80%9A%E8%BF%87File%20%E7%9A%84Settings%20%E5%8F%AF%E4%BB%A5,%E4%B8%BACtrl%2BAlt%2BL%E3%80%82
 # command + option + l
+
+# 25) custom maven setting (settings.xml)
+# add settings.xml to .m2
+# e.g.
+# yennanliu@macbookpro ~ % ls .m2
+# repository	settings.xml	wrapper
+# yennanliu@macbookpro ~ % ls .m2
