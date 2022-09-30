@@ -159,3 +159,8 @@ ls ~/Library/Caches/JetBrains/
 # yennanliu@macbookpro ~ % ls .m2
 # repository	settings.xml	wrapper
 # yennanliu@macbookpro ~ % ls .m2
+
+# 26) clean IntellJ cache
+# file -> invalidate cache (unselect 3rd from top)-> restart intellj -> rebuild
+
+
