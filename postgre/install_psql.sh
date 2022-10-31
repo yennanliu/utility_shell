@@ -11,6 +11,9 @@ brew install postgresql
 brew services start postgresql
 
 # step 4) access via psql
+# https://alvinalexander.com/blog/post/postgresql/log-in-postgresql-database/
+# psql -d mydb -U myuser -W
+# psql -h myhost -d mydb -U myuser -W
 psql postgres
 
 # step 5) stop postgresql
