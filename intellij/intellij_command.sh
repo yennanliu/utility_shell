@@ -166,4 +166,5 @@ ls ~/Library/Caches/JetBrains/
 
 # 27) run app with env
 # add -Denv=QA
+# https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_run_env.png
 
