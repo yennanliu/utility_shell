@@ -163,3 +163,7 @@ ls ~/Library/Caches/JetBrains/
 # 26) clean IntellJ cache
 # file -> invalidate cache (unselect 3rd from top)-> restart intellj -> rebuild
 # https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_clean_cache.png
+
+# 27) run app with env
+# add -Denv=QA
+
