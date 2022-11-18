@@ -165,6 +165,9 @@ ls ~/Library/Caches/JetBrains/
 # https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_clean_cache.png
 
 # 27) run app with env
-# add -Denv=QA
+# step 1) Edit configrations
+# step 2) Modify options
+# step 3) Add VM option
+# step 4) add "-Denv=QA"
 # https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_run_env.png
 
