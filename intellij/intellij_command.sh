@@ -159,3 +159,15 @@ ls ~/Library/Caches/JetBrains/
 # yennanliu@macbookpro ~ % ls .m2
 # repository	settings.xml	wrapper
 # yennanliu@macbookpro ~ % ls .m2
+
+# 26) clean IntellJ cache
+# file -> invalidate cache (unselect 3rd from top)-> restart intellj -> rebuild
+# https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_clean_cache.png
+
+# 27) run app with env
+# step 1) Edit configrations
+# step 2) Modify options
+# step 3) Add VM option
+# step 4) add "-Denv=QA"
+# https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_run_env.png
+
