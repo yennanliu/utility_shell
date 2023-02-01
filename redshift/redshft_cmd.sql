@@ -76,3 +76,15 @@ LEFT JOIN colenc ON colenc.attrelid=ti.table_id
 CROSS JOIN cluster_info
 WHERE ti.schema='sh'
 ORDER BY ti.size DESC;
+
+# 3) connection count
+# https://www.infoq.cn/article/yudaymzeokmbr3zgwxag
+
+SELECT c.remotehost,
+       count(*)
+FROM stv_sessions s
+LEFT JOIN stl_connection_log c ON s.process=c.pid
+WHERE event='authenticated'
+  AND s.user_name<>'abv'
+GROUP BY 1
+ORDER BY 2 DESC;
