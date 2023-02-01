@@ -88,3 +88,25 @@ WHERE event='authenticated'
   AND s.user_name<>'abv'
 GROUP BY 1
 ORDER BY 2 DESC;
+
+# 4) monitor WLM queue
+# https://www.infoq.cn/article/yudaymzeokmbr3zgwxag
+
+CREATE VIEW WLM_QUEUE_STATE_VW AS
+SELECT (config.service_class-5) AS queue ,
+       TRIM (class.condition) AS description ,
+            config.num_query_tasks AS slots ,
+            config.query_working_mem AS mem ,
+            config.max_execution_time AS max_time ,
+            config.user_group_wild_card AS "user_*" ,
+            config.query_group_wild_card AS "query_*" ,
+            state.num_queued_queries queued ,
+            state.num_executing_queries executing ,
+            state.num_executed_queries executed
+FROM STV_WLM_CLASSIFICATION_CONFIG CLASS,
+                                   STV_WLM_SERVICE_CLASS_CONFIG config,
+                                   STV_WLM_SERVICE_CLASS_STATE state
+WHERE class.action_service_class = config.service_class
+  AND class.action_service_class = state.service_class
+  AND config.service_class > 4
+ORDER BY config.service_class;
