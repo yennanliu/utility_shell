@@ -113,6 +113,7 @@ ORDER BY config.service_class;
 
 # 5) check table skew
 # https://www.infoq.cn/article/yudaymzeokmbr3zgwxag
+
 SELECT trim(pgn.nspname) AS SCHEMA,
        trim(a.name) AS TABLE,
        id AS tableid,
@@ -177,3 +178,50 @@ JOIN
    WHERE part_begin=0 ) AS part ON 1=1
 WHERE mbytes IS NOT NULL
 ORDER BY mbytes DESC;
+
+# 5) get top 50 slow SQL in last 7 days
+# https://www.infoq.cn/article/yudaymzeokmbr3zgwxag
+
+SELECT trim(DATABASE) AS db,
+       count(query) AS n_qry,
+       max(SUBSTRING (qrytext, 1, 80)) AS qrytext,
+       min(run_minutes) AS "min",
+       max(run_minutes) AS "max",
+       avg(run_minutes) AS "avg",
+       sum(run_minutes) AS total,
+       max(query) AS max_query_id,
+       max(starttime)::date AS last_run,
+       sum(alerts) AS alerts,
+       aborted
+FROM
+  (SELECT userid,
+          label,
+          stl_query.query,
+          trim(DATABASE) AS DATABASE,
+          trim(querytxt) AS qrytext,
+          md5(trim(querytxt)) AS qry_md5,
+          starttime,
+          endtime,
+          (datediff(seconds, starttime, endtime)::numeric(12, 2))/60 AS run_minutes,
+          alrt.num_events AS alerts,
+          aborted
+   FROM stl_query
+   LEFT OUTER JOIN
+     (SELECT query,
+             1 AS num_events
+      FROM stl_alert_event_log
+      GROUP BY query) AS alrt ON alrt.query = stl_query.query
+   WHERE userid <> 1
+     AND starttime >= dateadd(DAY, -7, CURRENT_DATE))
+GROUP BY DATABASE,
+         label,
+         qry_md5,
+         aborted
+ORDER BY total DESC
+LIMIT 50;
+
+# 6) check performance alert record
+Select * from stl_alert_event_log where query = <MyQueryID>;
+
+# 7) check query report
+select * from svl_query_report where query = <MyQueryID> order by segment, step, elapsed_time, rows;
