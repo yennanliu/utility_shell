@@ -225,3 +225,18 @@ Select * from stl_alert_event_log where query = <MyQueryID>;
 
 # 7) check query report
 select * from svl_query_report where query = <MyQueryID> order by segment, step, elapsed_time, rows;
+
+# 8) show table rows count under schema
+# https://dataedo.com/kb/query/amazon-redshift/list-of-tables-by-the-number-of-rows
+
+select tab.table_schema,
+       tab.table_name,
+       tinf.tbl_rows as rows
+from svv_tables tab
+join svv_table_info tinf
+          on tab.table_schema = tinf.schema
+          and tab.table_name = tinf.table
+where tab.table_type = 'BASE TABLE'
+      and tab.table_schema not in('pg_catalog','information_schema')
+      and tinf.tbl_rows > 1
+order by tinf.tbl_rows desc;

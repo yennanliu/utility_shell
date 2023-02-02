@@ -1,3 +1,10 @@
+# 0) Set up Iam role in AWS
+# go to https://us-east-1.console.aws.amazon.com/iamv2/home#/security_credentials/access-key-wizard
+# click "Roles" (under "Access management")
+# click "Create Role"
+# click "add permissions"
+# after complete, the ARN (e.g. : arn:aws:iam::423234423:role/dev1) can be found in the IAM console
+
 # 1) install AWS S3 CMD (Mac)
 # https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "AWSCLIV2.pkg"
