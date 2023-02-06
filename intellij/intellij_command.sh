@@ -171,3 +171,6 @@ ls ~/Library/Caches/JetBrains/
 # step 4) add "-Denv=QA"
 # https://github.com/yennanliu/utility_shell/blob/master/doc/pic/intellj_run_env.png
 
+# 28) IntelliJ create test from a class directly
+# move mouse to the class, right click, select "create test"
+# https://youtu.be/kyWllXOGMWQ?t=472
