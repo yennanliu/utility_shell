@@ -102,6 +102,8 @@ docker rmi -f $(docker images -q)
 docker rm -f $(docker ps -a -q)
 # remove all images in docker
 docker rmi -f $(docker images -q -a)
+# clean docker cache : https://stackoverflow.com/questions/65405562/is-there-a-way-to-clean-docker-build-cache
+docker builder prune
 
 
 # 10) OTHERS 
