@@ -24,3 +24,7 @@ aws s3 ls
 
 # 4) copy local file to S3 bucket
 aws s3 cp user.sql s3://yen-bucket1
+
+# 5) list VPC under current account
+# https://gist.github.com/andytumelty/3651ef79fc00908b4d9f5f6bba05489a
+aws ec2 --output text --query 'Vpcs[*].{VpcId:VpcId,Name:Tags[?Key==`Name`].Value|[0],CidrBlock:CidrBlock}' describe-vpcs
