@@ -68,3 +68,7 @@ psql
 
 # 5) quit psql 
 \q 
+
+# 6) describe table
+# https://stackoverflow.com/questions/109325/postgresql-describe-table
+\d+ <tablename>
