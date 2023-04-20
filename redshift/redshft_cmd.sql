@@ -240,3 +240,9 @@ where tab.table_type = 'BASE TABLE'
       and tab.table_schema not in('pg_catalog','information_schema')
       and tinf.tbl_rows > 1
 order by tinf.tbl_rows desc;
+
+# 9) show table owner with table name
+# https://stackoverflow.com/questions/29853079/how-to-list-all-tables-and-their-creators-or-owners-in-redshift
+select tablename, tableowner, * From pg_tables  
+where tablename = 'xxx'
+limit 10;
