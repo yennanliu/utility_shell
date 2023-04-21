@@ -57,3 +57,9 @@ from sys_load_error_detail order by start_time desc limit 10;
 
 GRANT ALL ON TABLE <schema_name>.<table_name> TO <user_name>;
 
+
+----------------------------------
+-- 5) copy table to a new one
+----------------------------------
+-- https://popsql.com/learn-sql/redshift/how-to-duplicate-a-table-in-redshift
+CREATE TABLE new_table AS SELECT * FROM original_table;
