@@ -49,3 +49,11 @@ select ......
 SELECT
 	*
 from sys_load_error_detail order by start_time desc limit 10;
+
+
+----------------------------------
+-- 4) grant schema to user
+----------------------------------
+
+GRANT ALL ON TABLE <schema_name>.<table_name> TO <user_name>;
+
