@@ -1,3 +1,7 @@
+#-------------------------------
+# ES REST command
+#-------------------------------
+
 # step 1) plz go to kibana UI  (port 5601)
 # step 2) click "dev-op tool"
 # step 3) run below command in the UI (these command can be run via CLI curl as well)
@@ -14,14 +18,28 @@
 #-------------------------------
 # basic command
 #-------------------------------
-# get
+
+# GET
 GET /9300 
 
+# check health
 GET /_cat/health?v
 
+# get master node info
 GET /_cat/master?v
 
-# put
+# get all indices
+GET /_cat/indices
+
+
+# PUT
+
+# add new index (POST is OK as well)
+# PUT needs id; for POST it's optional
+# syntax : PUT <index_name>/<table_name>/<data_id>
+# ES index ~= mysql DB, table ~= mysql table
+# if index, table already existed, will become update op
+# https://youtu.be/hKBxfpmTclw?t=207
 PUT twitter/_doc/2
 {
   "user": "GBaxewfewx",
