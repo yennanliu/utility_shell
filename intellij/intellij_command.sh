@@ -176,3 +176,9 @@ ls ~/Library/Caches/JetBrains/
 # 28) IntelliJ create test from a class directly
 # move mouse to the class, right click, select "create test"
 # https://youtu.be/kyWllXOGMWQ?t=472
+
+# 29) module pom.xml becomes "gray"
+# https://www.cnblogs.com/suizhikuo/p/14706763.html
+# https://blog.csdn.net/weixin_45300108/article/details/109597545
+# possibly the module is negelected
+# intellJ -> setting -> Build, Execution, deployment -> Built tools -> maven -> ignored files -> unselect files
