@@ -99,6 +99,11 @@ POST twitter/_update/1
   }
 }
 
+# DELETE
+# https://youtu.be/ryKQGqx67jg?t=10
+
+DELETE myindex1
+
 
 #-------------------------------
 # create datatype (for index)
