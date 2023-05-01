@@ -22,3 +22,9 @@ cd kibana-6.8.7-darwin-x86_64
 cd logstash-7.6.1
 bin/logstash -f logstash.conf
 ```
+
+### Port
+- ES
+	- 9300 : TCP, for ES nodes communication
+	- 9200 : HTTP, recommended for client API
+	- https://youtu.be/EIymTNQn8XE?t=72

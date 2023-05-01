@@ -62,3 +62,12 @@ curl -XPOST 'http://localhost:9200/library/_cache/clear'
 
 # 9) refresh cache (index)
 curl -XPOST 'http://localhost:9200/library/_refresh'
+
+# 10) bulk insert
+# https://stackoverflow.com/questions/45601344/elasticsearch-bulk-json-data
+# https://youtu.be/ryKQGqx67jg?t=591
+# curl -XPOST localhost:9200/your_index/your_type/_bulk -H "Content-Type: application/x-ndjson" --data-binary @bulk.json
+curl -XPOST localhost:9200/myindex1/data/_bulk -H "Content-Type: application/x-ndjson" --data-binary data/accounts.json
+
+curl -XPOST localhost:9200/myindex1/data/_bulk?pretty --data-binary data/accounts.json -H 'Content-Type: application/json'
+
