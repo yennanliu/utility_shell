@@ -52,6 +52,8 @@ PUT twitter/_create/10
   
 }
 
+# GET
+
 GET twitter/_doc/WBk8e3MBpFYgZiusgXSc
 
 GET twitter/_doc/WBk8e3MBpFYgZiusgXSc/_source
@@ -89,6 +91,13 @@ GET _search
     "match_all": {}
   }
 }
+
+
+# query data in index
+# https://youtu.be/YXSti7iDv8Y?t=709
+GET /<index_name>/_search
+# curl http://localhost:9200/myindex3/_search
+
 
 # update
 POST twitter/_update/1
