@@ -100,7 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
@@ -112,3 +111,9 @@ else
 fi
 
 alias python=python3
+
+
+# nvm
+# https://blog.csdn.net/MRX001/article/details/122257729
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
