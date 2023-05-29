@@ -246,3 +246,22 @@ order by tinf.tbl_rows desc;
 select tablename, tableowner, * From pg_tables  
 where tablename = 'xxx'
 limit 10;
+
+# 10) show daat / files are processed
+select b.query,
+       count(distinct b.bucket || b.key)  as distinct_files,
+      sum(b.transfer_size) / 1024 / 1024 as MB_scanned,
+      sum(b.transfer_time)               as load_micro
+      from stl_s3client b
+      where b.http_method = 'GET' and query = '3200'
+      group by 1;
+
+
+# 11)  show how many data was inserted
+select query,
+             tbl,
+             sum(rows)                                             as rows_inserted,
+             max(endtime)                                          as endtime,
+             datediff('microsecond', min(starttime), max(endtime)) as insert_micro
+      from stl_insert
+      group by query, tbl
