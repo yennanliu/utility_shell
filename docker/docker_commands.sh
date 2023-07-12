@@ -151,3 +151,7 @@ docker exec -it $containers_id /bin/sh -c "python"
 # 7) re-start the docker app
 # 8) build again
 # 9) done!
+
+# 14) check tail log
+# https://stackoverflow.com/questions/52119832/tail-docker-logs-to-see-recent-records-not-all
+docker logs -f --tail 10 container_name
