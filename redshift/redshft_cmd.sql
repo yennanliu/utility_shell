@@ -265,3 +265,6 @@ select query,
              datediff('microsecond', min(starttime), max(endtime)) as insert_micro
       from stl_insert
       group by query, tbl
+
+# 12) show view definition (table behind view)
+SHOW view_name;
