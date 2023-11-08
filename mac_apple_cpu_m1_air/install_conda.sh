@@ -16,6 +16,8 @@ rm -rf ~/miniconda3/miniconda.sh
 ~/miniconda3/bin/conda init bash
 ~/miniconda3/bin/conda init zsh
 
+# make alias
+alias conda="/Users/yennanliu/miniforge3/bin/conda"
 
 #-----------------------------------
 # V2
