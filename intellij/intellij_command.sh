@@ -182,3 +182,8 @@ ls ~/Library/Caches/JetBrains/
 # https://blog.csdn.net/weixin_45300108/article/details/109597545
 # possibly the module is negelected
 # intellJ -> setting -> Build, Execution, deployment -> Built tools -> maven -> ignored files -> unselect files
+
+# 30) Allow run app in parallel (multiple instances)
+# https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010505820-Why-my-2020-3-2-IntelliJ-IDEA-Allow-parallel-run-check-box-is-missing
+# configuration -> select main app name -> "Modify options"  -> click "allow multiple instances check box
+
