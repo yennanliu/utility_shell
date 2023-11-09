@@ -3,4 +3,5 @@
 :set paste
 
 # 2) show line number
+# https://www.cyberciti.biz/faq/vi-show-line-numbers/
 :set number
