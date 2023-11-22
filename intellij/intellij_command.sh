@@ -187,3 +187,8 @@ ls ~/Library/Caches/JetBrains/
 # https://intellij-support.jetbrains.com/hc/en-us/community/posts/360010505820-Why-my-2020-3-2-IntelliJ-IDEA-Allow-parallel-run-check-box-is-missing
 # configuration -> select main app name -> "Modify options"  -> click "allow multiple instances check box
 
+# 31) if "internal class" do exist, but IntelliJ editor keep complaining class not found
+# -> remove m2 jar, remove .idea, delete project record in IntelliJ
+# e.g. rm -fr ~/.m2/repository/com/yen/TddPlayGround
+# e.g. rm -fr dev_projects/TddPlayGround/.m2
+# -> open such project again in IntelliJ again
