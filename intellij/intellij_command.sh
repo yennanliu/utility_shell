@@ -192,3 +192,6 @@ ls ~/Library/Caches/JetBrains/
 # e.g. rm -fr ~/.m2/repository/com/yen/TddPlayGround
 # e.g. rm -fr dev_projects/TddPlayGround/.m2
 # -> open such project again in IntelliJ again
+
+# 32) (java) auto create new variable (example : String mystr = new String();)
+# option + enter
