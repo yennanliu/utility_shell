@@ -112,14 +112,16 @@ fi
 
 alias python=python3
 
-
-# nvm
-# https://blog.csdn.net/MRX001/article/details/122257729
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 
 # maven
 # https://www.digitalocean.com/community/tutorials/install-maven-mac-os
 export M2_HOME="/Users/yennanliu/apache-maven-3.9.4"
 PATH="${M2_HOME}/bin:${PATH}"
 export PATH
+
+# nvm
+# https://blog.csdn.net/MRX001/article/details/122257729
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
