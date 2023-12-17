@@ -16,4 +16,8 @@ brew services stop nginx
 # /usr/local/etc/nginx
 # /usr/local/etc/nginx/nginx.conf 
 
+# macbook M1
+# /opt/homebrew/etc/nginx
+# /opt/homebrew/etc/nginx/nginx.conf 
+
 # example setting
