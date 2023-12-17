@@ -21,3 +21,6 @@ brew services stop nginx
 # /opt/homebrew/etc/nginx/nginx.conf 
 
 # example setting
+
+# reload config
+nginx -s reload
