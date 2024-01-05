@@ -1,3 +1,8 @@
+#---------------------------------
+# ZK command
+#---------------------------------
+
+
 # 0) brew install zk & zk basic cmd
 # https://segmentfault.com/a/1190000022287477
 
@@ -6,12 +11,18 @@ brew services start zookeeper
 brew services stop zookeeper
 
 # 2) ZK CLI
+
+# https://husterxsp.github.io/2018/10/08/zookeeper%E5%AE%89%E8%A3%85/
+
+
+# file path
+# /usr/local/etc/zookeeper
+
+cd /usr/local/etc/zookeeper
+
 zkCli
 ls /
 ls /services
-# get node info
-# exmaple :
-# get /services/cloud-provider-payment/95644d59-29d5-47a3-86ae-fda24689cb8b
 
 
 # 2') ZK CLI example
