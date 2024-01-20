@@ -1,3 +1,6 @@
+# Fig pre block. Keep at the top of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -70,9 +73,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+#plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+export PATH=/opt/homebrew/bin:$PATH
 
 # User configuration
 
@@ -100,28 +105,52 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
-        . "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
-    fi
-fi
+# conda env var
+alias conda="/Users/yennanliu/miniforge3/bin/conda"
+
+
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
+# # . "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh"  # commented out by conda initialize
+#     else
+#         export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
+#     fi
+# fi
 
 alias python=python3
+export ES_JAVA_HOME=/opt/homebrew/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home
+
+# nvm
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+
+# Fig post block. Keep at the bottom of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
 
-# maven
-# https://www.digitalocean.com/community/tutorials/install-maven-mac-os
 export M2_HOME="/Users/yennanliu/apache-maven-3.9.4"
 PATH="${M2_HOME}/bin:${PATH}"
 export PATH
 
-# nvm
-# https://blog.csdn.net/MRX001/article/details/122257729
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# notebook
+# https://medium.com/%E7%A8%8B%E5%BC%8F%E4%B9%BE%E8%B2%A8/jupyter-notebook-%E5%95%8F%E9%A1%8C-jupyter-command-not-found-a0764d253c65
+export PATH=/Users/yennanliu/Library/Python/3.9/bin:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/yennanliu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh" ]; then
+#         . "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/Users/yennanliu/miniconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
