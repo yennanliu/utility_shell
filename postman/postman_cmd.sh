@@ -22,3 +22,10 @@
 #   - step 3) go to request, go to header, replace "cookie" with the cookie you got from step 2)
 #   - step 4) done, ur request should work now
 #
+
+
+# 4) how to do a pressure test?
+#   - step 1) go to postman
+#   - step 2) Right-click "collections" and select "run collection" (NOT click endpoint), then ...
+#            - https://juejin.cn/post/7108288696025088008
+#
