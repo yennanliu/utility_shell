@@ -1,0 +1,10 @@
+#-----------------------------------------------------------------------------
+# 1) Search cloud watchlog with message like "Data Source has been initialized!"
+#-----------------------------------------------------------------------------
+
+# https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-examples.html
+
+fields @timestamp, @message, @logStream, @log
+| filter @message like "Data Source has been initialized!"
+| sort @timestamp desc
+| limit 1000
