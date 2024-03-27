@@ -2,5 +2,14 @@
 
 # https://zh-tw.manuals.plus/%E9%8D%B5%E6%99%82/keychron-k6-%E8%97%8D%E7%89%99%E6%A9%9F%E6%A2%B0%E9%8D%B5%E7%9B%A4%E8%AA%AA%E6%98%8E%E6%9B%B8#backlit_setting
 
-# 1) close keyboard light
+# 1) Close the keyboard light
 # F5 button
+
+# 2) activate/connect keyboard to MacBook
+
+> 藍牙模式
+> 將鍵盤切換到藍牙選項。
+> 背光將打開。
+> 按住“Fn1+Q”鍵4秒激活藍牙配對（藍牙指示燈快閃3分鐘檢測配對。
+
+同時按下外接鍵盤的按鍵  "fn" + "1" + "Q"
