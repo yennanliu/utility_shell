@@ -105,3 +105,9 @@ git reset --hard <commit_id>
 # 18) git force push to remote branch
 # https://gitbook.tw/chapters/github/using-force-push
 git push -f origin <branch_name>
+
+# 19) git rebase
+# Step 1) be in the temp branch (e.g.: 3b0f8b22), fix conflicts manually
+# Step 2) Once conflicts are fixed, do "git rebase --continue"
+# Step 3) if rebase successfully, then should automatically change back to the original branch
+# Step 4) commit, push
