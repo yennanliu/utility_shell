@@ -3,9 +3,28 @@
 # HELP COMMANDS RUN GIT VERSION CONTROL OP
 #################################################################
 
-# 1) check commit histroy
+# 0) set up local/global git username, email
+# https://stackoverflow.com/questions/6116548/how-to-tell-git-to-use-the-correct-identity-name-and-email-for-a-given-project
+
+# local set
+git config user.email mahmoud@company.ccc
+git config user.name 'Mahmoud Zalt'
+
+# local get
+git config --get user.email
+git config --get user.name
+
+# global set
+git config --global user.email mahmoud@zalt.me
+git config --global user.name 'Mahmoud Zalt'
+
+# global get
+git config --global --get user.email
+git config --global --get user.name
+
+# 1) check commit history
 git log 
-git log --oneline
+git log --online
 git reflog
 
 # 2) merge 
