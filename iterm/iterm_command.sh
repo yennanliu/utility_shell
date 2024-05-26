@@ -15,3 +15,11 @@
 # https://superuser.com/questions/967066/is-there-any-way-to-set-the-default-font-to-16pts-in-iterm2
 # Open 'Preferences', click on the 'Profiles' tab, further click on the 'Text' sub-tab,
 # steps) Preferences -> Profiles -> Font -> change ur font size!
+
+
+# 5) fix below error :
+# iconv: iconv_open(, -t): Invalid argument
+# Error converting string from  to UTF-8
+#
+# -> update iterm profile
+# https://github.com/ohmyzsh/ohmyzsh/issues/11645#issuecomment-1884685602
