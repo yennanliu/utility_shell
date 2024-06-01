@@ -161,3 +161,8 @@ ls -al ~/.ssh
 
 # example (NOTE !!! git clone via ssh, but NOT http)
 git clone git@github.com:yennanliu/utility_shell.git
+
+
+### NOTE !!! 
+# if git clone via ssh, then can push directly (no need password). 
+# if you setup ssh key properly at github
