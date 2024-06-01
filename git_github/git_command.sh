@@ -130,3 +130,34 @@ git push -f origin <branch_name>
 # Step 2) Once conflicts are fixed, do "git rebase --continue"
 # Step 3) if rebase successfully, then should automatically change back to the original branch
 # Step 4) commit, push
+
+
+
+# 20) clone, push priavte repo
+# https://tsengbatty.medium.com/git-%E8%B8%A9%E5%9D%91%E7%B4%80%E9%8C%84-%E4%BA%8C-git-clone-with-ssh-keys-%E6%88%96-https-%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F-bdb721bd7cf2
+# https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+# Step 1) create ssh key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+"""
+- id_rsa：private key，這是給自己用的。
+- id_rsa.pub：public key，這是給外部系統用的，加到 Github 帳戶就是用這個
+"""
+
+# Step 2) add public key to github
+# Settings -> Personal settings -> SSH and GPG keys
+
+# Step 3) test if can connect
+ssh -T git@github.com
+
+eval $(ssh-agent -s)
+
+ssh-add ~/.ssh/id_rsa
+
+ls -al ~/.ssh
+
+# Step 4) clone priave repo
+
+# example (NOTE !!! git clone via ssh, but NOT http)
+git clone git@github.com:yennanliu/utility_shell.git
