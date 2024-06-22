@@ -195,3 +195,12 @@ ls ~/Library/Caches/JetBrains/
 
 # 32) (java) auto create new variable (example : String mystr = new String();)
 # option + enter
+
+# 33) format with google java plugin
+# IntelliJ format code with google java code format plugin
+# https://stackoverflow.com/questions/42979700/how-to-configure-google-java-code-formatter-in-intellij-idea-17
+# https://github.com/yennanliu/utility_shell/blob/master/intellij/intellij_command.sh#L32
+# step 1) install plugin
+#  step 2) enable plugin in whole project
+#  step 3) go to java dir / file, press "Option + Command + L" format code ( if do on dir, then can format all files under dir at once)
+# extra config : https://github.com/google/google-java-format/blob/master/README.md#intellij-jre-config
