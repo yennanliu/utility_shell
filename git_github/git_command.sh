@@ -166,3 +166,9 @@ git clone git@github.com:yennanliu/utility_shell.git
 ### NOTE !!! 
 # if git clone via ssh, then can push directly (no need password). 
 # if you setup ssh key properly at github
+
+
+# git get difference between branches, and output as file
+# git diff main dev-001-mon-auto-fix >> diff.txt
+# https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches
+git diff main_branch cur_dev_branch diff.txt
