@@ -204,3 +204,6 @@ ls ~/Library/Caches/JetBrains/
 #  step 2) enable plugin in whole project
 #  step 3) go to java dir / file, press "Option + Command + L" format code ( if do on dir, then can format all files under dir at once)
 # extra config : https://github.com/google/google-java-format/blob/master/README.md#intellij-jre-config
+
+# 34) IntelliJ compile project as jar
+# https://matthung0807.blogspot.com/2022/08/intellij-build-executable-jar.html
