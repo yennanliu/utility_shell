@@ -7,7 +7,10 @@
   - useful bash scripts
   - others
 
-## Ref 
+> [!NOTE]
+> this is a util shell repo  
+
+## Ref
 
 <details>
 <summary>Ref</summary>
