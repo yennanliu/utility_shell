@@ -1,3 +1,6 @@
+# find program use port
+sudo lsof -i :8080
+
 # Specify the port you want to kill processes on
 port=8080
 
