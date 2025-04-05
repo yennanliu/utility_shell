@@ -13,3 +13,11 @@
 > 按住“Fn1+Q”鍵4秒激活藍牙配對（藍牙指示燈快閃3分鐘檢測配對。
 
 同時按下外接鍵盤的按鍵  "fn" + "1" + "Q"
+
+
+# 3)  how to permanently disable light mode at keychron keyboard ?
+
+
+-> To permanently disable light mode on your Keychron keyboard, you need to turn off the backlight and then "lock" that off state using the `FN+L+Light key` combination for 6 seconds. 
+
+https://www.google.com/search?q=how+to+permenetly+disable+light+mode+at+keychron+keyboard+%3F&oq=how+to+permenetly+disable+light+mode+at+keychron+keyboard+%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIJCAEQIRgKGKABMgkIAhAhGAoYoAEyCQgDECEYChigATIJCAQQIRgKGKABMgkIBRAhGAoYoAEyBwgGECEYjwIyBwgHECEYjwLSAQoxNzkxMDNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
