@@ -1,0 +1,221 @@
+# Ref profile: https://github.com/PenHsuanWang/mlflow-docker-setup
+
+
+Okay, to make your terminal look like the screenshot (which features Powerlevel10k with Git status, current directory, etc.), you'll need to modify your `~/.zshrc` file to incorporate the Powerlevel10k theme and ensure you have the necessary fonts installed.
+
+
+
+Here's your updated `~/.zshrc` profile, with the key changes highlighted and explained.
+
+**Before you update your `~/.zshrc`:**
+
+1.  **Ensure Powerlevel10k is installed:**
+    If you haven't already, run this command:
+
+    ```bash
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    ```
+
+2.  **Install a Nerd Font:** This is crucial for the icons to display correctly.
+
+      * Go to [Nerd Fonts](https://www.nerdfonts.com/font-downloads).
+      * Download `MesloLGS NF` (recommended).
+      * Install the font on your macOS system (double-click the `.ttf` files and click "Install Font").
+      * Open your terminal application's preferences (e.g., iTerm2, macOS Terminal) and set the font to `MesloLGS NF`.
+
+-----
+
+**Your Updated `~/.zshrc` Profile:**
+
+```zsh
+# Fig pre block. Keep at the top of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
+
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# ZSH_THEME="robbyrussell" # Original theme
+ZSH_THEME="powerlevel10k/powerlevel10k" # <--- CHANGED: Set Powerlevel10k as the theme
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+# zstyle ':omz:update' frequency 13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# plugins=(git) # You can add plugins here. 'git' is often useful.
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting) # <--- ADDED/MODIFIED: Common plugins for a better experience
+
+source $ZSH/oh-my-zsh.sh
+
+export PATH=/opt/homebrew/bin:$PATH
+
+# User configuration
+
+# export MANPATH="/usr/local/man:$MANPATH"
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#     export EDITOR='vim'
+# else
+#     export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# conda env var
+alias conda="/Users/yennanliu/miniforge3/bin/conda"
+
+
+# if [ $? -eq 0 ]; then
+#       eval "$__conda_setup"
+# else
+#       if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
+# # . "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh"  # commented out by conda initialize
+#       else
+#             export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
+#       fi
+# fi
+
+alias python=python3
+export ES_JAVA_HOME=/opt/homebrew/Cellar/openjdk/20/libexec/openjdk.jdk/Contents/Home
+
+# nvm
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+
+# Fig post block. Keep at the bottom of this file.
+#[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home
+
+export M2_HOME="/Users/yennanliu/apache-maven-3.9.4"
+PATH="${M2_HOME}/bin:${PATH}"
+export PATH
+
+# notebook
+export PATH=/Users/yennanliu/Library/Python/3.9/bin:$PATH
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/yennanliu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#       eval "$__conda_setup"
+# else
+#       if [ -f "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh" ]; then
+#             . "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh"
+#       else
+#             export PATH="/Users/yennanliu/miniconda3/bin:$PATH"
+#       fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# <--- ADDED: Plugin installations (if you haven't installed them via git clone already)
+# Install zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Install zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+```
+
+-----
+
+**Key Changes Explained:**
+
+1.  **`ZSH_THEME="powerlevel10k/powerlevel10k"`**: This is the most crucial change. It tells Oh My Zsh to load the Powerlevel10k theme instead of `robbyrussell`.
+2.  **`plugins=(git zsh-autosuggestions zsh-syntax-highlighting)`**:
+      * I've uncommented and expanded your `plugins` line.
+      * `git` is essential for the Git status features shown in your screenshot.
+      * `zsh-autosuggestions` provides command suggestions as you type (gray text, like Fish shell).
+      * `zsh-syntax-highlighting` highlights commands as you type, making it easier to spot typos.
+      * **Important:** For `zsh-autosuggestions` and `zsh-syntax-highlighting` to work, you need to install them if you haven't already. I've left the `git clone` commands commented out at the bottom of the `.zshrc` file for your reference. You should run them once manually in your terminal if these plugins aren't already present in your `$ZSH_CUSTOM/plugins` directory.
+
+**After updating your `~/.zshrc`:**
+
+1.  **Save the file.**
+2.  **Open a new terminal window or tab.**
+3.  **Run the Powerlevel10k configuration wizard:**
+    ```bash
+    p10k configure
+    ```
+    This wizard will guide you through customizing the prompt's appearance to match the screenshot as closely as possible, including displaying the Git branch, current directory, and other elements. Be sure to say "yes" when it asks about installing recommended fonts if you haven't done so manually.
+
+By following these steps, your Zsh terminal should transform to look like the one in your screenshot\!
