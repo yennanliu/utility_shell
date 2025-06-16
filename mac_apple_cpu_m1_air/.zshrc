@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Fig pre block. Keep at the top of this file.
 #[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 
@@ -11,7 +18,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell" # Original theme
+ZSH_THEME="powerlevel10k/powerlevel10k" # <--- CHANGED: Set Powerlevel10k as the theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,7 +81,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-#plugins=(git)
+# plugins=(git) # You can add plugins here. 'git' is often useful.
+#plugins=(git zsh-autosuggestions zsh-syntax-highlighting) # <--- ADDED/MODIFIED: Common plugins for a better experience
 
 source $ZSH/oh-my-zsh.sh
 
@@ -88,9 +97,9 @@ export PATH=/opt/homebrew/bin:$PATH
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#     export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#     export EDITOR='mvim'
 # fi
 
 # Compilation flags
@@ -110,13 +119,13 @@ alias conda="/Users/yennanliu/miniforge3/bin/conda"
 
 
 # if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
+#       eval "$__conda_setup"
 # else
-#     if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
+#       if [ -f "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh" ]; then
 # # . "/Users/yennanliu/miniforge3/etc/profile.d/conda.sh"  # commented out by conda initialize
-#     else
-#         export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
-#     fi
+#       else
+#             export PATH="/Users/yennanliu/miniforge3/bin:$PATH"
+#       fi
 # fi
 
 alias python=python3
@@ -137,20 +146,31 @@ PATH="${M2_HOME}/bin:${PATH}"
 export PATH
 
 # notebook
-# https://medium.com/%E7%A8%8B%E5%BC%8F%E4%B9%BE%E8%B2%A8/jupyter-notebook-%E5%95%8F%E9%A1%8C-jupyter-command-not-found-a0764d253c65
 export PATH=/Users/yennanliu/Library/Python/3.9/bin:$PATH
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 # __conda_setup="$('/Users/yennanliu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 # if [ $? -eq 0 ]; then
-#     eval "$__conda_setup"
+#       eval "$__conda_setup"
 # else
-#     if [ -f "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh" ]; then
-#         . "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh"
-#     else
-#         export PATH="/Users/yennanliu/miniconda3/bin:$PATH"
-#     fi
+#       if [ -f "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh" ]; then
+#             . "/Users/yennanliu/miniconda3/etc/profile.d/conda.sh"
+#       else
+#             export PATH="/Users/yennanliu/miniconda3/bin:$PATH"
+#       fi
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# <--- ADDED: Plugin installations (if you haven't installed them via git clone already)
+# Install zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+# Install zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
