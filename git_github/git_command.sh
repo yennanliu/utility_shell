@@ -133,7 +133,7 @@ git push -f origin <branch_name>
 
 
 
-# 20) clone, push priavte repo
+# 20) clone, push private repo
 # https://tsengbatty.medium.com/git-%E8%B8%A9%E5%9D%91%E7%B4%80%E9%8C%84-%E4%BA%8C-git-clone-with-ssh-keys-%E6%88%96-https-%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F-bdb721bd7cf2
 # https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
 
@@ -157,7 +157,7 @@ ssh-add ~/.ssh/id_rsa
 
 ls -al ~/.ssh
 
-# Step 4) clone priave repo
+# Step 4) clone private repo
 
 # example (NOTE !!! git clone via ssh, but NOT http)
 git clone git@github.com:yennanliu/utility_shell.git
@@ -166,6 +166,56 @@ git clone git@github.com:yennanliu/utility_shell.git
 ### NOTE !!! 
 # if git clone via ssh, then can push directly (no need password). 
 # if you setup ssh key properly at github
+
+
+# 21) Setup different ssh key for different github account on same MacBook
+
+# 🪪 1. Generate SSH Keys (if needed)
+
+ssh-keygen -t ed25519 -C "your_email@example.com"
+
+#Example:
+# # Personal
+# ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_personal -C "me@personal.com"
+
+# # Work
+# ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_work -C "me@work.com"
+
+
+⸻
+
+# 🔑 2. Add Public Keys to GitHub
+
+# Go to GitHub > Settings > SSH and GPG Keys
+# → Click “New SSH key”
+# → Paste content of:
+
+# cat ~/.ssh/id_ed25519_personal.pub
+# cat ~/.ssh/id_ed25519_work.pub
+
+
+⸻
+
+# ⚙️ 3. Edit SSH Config File
+
+# nano ~/.ssh/config
+
+# Add config blocks like this:
+
+# # Personal GitHub account
+# Host github.com-personal
+#   HostName github.com
+#   User git
+#   IdentityFile ~/.ssh/id_ed25519_personal
+#   IdentitiesOnly yes
+
+# # Work GitHub account
+# Host github.com-work
+#   HostName github.com
+#   User git
+#   IdentityFile ~/.ssh/id_ed25519_work
+#   IdentitiesOnly yes
+
 
 
 # git get difference between branches, and output as file
