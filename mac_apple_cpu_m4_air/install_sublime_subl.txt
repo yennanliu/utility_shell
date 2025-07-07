@@ -1,0 +1,10 @@
+# step 1) install sublime
+
+# step 2) enable `subl`
+
+sudo mkdir -p /usr/local/bin
+sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+# step 3) add to zshrc, ectivate it
+echo 'export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
