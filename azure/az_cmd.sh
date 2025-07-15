@@ -8,3 +8,5 @@ az ad sp create-for-rbac --name "github-actions-acr" \
                         --role contributor \
                         --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP> \
                         --sdk-auth
+# 3) get  AZURE_ACR_USERNAME, AZURE_ACR_PASSWORD
+az acr credential show --name <your_acr_name>
