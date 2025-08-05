@@ -1,5 +1,9 @@
-# - Claude code video course
-# - https://anthropic.skilljar.com/claude-code-in-action/303237
+#-------------------------------------------------------------
+#  Claude code video course
+#   
+#   - https://anthropic.skilljar.com/claude-code-in-action/303237
+#-------------------------------------------------------------
+
 
 # 1. stop/interrupt
 
@@ -33,4 +37,17 @@ esc +  esc
 # run: (restart and open claude CLI): /audit
 
 
+# 8. Claude code MCP server
+# https://anthropic.skilljar.com/claude-code-in-action/303239
 
+
+# 9. Hooks
+# https://anthropic.skilljar.com/claude-code-in-action/312000
+# Global - ~/.claude/settings.json (affects all projects)
+# Project - .claude/settings.json (shared with team)
+# Project (not committed) - .claude/settings.local.json (personal settings)
+
+# https://anthropic.skilljar.com/claude-code-in-action/312002
+# https://anthropic.skilljar.com/claude-code-in-action/312423
+
+# 10. 
