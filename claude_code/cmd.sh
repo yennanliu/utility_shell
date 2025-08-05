@@ -1,3 +1,6 @@
+# - Claude code video course
+# - https://anthropic.skilljar.com/claude-code-in-action/303237
+
 # 1. stop/interrupt
 
 esc
@@ -26,5 +29,8 @@ esc +  esc
 # 7. custom cmd
 
 # create a new file:   `.claude/commands`
-
 # under the  `.claude/commands` create `audit.md`
+# run: (restart and open claude CLI): /audit
+
+
+
