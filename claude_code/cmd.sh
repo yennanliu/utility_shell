@@ -50,4 +50,15 @@ esc +  esc
 # https://anthropic.skilljar.com/claude-code-in-action/312002
 # https://anthropic.skilljar.com/claude-code-in-action/312423
 
-# 10. 
+# 10. skip `minor confirmation`
+# https://youtu.be/n7iT5r0Sl_Y?si=GRbBUTyrYvV176hW&t=154
+claude --dangerously-skip-permissions
+
+# 11. paste pic
+# copy pic, then go to claude code CLI
+ctrl + v
+
+# 12. go to prev sessions
+/ or esc + esc
+
+# 13. claude code VS code plugin
