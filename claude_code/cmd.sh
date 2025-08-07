@@ -59,6 +59,8 @@ claude --dangerously-skip-permissions
 ctrl + v
 
 # 12. go to prev sessions
-/ or esc + esc
+# (NOT in claude code CLI, but in the terminal)
+claude --resume
 
 # 13. claude code VS code plugin
+
