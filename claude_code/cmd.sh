@@ -2,6 +2,7 @@
 #  Claude code video course
 #   
 #   - https://anthropic.skilljar.com/claude-code-in-action/303237
+#   - https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/
 #-------------------------------------------------------------
 
 # 0. init (will generate a new CLAUDE.md based on project scan)
@@ -19,9 +20,13 @@ esc
 
 esc +  esc
 
-# 4. Mention a file
+# 4. Mention a file 
 
-@<file_name>
+@ <file_name>
+
+# 4-1 planning mode
+# enable with
+shift + tab    shift + tab 
 
 
 # 5. Summary the current session as a single message so that next one can use 
