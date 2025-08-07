@@ -4,14 +4,16 @@
 #   - https://anthropic.skilljar.com/claude-code-in-action/303237
 #-------------------------------------------------------------
 
+# 0. init (will generate a new CLAUDE.md based on project scan)
+/init 
 
 # 1. stop/interrupt
 
 esc
 
-# 2. Add memory
+# 2. Add memory (# <things to ask claude code to remember)
 
-#
+# <things to remember>
 
 # 3. revert to prev msg
 
