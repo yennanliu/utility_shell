@@ -217,7 +217,6 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 #   IdentitiesOnly yes
 
 
-
 # git get difference between branches, and output as file
 # git diff main dev-001-mon-auto-fix >> diff.txt
 # https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches
