@@ -46,6 +46,11 @@ shift + tab    shift + tab
 
 # 8. Claude code MCP server
 # https://anthropic.skilljar.com/claude-code-in-action/303239
+# https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/zzhtb/adding-features
+
+claude mcp add <mcp_server>
+
+claude mcp add playwright npx @playwright/mcp@latest
 
 
 # 9. Hooks
