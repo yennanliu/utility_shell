@@ -76,3 +76,13 @@ claude --resume
 
 # 13. claude code VS code plugin
 
+
+# 14. git worktree
+# so 2 claude code can work on seperated isolcated code env, do changes
+# then merge result later on
+# https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/oo58a/adding-multiple-features-simultaneously
+
+mkdir .trees
+
+git worktree add .trees/ui_feature
+git worktree add .trees/testing_feature
