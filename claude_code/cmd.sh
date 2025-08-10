@@ -86,3 +86,13 @@ mkdir .trees
 
 git worktree add .trees/ui_feature
 git worktree add .trees/testing_feature
+
+# 15. Claude code + github integration
+# auto code review, issue -> PR, ....
+# https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/nngi6/exploring-github-integration-&-hooks
+
+# 16. hooks
+# https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/nngi6/exploring-github-integration-&-hooks
+
+
+
