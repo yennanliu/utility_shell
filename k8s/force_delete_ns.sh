@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: ./force-delete-namespace.sh ruby-app
+# Usage: ./force-delete-namespace.sh <name_space>
 
 NS="my_name_space"
 
