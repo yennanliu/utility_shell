@@ -1,5 +1,6 @@
 # install
 # https://docs.astral.sh/uv/#highlights
+curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # 1) create new env
 $ uv venv my-env
