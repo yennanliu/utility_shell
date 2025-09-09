@@ -2,6 +2,11 @@
 # https://docs.astral.sh/uv/#highlights
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# export installed env
+# source $HOME/.local/bin/env (sh, bash, zsh)
+# source $HOME/.local/bin/env.fish (fish)
+source $HOME/.local/bin/env
+
 # 1) create new env
 $ uv venv my-env
 $ uv venv my-env --python 3.11
