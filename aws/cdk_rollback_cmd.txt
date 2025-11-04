@@ -1,0 +1,57 @@
+⏺ Yes, exactly! Here's the complete command explanation:
+
+Command to Force CloudFormation Rollback to Continue
+
+aws cloudformation continue-update-rollback \
+  --stack-name <my_stack_name> \
+  --region us-east-1 \
+  --resources-to-skip OpenSearchISMPolicyManager
+
+What This Command Does:
+
+- continue-update-rollback - Tells CloudFormation to resume a failed rollback operation
+- --stack-name - Specifies which stack to fix
+- --region - AWS region where the stack is located
+- --resources-to-skip - Lists resources that CloudFormation should skip during rollback (because they're
+stuck/failed)
+
+When to Use This:
+
+Use this command when your stack is in one of these states:
+- UPDATE_ROLLBACK_FAILED ← Your case
+- UPDATE_ROLLBACK_IN_PROGRESS (and stuck)
+
+General Pattern for Any Stack:
+
+# 1. First, identify which resource(s) are causing the failure
+aws cloudformation describe-stack-events \
+  --stack-name <STACK_NAME> \
+  --region <REGION> \
+  --max-items 30 \
+  --query 'StackEvents[?ResourceStatus==`UPDATE_ROLLBACK_FAILED` ||
+ResourceStatus==`UPDATE_FAILED`].[LogicalResourceId,ResourceStatus,ResourceStatusReason]' \
+  --output table
+
+# 2. Then continue rollback, skipping the failed resources
+aws cloudformation continue-update-rollback \
+  --stack-name <STACK_NAME> \
+  --region <REGION> \
+  --resources-to-skip <RESOURCE_1> <RESOURCE_2> ...
+
+Multiple Resources Example:
+
+If multiple resources are stuck, you can skip them all:
+
+aws cloudformation continue-update-rollback \
+  --stack-name OSSDomainStack-oss-stage \
+  --region us-east-1 \
+  --resources-to-skip OpenSearchISMPolicyManager OpenSearchIndexTemplateManager
+
+Important Notes:
+
+1. Skipped resources remain in their current state - They won't be rolled back, so you'll need to fix them manually
+ or in the next deployment
+2. The stack becomes stable again - After this command succeeds, the stack moves to UPDATE_ROLLBACK_COMPLETE state
+3. You can deploy again - Once in UPDATE_ROLLBACK_COMPLETE, you can run a new deployment to fix the issues
+
+This is the standard AWS-recommended way to recover from stuck CloudFormation rollbacks!
