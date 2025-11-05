@@ -1,14 +1,51 @@
-> what's the difference between below?
+-> What is the difference between below?
 
-1. git fetch origin devlop
+1. `git fetch origin develp`
 
 VS
 
-2. git pull origin develop
-   git rebase
+2. `git pull origin develop`
+   `git rebase`
 
 ==============================================================
 
+
+⏺ You should use git fetch origin develop + git rebase origin/develop - this is the correct and better approach.
+
+  Here's why:
+
+  ❌ git pull origin develop + git rebase - WRONG
+
+  git pull origin develop    # This fetches AND merges develop into your branch
+  git rebase                 # Now you're trying to rebase after already merging - confusing!
+  This doesn't make sense because:
+  - git pull already merged develop into your branch
+  - Then you're trying to rebase, but you already have a merge commit
+  - Results in a messy, confusing history
+
+  ✅ git fetch origin develop + git rebase origin/develop - CORRECT
+
+  git fetch origin develop          # Download latest develop, don't merge yet
+  git rebase origin/develop         # Replay your commits on top of develop
+  This is the proper workflow because:
+  - Fetch downloads the changes without touching your branch
+  - Rebase replays your feature commits on top of the latest develop
+  - Creates clean, linear history
+  - This is the standard workflow for syncing with rebase
+
+  Common Shortcut
+
+  You can also use:
+  git pull --rebase origin develop
+  This is equivalent to git fetch origin develop + git rebase origin/develop in one command.
+
+  Summary
+
+  - For syncing with rebase: git fetch + git rebase ✅
+  - For syncing with merge: git pull (or git fetch + git merge) ✅
+  - Don't mix: git pull + git rebase ❌
+
+==============================================================
 
 
 ⏺ Great question! Let me explain the key differences between these two approaches:
@@ -53,6 +90,3 @@ VS
   - ✅ No merge commits
   - ❌ Rewrites commit history (requires force push if already pushed)
   - Branch history: A - B - C - D - E - F (linear)
-
-  Would you like me to redo the sync using rebase instead for a cleaner history?
-
