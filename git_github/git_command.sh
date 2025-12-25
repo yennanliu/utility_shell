@@ -7,8 +7,8 @@
 # https://stackoverflow.com/questions/6116548/how-to-tell-git-to-use-the-correct-identity-name-and-email-for-a-given-project
 
 # local set
-git config user.email mahmoud@company.ccc
-git config user.name 'Mahmoud Zalt'
+git config user.email jim@uber.com
+git config user.name 'jim'
 
 # local get
 git config --get user.email
