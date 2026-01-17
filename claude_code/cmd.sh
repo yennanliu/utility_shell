@@ -95,4 +95,7 @@ git worktree add .trees/testing_feature
 # https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/lesson/nngi6/exploring-github-integration-&-hooks
 
 
+# 17. turn on / off `plan` mode
+
+Shift + Tab
 
