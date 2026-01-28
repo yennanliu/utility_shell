@@ -99,3 +99,35 @@ git worktree add .trees/testing_feature
 
 Shift + Tab
 
+# 18. shift, tab in macbook?
+# https://www.google.com/search?q=where+is+Shift%2BTab+in+macbook+%3F&oq=where+is+Shift%2BTab+in+macbook+%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRiPAjIHCAUQIRiPAtIBCDU5NTNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
+ Shift (\(\Uparrow \)) 
+ Tab (\tab)
+
+# 19. auto all allow in interactive mode
+
+# 1. --allowedTools Flag (CLI)
+
+# claude -p "Your task" --allowedTools "Bash,Read,Edit"
+# This allows Claude to execute specified tools without prompting for permission.
+
+# 2. Auto-Accept Mode (Interactive)
+
+# Press Shift+Tab repeatedly to cycle through permission modes until you reach "auto-accept"
+# mode. This allows immediate execution without confirmations.
+
+# ⚠️ Important Warnings
+
+# - Use with extreme caution - Claude will execute operations immediately, including
+# potentially destructive commands
+# - Scope permissions narrowly - Only allow specific tools needed:
+# --allowedTools "Bash(git diff *),Bash(git status *),Read"
+# - Configure deny lists in settings to prevent dangerous operations:
+# {
+#   "permissions": {
+#     "allow": ["Bash(git *)", "Read"],
+#     "deny": ["Bash(rm *)"]
+#   }
+# }
+
+
