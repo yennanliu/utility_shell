@@ -100,7 +100,9 @@ git worktree add .trees/testing_feature
 Shift + Tab
 
 # 18. shift, tab in macbook?
+# https://github.com/yennanliu/utility_shell/blob/master/doc/pic/shift_tab_macbook.png
 # https://www.google.com/search?q=where+is+Shift%2BTab+in+macbook+%3F&oq=where+is+Shift%2BTab+in+macbook+%3F&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigATIHCAMQIRigATIHCAQQIRiPAjIHCAUQIRiPAtIBCDU5NTNqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
+
  Shift (\(\Uparrow \)) 
  Tab (\tab)
 
