@@ -1,0 +1,21 @@
+# https://www.facebook.com/photo/?fbid=122115967065170166&set=a.122103957489170166
+
+下面這些是「那些你可能知道的Claude Code兩三事
+
+
+1. 如果你不小心輸入錯了或覺得方向錯了，可以透過連續按兩下 esc（或 /rewind）來回到上一次或前一次的訊息重新輸入（包含code的狀態）
+2. 在輸入框中使用!可以直接執行bash command，並且結果會直接給Claude看到，如果Claude需要你幫忙執行可以直接在這裡用，就不用開新的terminal session再複製貼上結果（但當然會佔用context）
+3. 好好維護CLAUDE.md，官方一再強調他的重要性
+4. （承上）CLAUDE.md的讀取是階層式的，可以根據不同的功能撰寫不同的CLAUDE.md，並透過@path設定關聯
+5. 把你一天要求Claude做兩次以上的重複事情設定成hook，例如剛開新對話的時候了解專案（透過startsessionhook）、read-only的操作直接同意（透過permissionhook）、修改完成之後讓Claude去code review（透過agenthook）等等
+6. 設定Claude Code的功能，最好的方式是直接問他，叫他去讀官方文件，例如上面提到的hooks或agent或skills
+7. （承上）要求他深入了解官方文件後，寫成一個skills，這樣就可以在下次要再設定時不用重工，像我自己設定了hooks的skills
+8. Claude Code可以用訂閱額度整合進CI pipeline，讓你在遇到lint error, unused var時直接自動修復直到通過，不需要人類在中間當傳聲筒，失敗時重新叫Claude修復然後push無限循環
+9. Claude Code可以幫你做e2e測試
+10. 大多時候都建議你從plan mode開始
+11. 讓跟你對話的Session保持乾淨，最好只負責討論，要修改code讓他派agent去改
+12. 把你會需要用到的東西盡可能接進去，包含但不限於gh、MCP、skills、查log的cli工具等等
+13. Plugin中有LSP，加入可以讓Claude Code看到靜態分析，更不容易漏改
+14. Claude App中提供code，可以透過/teleport同步Claude Code and App，不是只有在電腦前才能coding
+15. 趁早加入Claude Pro，甚至最好是Max，上面的功能只要你開始用了你就會了
+16. 你不需要購買任何教你Claude Code的課程，最好的學習路徑是官方文件、Claude Code in Action、或是網路上的公開貼文（像是Boris Cherny的X）
