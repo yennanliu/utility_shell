@@ -1,0 +1,19 @@
+⏺ Based on the Claude Code documentation:
+
+  If you have a Claude Pro subscription:
+  - Your Claude Code usage is included in your subscription
+  - There isn't a hard "quota" in the traditional sense
+  - You can check your usage with /stats command
+
+  Typical usage patterns:
+  - Average cost: ~$6 per developer per day
+  - 90% of users stay below $12 per day
+  - Monthly estimate: $100-200 per month (using Sonnet 4.5)
+
+  To check your current usage:
+  - Run /cost to see detailed token statistics
+  - Run /stats if you're a Pro subscriber
+
+  The pricing is based on API token consumption rather than fixed daily/monthly quotas. If
+  you're a Claude Pro or Max subscriber, your usage is covered under your subscription plan.
+
