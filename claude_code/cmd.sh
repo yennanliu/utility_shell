@@ -132,4 +132,23 @@ Shift + Tab
 #   }
 # }
 
+# 20. change using model in Claude code
 
+ # 1. Command line flag when starting:
+ # claude --model haiku
+ # # or
+ # claude --model claude-3-5-haiku-latest
+ # 2. During session - use the /model command:
+ # /model haiku
+ # 3. Settings file - edit ~/.claude/settings.json:
+ # {
+ #   "model": "claude-3-5-haiku-latest"
+ # }
+
+ # The available options are:
+ # - haiku / claude-3-5-haiku-latest - Fastest, cheapest
+ # - sonnet / claude-sonnet-4-20250514 - Balanced
+ # - opus / claude-opus-4-20250514 - Most capable
+
+ # For the task we just did (implementing a module with multiple files), Opus was
+ # appropriate. For simpler tasks like quick edits or translations, Haiku would save costs.
