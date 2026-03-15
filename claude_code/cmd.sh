@@ -150,5 +150,10 @@ Shift + Tab
  # - sonnet / claude-sonnet-4-20250514 - Balanced
  # - opus / claude-opus-4-20250514 - Most capable
 
+# ---  Claude models are usually grouped into three tiers:
+# Opus – most powerful / highest reasoning
+# Sonnet – balanced performance and speed
+# Haiku – fastest and cheapest model
+
  # For the task we just did (implementing a module with multiple files), Opus was
  # appropriate. For simpler tasks like quick edits or translations, Haiku would save costs.
