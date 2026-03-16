@@ -155,5 +155,9 @@ Shift + Tab
 # Sonnet – balanced performance and speed
 # Haiku – fastest and cheapest model
 
+# https://github.com/yennanliu/ai_experiment/blob/main/courses/doc/pic/claude_models.png
+
+
+
  # For the task we just did (implementing a module with multiple files), Opus was
  # appropriate. For simpler tasks like quick edits or translations, Haiku would save costs.
