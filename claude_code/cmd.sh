@@ -157,7 +157,16 @@ Shift + Tab
 
 # https://github.com/yennanliu/ai_experiment/blob/main/courses/doc/pic/claude_models.png
 
-
-
  # For the task we just did (implementing a module with multiple files), Opus was
  # appropriate. For simpler tasks like quick edits or translations, Haiku would save costs.
+
+
+# 21 /simplify
+
+# 🔍 官方的 /simplify 原本是怎麼用的？
+# 根據 Anthropic 官方文件，/simplify 是 Claude Code 內建的一個強大 Skill。它的原始設計是「在程式碼寫完之後」使用的工具。
+# 當你修改完檔案，輸入 /simplify，它會自動呼叫三個平行的 Agent 幫你 Review 剛剛改過的 Code，抓出重複邏輯、提升品質與效率，並自動修復。簡單來說，它官方的定位是一個「事後清理與重構」的幫手。
+# 💡 突破盲點的駭客玩法：把 /simplify 往前挪！
+# 既然它具備強大的簡化與 Review 能力，為什麼不拿來審查計畫本身？
+# 當 Claude 在 Plan Mode 準備執行那份龐大計畫時，不要急著放行，直接輸入：
+# use /simplify to check if the plan is sound
