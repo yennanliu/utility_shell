@@ -170,3 +170,12 @@ Shift + Tab
 # 既然它具備強大的簡化與 Review 能力，為什麼不拿來審查計畫本身？
 # 當 Claude 在 Plan Mode 準備執行那份龐大計畫時，不要急著放行，直接輸入：
 # use /simplify to check if the plan is sound
+
+
+## 22
+# Claude Code 新增功能：自動模式。
+# 自動模式不會像傳統模式一樣逐一批准檔案寫入和 bash 命令，或完全跳過權限檢查，而是讓 Claude 代表你做出權限決定。
+# 每個操作在執行前都會經過安全檢查。
+# https://www.bnext.com.tw/article/90416/claude-code-auto-mode
+
+claude --enable-auto-mode
