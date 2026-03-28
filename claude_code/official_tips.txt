@@ -1,0 +1,110 @@
+#--------------------------------
+# TIPS
+#--------------------------------
+
+
+- https://claude.ai/public/artifacts/63f8bd66-e0de-4692-865f-e4b409e211c9?fbclid=IwY2xjawQ0yTFleHRuA2FlbQIxMABicmlkETFRYmR0S3ZJcHh0Qm93VXNac3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHjVR0D4dAlnUAxorc6YrsyzHheIw6Uv5Uawfq63X7M9I5oN7EEkRBrLZ8rxU_aem_gYi-HSg7FUMsGPiyo4AqbQ
+
+
+鍵盤快捷鍵
+!	Bash 模式（直接輸入 shell 指令）
+@	提及檔案 / 資料夾
+\	換行（多行輸入）
+Esc	中斷目前操作
+Esc x2	Rewind 選單（回溯對話/程式碼）
+Ctrl+R	顯示完整輸出 context
+Ctrl+V	貼上圖片
+Ctrl+T	查看 tasks / todos
+Ctrl+B	把目前任務移到背景
+Shift+Tab	Auto-accept（自動核准工具呼叫）
+Slash 指令
+Context 管理
+/compact	壓縮 context（釋放 token）
+/context	視覺化 context 使用量
+/resume	恢復上一次對話
+/branch	從目前對話建立分支
+/clear	清除對話
+/rewind	回溯到之前的對話狀態
+模型控制
+/model	切換模型 (Opus/Sonnet/Haiku)
+/fast	快速模式（同模型、更快輸出）
+/effort	調整推理強度
+開發流程
+/diff	查看未 commit 的變更
+/plan	進入規劃模式
+/pr-comments	讀取 GitHub PR 評論
+/btw	附帶問題（不消耗 context）
+/loop	排程重複執行任務
+/voice	語音模式（20 種語言）
+管理與設定
+/add-dir	新增工作目錄
+/agents	查看可用 agents
+/config	編輯設定
+/mcp	管理 MCP servers
+/memory	管理持久記憶
+/permissions	管理權限
+/sandbox	沙箱環境
+/vim	Vim 模式
+自訂指令 & Skills
+自訂指令
+在 .claude/commands/ 放 .md 檔，以 /my-command arg1 呼叫
+# .claude/commands/my-command.md
+執行任務：$ARGUMENTS
+Skills
+放在 .claude/skills/，由模型自動觸發，不需手動呼叫
+內建 Skill 功能
+/simplify	3 個平行 agent 做 code review
+/batch	跨多個 worktrees 平行重構
+/debug	標準除錯工作流
+Headless 模式（自動化/CI）
+claude --print "修復所有 lint 錯誤"
+claude -p "分析程式碼" --output-format json
+claude -p "重構模組" --max-turns 5
+echo "解釋這段 code" | claude -p
+MCP (Model Context Protocol)
+傳輸方式
+HTTP
+穩定、跨機器 生產環境
+stdio
+快速、本地 本地開發
+SSE
+事件推送 即時串流
+設定範圍
+全域	~/.claude.json
+專案	.mcp.json
+使用者	~/.claude/settings.json
+CLI 管理
+claude mcp add <name> <command>
+claude mcp list
+claude mcp remove <name>
+Agents（子代理）
+在 .claude/agents/ 建立 .md 檔，獨立 context、可限制工具權限
+內建模板
+code-reviewer debugger data-scientist
+Git Worktrees（平行開發）
+git worktree add <path> <branch>
+git worktree list
+git worktree remove <path>
+Hooks（事件自動化）
+PreToolUse	工具呼叫前
+PostToolUse	工具呼叫後
+UserPromptSubmit	使用者送出提示後
+Notification	通知觸發
+Stop	停止時
+SubagentStop	子代理停止時
+PreCompact	壓縮 context 前
+SessionStart	Session 開始
+SessionEnd	Session 結束
+權限管理
+Basic	常用開發指令允許，敏感檔案阻擋
+Strict	最大限制，適合生產環境
+Enterprise	MCP 控制，企業級管理
+權限類型：allow ask deny，支援 bash command pattern matching
+Checkpoint & 設定優先順序
+自動追蹤變更建立回溯點，Esc x2 或 /rewind 開啟回溯選單
+Bash 指令和外部編輯器的修改不會被 checkpoint 捕捉
+設定載入順序（高 → 低）
+/etc/claude-code/managed-settings.json（企業）
+.claude/settings.local.json（專案本地）
+.claude/settings.json（專案共用）
+~/.claude/settings.json（使用者全域）
