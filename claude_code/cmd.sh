@@ -1,9 +1,9 @@
-#-------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------
 #  Claude code video course
 #   
 #   - https://anthropic.skilljar.com/claude-code-in-action/303237
 #   - https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/
-#-------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------
 
 # 0. init (will generate a new CLAUDE.md based on project scan)
 /init 
@@ -179,3 +179,8 @@ Shift + Tab
 # https://www.bnext.com.tw/article/90416/claude-code-auto-mode
 
 claude --enable-auto-mode
+
+# 23
+# Claude Code 的 skill-creator 是 Anthropic 推出的元技能（meta-skill），讓用戶透過自然語言「教導」Claude 建立、優化和封裝特定的自動化工作流程（Skills
+# https://github.com/yennanliu/til/blob/master/README.md#20260329
+/skill-creator
