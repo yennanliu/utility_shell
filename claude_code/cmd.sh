@@ -186,5 +186,5 @@ claude --enable-auto-mode
 /skill-creator
 
 
-# 24 APU usage quota / monitoring page
+# 24 Claude code usage quota/monitoring page
 https://claude.ai/settings/usage
