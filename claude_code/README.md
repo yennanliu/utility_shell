@@ -16,3 +16,8 @@
 
 - https://learn.deeplearning.ai/courses/claude-code-a-highly-agentic-coding-assistant/
 - https://anthropic.skilljar.com/
+
+
+## Cost saving
+
+- https://www.termdock.com/zh/blog/claude-code-cost-saving-tips
