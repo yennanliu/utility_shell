@@ -184,3 +184,7 @@ claude --enable-auto-mode
 # Claude Code 的 skill-creator 是 Anthropic 推出的元技能（meta-skill），讓用戶透過自然語言「教導」Claude 建立、優化和封裝特定的自動化工作流程（Skills
 # https://github.com/yennanliu/til/blob/master/README.md#20260329
 /skill-creator
+
+
+# 24 APU usage quota / monitoring page
+https://claude.ai/settings/usage
