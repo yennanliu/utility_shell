@@ -188,3 +188,7 @@ claude --enable-auto-mode
 
 # 24 Claude code usage quota/monitoring page
 https://claude.ai/settings/usage
+
+#25 /btw
+# Tip: Use /btw to ask a quick side question without interrupting Claude's current work
+
