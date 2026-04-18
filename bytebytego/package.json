@@ -1,0 +1,10 @@
+{
+  "name": "bytebytego-downloader",
+  "version": "1.0.0",
+  "scripts": {
+    "download": "node download_courses.js"
+  },
+  "dependencies": {
+    "playwright": "^1.59.1"
+  }
+}
