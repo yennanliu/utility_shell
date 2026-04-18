@@ -28,21 +28,42 @@ PDFs land in `pdfs/<Course_Name>/NN_<Chapter_Title>.pdf`.
 
 The site auth uses a **Firebase JWT** in the `token` cookie. The script injects this cookie via Playwright's `context.addCookies()` so it doesn't need to log in itself.
 
-### How to grab a fresh token
+### How to grab a fresh token (manual, ~30 seconds)
 
-1. Log in to https://bytebytego.com in your normal browser (Google SSO works fine).
-2. Open DevTools → Application → Cookies → `https://bytebytego.com`.
-3. Copy the value of the `token` cookie (it's a long JWT starting with `eyJ...`).
-4. Paste into `download_courses.js` at the `COOKIES` constant:
+1. **Log in** to https://bytebytego.com in your normal browser (Google SSO works fine — you only need to do this once per session).
+2. **Open DevTools** (Cmd+Opt+I on Mac, F12 on Windows/Linux).
+3. Go to **Application** tab → left sidebar **Storage** → **Cookies** → `https://bytebytego.com`.
+4. Find the row where **Name = `token`**. Click it and copy the full **Value** — it's a long JWT starting with `eyJ...` (~1000 characters).
+5. Paste it into `download_courses.js`, replacing the existing token in the `COOKIES` constant:
    ```js
    const COOKIES = [
      { name: 'token', value: 'PASTE_JWT_HERE', domain: '.bytebytego.com', path: '/' },
    ];
    ```
+6. Save the file and re-run the download. Skip-if-exists keeps already-downloaded PDFs, so only the missing chapters get re-rendered.
 
-### Token expiry
+### Token expiry — silent failure mode
 
-The JWT expires **~1 hour** after login. If the script fails with "Not logged in!", refresh the token and re-run. The skip-if-exists logic means you only re-render PDFs that weren't completed.
+The JWT expires **~1 hour** after issuance (`exp` claim in the JWT). When it expires mid-run:
+
+- The startup login check (`/my-courses`) **still passes** — that endpoint doesn't strictly enforce the token, so the script reports "Logged in" even when the token is dead.
+- Individual course chapter pages **silently render the login wall** instead of the article.
+- Resulting PDFs all have **identical file sizes** (~143KB on this site) because they all contain the same login modal.
+
+**Detect it:** after a download, check file sizes. If many PDFs are exactly the same byte count, you got the login page.
+```bash
+ls -la pdfs/<Course_Name>/ | awk '{print $5}' | sort | uniq -c | sort -rn | head
+```
+
+**Fix it:** delete the broken PDFs and re-run with a fresh token. To delete only the login-page files (keeping good content):
+```bash
+# Replace 143565 with whatever byte size shows up repeatedly
+find pdfs/<Course_Name>/ -name "*.pdf" -size 143565c -delete
+```
+
+### Why the script doesn't auto-detect this
+
+The script doesn't validate PDF content because the login wall renders as a normal HTML page (no HTTP error, no redirect). A future improvement would be to check rendered PDF size / look for known login-page text via `pdftotext` after each chapter and abort if detected.
 
 ---
 
