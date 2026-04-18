@@ -25,15 +25,32 @@ const COOKIES = [
 
 const COURSES = [
   { name: 'How_to_Write_a_Good_Resume', startUrl: 'https://bytebytego.com/courses/tech-resume/p0-c2-introduction' },
-  { name: 'Coding_Interview_Patterns', startUrl: 'https://bytebytego.com/courses/coding-interview-patterns/introduction' },
+  { name: 'Coding_Interview_Patterns', startUrl: 'https://bytebytego.com/courses/coding-patterns/two-pointers/introduction-to-two-pointers' },
   { name: 'System_Design_Interview', startUrl: 'https://bytebytego.com/courses/system-design-interview/foreword' },
-  { name: 'Object_Oriented_Design_Interview', startUrl: 'https://bytebytego.com/courses/ood-interview/introduction' },
-  { name: 'Machine_Learning_System_Design', startUrl: 'https://bytebytego.com/courses/machine-learning-system-design-interview/introduction' },
+  { name: 'Object_Oriented_Design_Interview', startUrl: 'https://bytebytego.com/courses/object-oriented-design-interview/what-is-an-object-oriented-design-interview' },
+  { name: 'Machine_Learning_System_Design', startUrl: 'https://bytebytego.com/courses/machine-learning-system-design-interview/visual-search-system' },
   { name: 'Mobile_System_Design', startUrl: 'https://bytebytego.com/courses/mobile-system-design-interview/introduction' },
-  { name: 'Generative_AI_System_Design', startUrl: 'https://bytebytego.com/courses/genai-system-design-interview/introduction' },
+  { name: 'Generative_AI_System_Design', startUrl: 'https://bytebytego.com/courses/genai-system-design-interview/introduction-and-overview' },
 ];
 
 async function getChapterUrls(page) {
+  // Some courses (e.g. Coding Interview Patterns) group lessons under
+  // collapsible topic submenus. The lesson links are NOT rendered in the DOM
+  // until each submenu is expanded. Expand all collapsed submenus first.
+  // Loop until no more collapsed submenus remain (expanding one can reveal
+  // nested ones).
+  for (let pass = 0; pass < 5; pass++) {
+    const expanded = await page.evaluate(() => {
+      const collapsed = Array.from(
+        document.querySelectorAll('.ant-menu-submenu-title[aria-expanded="false"]')
+      );
+      collapsed.forEach(el => el.click());
+      return collapsed.length;
+    });
+    if (expanded === 0) break;
+    await page.waitForTimeout(400);
+  }
+
   return await page.evaluate(() => {
     const results = [];
     const seen = new Set();

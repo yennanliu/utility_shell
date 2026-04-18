@@ -1,128 +1,119 @@
 # ByteByteGo Course PDF Downloader
 
-## Overview
-Downloads ByteByteGo course chapters as individual PDFs using Playwright MCP inside Claude Code.
+Downloads ByteByteGo course chapters as individual PDFs using a standalone Node + Playwright script. Re-runnable, skips already-downloaded files, and supports per-course filtering.
 
 ---
 
-## Login
+## Quick Start
 
-- URL: `https://bytebytego.com/my-courses`
-- Auth: Magic Link (email OTP) — **not** Google SSO via Playwright
-- Login flow: Enter email → receive 6-digit OTP → enter code in modal
-
----
-
-## Courses Available
-
-| Course | Start URL |
-|--------|-----------|
-| How to Write a Good Resume | `/courses/tech-resume/p0-c2-introduction` |
-| Coding Interview Patterns | `/courses/coding-patterns/two-pointers/introduction-to-two-pointers` |
-| System Design Interview | `/courses/system-design-interview/scale-from-zero-to-millions-of-users` |
-| Object-Oriented Design Interview | `/courses/object-oriented-design-interview/what-is-an-object-oriented-design-interview` |
-| Machine Learning System Design | `/courses/machine-learning-system-design-interview/visual-search-system` |
-| Mobile System Design | `/courses/mobile-system-design-interview/introduction` |
-| Generative AI System Design | `/courses/genai-system-design-interview/introduction-and-overview` |
-
-> "Behavioral Interview" is **Coming Soon** — no content yet.
-
----
-
-## How to Get All Chapter URLs
-
-The sidebar uses Ant Design menus with `data-menu-id` attributes. Sections are **collapsed by default** — must expand all first.
-
-### Step 1: Expand all sections
-```js
-const sections = await page.evaluate(() =>
-  Array.from(document.querySelectorAll('.ant-menu-submenu-title'))
-    .filter(el => el.getAttribute('aria-expanded') === 'false')
-    .map(el => el.getAttribute('data-menu-id'))
-);
-for (const menuId of sections) {
-  await page.locator(`[data-menu-id="${menuId}"]`).first().click();
-  await page.waitForTimeout(300);
-}
-```
-
-### Step 2: Collect all chapter URLs
-```js
-const chapters = await page.evaluate(() => {
-  const results = [], seen = new Set();
-  document.querySelectorAll('*').forEach(el => {
-    const menuId = el.getAttribute('data-menu-id');
-    if (menuId && menuId.includes('/courses/')) {
-      const match = menuId.match(/\/courses\/.+/);
-      if (match && !seen.has(match[0])) {
-        seen.add(match[0]);
-        results.push({ title: el.innerText.trim().split('\n')[0], url: 'https://bytebytego.com' + match[0] });
-      }
-    }
-  });
-  return results;
-});
-```
-
----
-
-## PDF Generation
-
-### Key findings
-- `page.pdf()` works — content is white background, dark text, no hostile `@media print` CSS
-- **The sidebar stays in the PDF** (grey Ant Design sider) and pushes content off the right edge
-- Fix: inject a `<style>` tag via `page.addStyleTag` (safer than removing DOM nodes — DOM removal causes Next.js re-renders and unexpected navigation)
-
-### CSS fix to inject before `page.pdf()`
-```js
-await page.addStyleTag({ content: `
-  .ant-layout-sider, header, [class*="AskAlex"], [class*="ask-alex"] { display: none !important; }
-  .ant-layout { background: #fff !important; }
-  .ant-layout-content { margin-left: 0 !important; width: 100% !important; max-width: 100% !important; background: #fff !important; }
-  body { background: #fff !important; }
-`});
-```
-
-### PDF call
-```js
-await page.pdf({
-  path: outPath,
-  format: 'A4',
-  printBackground: true,
-  margin: { top: '15mm', bottom: '15mm', left: '15mm', right: '15mm' }
-});
-```
-
----
-
-## Navigation Gotchas
-
-1. **Use a dedicated tab** — always open a new tab (`browser_tabs new`) for downloading. Tab 0 from prior sessions may auto-navigate due to leftover Next.js client-side routing state.
-2. **Don't remove DOM nodes** — causes Next.js to re-render and navigate away. Use CSS injection instead.
-3. **`waitUntil: 'domcontentloaded'`** — use this (not `networkidle`) with a 2–3s `waitForTimeout` after; `networkidle` times out on this site.
-4. **Course cards use `li.style_courseItem__MV4Ic`** — not `<a>` tags. Click the `<li>` to discover the course start URL.
-
----
-
-## Output Structure
-
-```
-pdfs/
-  Coding_Interview_Patterns/
-    001_Introduction_to_Two_Pointers.pdf
-    002_Pair_Sum_-_Sorted.pdf
-    ...
-    120_Triangle_Numbers.pdf
-```
-
----
-
-## Chrome DevTools MCP (alternative approach — not working yet)
-
-Tried connecting to existing Chrome session via:
 ```bash
-claude mcp add chrome-devtools -- npx chrome-devtools-mcp@latest --autoConnect
-```
-And enabling `chrome://inspect/#remote-debugging` in Chrome 146.
+# 1. Install dependencies (one-time)
+npm install playwright
+npx playwright install chromium      # installs full Chromium (PDF support)
+brew install poppler                 # optional, for pdftotext verification
 
-**Status:** MCP still looks for `DevToolsActivePort` file (port-based), which requires launching Chrome with `--remote-debugging-port=9222`. The native pipe-based debugging from Chrome 146 is not yet supported by this MCP version.
+# 2. Refresh the auth token in download_courses.js (see "Authentication" below)
+
+# 3. Download
+node download_courses.js             # all courses
+node download_courses.js 0           # first course only
+node download_courses.js 0,2,3       # selected courses by index
+```
+
+PDFs land in `pdfs/<Course_Name>/NN_<Chapter_Title>.pdf`.
+
+---
+
+## Authentication
+
+The site auth uses a **Firebase JWT** in the `token` cookie. The script injects this cookie via Playwright's `context.addCookies()` so it doesn't need to log in itself.
+
+### How to grab a fresh token
+
+1. Log in to https://bytebytego.com in your normal browser (Google SSO works fine).
+2. Open DevTools → Application → Cookies → `https://bytebytego.com`.
+3. Copy the value of the `token` cookie (it's a long JWT starting with `eyJ...`).
+4. Paste into `download_courses.js` at the `COOKIES` constant:
+   ```js
+   const COOKIES = [
+     { name: 'token', value: 'PASTE_JWT_HERE', domain: '.bytebytego.com', path: '/' },
+   ];
+   ```
+
+### Token expiry
+
+The JWT expires **~1 hour** after login. If the script fails with "Not logged in!", refresh the token and re-run. The skip-if-exists logic means you only re-render PDFs that weren't completed.
+
+---
+
+## Course Index
+
+Pass these numbers as the CLI arg to `download_courses.js`:
+
+| Index | Course | Verified ✓ |
+|-------|--------|-----------|
+| 0 | How to Write a Good Resume | ✓ (19 chapters) |
+| 1 | Coding Interview Patterns | ✓ (120 chapters) |
+| 2 | System Design Interview | not yet verified |
+| 3 | Object-Oriented Design Interview | not yet verified |
+| 4 | Machine Learning System Design | not yet verified |
+| 5 | Mobile System Design | not yet verified |
+| 6 | Generative AI System Design | not yet verified |
+
+> If a course returns 0 chapters or 404s, the start URL slug is probably wrong. Open the course in the browser, copy the URL of the first lesson from the address bar, and update `COURSES[i].startUrl` in the script.
+
+---
+
+## How It Works
+
+1. Launches **full Chromium** (not the headless shell — see gotchas) with the cookie injected.
+2. Verifies login by visiting `/my-courses`.
+3. For each course:
+   - Goes to `startUrl`, expands all collapsible submenus in the sidebar (some courses group lessons under topics like "Two Pointers", "Sliding Window" etc.).
+   - Scrapes chapter URLs from `data-menu-id` attributes.
+   - For each chapter: navigates, applies layout fixes, calls `page.pdf()`.
+   - Skips chapters whose PDF already exists on disk.
+
+---
+
+## Gotchas (read before modifying)
+
+These are the non-obvious traps. Full debugging history in `DEBUGGING_NOTES.md`.
+
+1. **Headless shell ≠ full Chromium.** `chromium_headless_shell` (Playwright's default) silently produces empty PDFs. The script hardcodes the path to `Google Chrome for Testing` (the full binary) via `executablePath`. If you're on a different machine, update `CHROMIUM_EXEC` — find it under `~/Library/Caches/ms-playwright/`.
+
+2. **Don't use `[class*="sider"]` to hide the sidebar.** The Ant Design parent class `ant-layout-has-sider` matches that substring, so you'd hide the entire layout (article included). Use the exact selector `aside.ant-layout-sider`.
+
+3. **Don't hide `<header>` globally.** The article wraps its `<h1>` in a `<header>` — global hide drops the chapter title. Scope to `body > header, #__next > header`.
+
+4. **Force screen media before `page.pdf()`.** The site has `@media print` CSS that hides content. Without `await page.emulateMedia({ media: 'screen' })`, PDFs come out blank.
+
+5. **`networkidle` times out.** SPAs keep connections open. Use `waitUntil: 'domcontentloaded'` plus `waitForSelector('article h1, article p, main article')`.
+
+6. **Reclaim sidebar's horizontal space.** After hiding the sidebar, ancestor margins/widths still assume it exists, clipping the article's right edge. The script walks up from `<article>` clearing margin-left/padding-left/max-width, then centers the article at 780px max-width.
+
+7. **Submenus must be expanded before scraping URLs.** Lesson links are not in the DOM until each topic's submenu is clicked open. The script loops up to 5 passes clicking every `.ant-menu-submenu-title[aria-expanded="false"]` until none remain.
+
+---
+
+## Verification
+
+```bash
+# Spot-check a PDF actually contains text
+pdftotext pdfs/How_to_Write_a_Good_Resume/02_Introduction.pdf - | head -50
+
+# Render first page as PNG to eyeball layout
+pdftoppm -f 1 -l 1 -r 150 pdfs/.../somefile.pdf /tmp/preview && open /tmp/preview-1.ppm
+```
+
+A healthy PDF is typically 100KB–700KB. Sub-10KB files mean the renderer produced an empty page — check the token, the selectors, and that you're using full Chromium.
+
+---
+
+## Files
+
+- `download_courses.js` — the real downloader. Edit this.
+- `test_download.js` — same logic limited to first 3 chapters of course 0. Use to sanity-check changes before a long run.
+- `DEBUGGING_NOTES.md` — the full backstory on why each fix exists.
+- `pdfs/` — output directory (gitignored).
+- `pdfs_test/` — test script output.
