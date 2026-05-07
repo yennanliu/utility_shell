@@ -180,3 +180,4 @@ export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 # use v20.19.0 nodeJS
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+eval "$(rbenv init -)"
