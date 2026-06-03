@@ -221,3 +221,27 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 # git diff main dev-001-mon-auto-fix >> diff.txt
 # https://stackoverflow.com/questions/4099742/how-to-compare-files-from-two-different-branches
 git diff main_branch cur_dev_branch diff.txt
+
+
+
+# 22) update git remote repo url
+git remote set-url origin git@<ssh-host-alias>:<github-username>/<repo-name>.git
+
+So for your two accounts:
+
+# For yennanliu repos
+git remote set-url origin git@github.com-yennanliu:yennanliu/<repo-name>.git
+
+# For my_company repos
+git remote set-url origin git@github.com-my_company:my_company/<repo-name>.git
+
+#The <ssh-host-alias> part (github.com-yennanliu) is what you defined in ~/.ssh/config — SSH swaps it
+#for the real github.com hostname and picks the right key automatically.
+
+# To verify it's set correctly after changing:
+git remote -v
+
+# And to test the key works before pushing:
+# ssh -T git@github.com-yennanliu
+# # → Hi yennanliu! You've successfully authenticated...
+
